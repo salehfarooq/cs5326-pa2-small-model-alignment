@@ -1,6 +1,6 @@
 {
   "status": "verified",
-  "manifest_files": 263,
+  "manifest_files": 264,
   "protected_course_files": 6,
   "data_rows": {
     "sft/train": 30000,

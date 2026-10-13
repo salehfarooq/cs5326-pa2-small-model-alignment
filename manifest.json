@@ -41,8 +41,8 @@
       "sha256": "ae1b800e1f8f43a7d856ae947a6450a546c86bd971af38fb0d8e37901fe998d3"
     },
     "REVIEW_CHECKLIST.md": {
-      "bytes": 1218,
-      "sha256": "54362313868a8737462168a46779f6b28694544b120218a127fa08c934a370f9"
+      "bytes": 1263,
+      "sha256": "9dccc5fe1f4a41eae5fefe4339fe921535ac99f148bbc655315b339c8871e2ed"
     },
     "SUBMISSION.md": {
       "bytes": 1652,
@@ -615,6 +615,10 @@
     "evidence/followup_completion.json": {
       "bytes": 864,
       "sha256": "87004ac3bdac6b4380d7b41a12c01a303443c42a78519541515769f4177d5046"
+    },
+    "evidence/github-verification.json": {
+      "bytes": 980,
+      "sha256": "c770d8ef56654e9f797d964023100288dc6312cb5f4b4b8b4d571383428c9be7"
     },
     "evidence/judge-archive-provenance.json": {
       "bytes": 385,

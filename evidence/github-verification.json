@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-13",
+  "repository": "https://github.com/salehfarooq/cs5326-pa2-small-model-alignment",
+  "public": true,
+  "default_branch": "main",
+  "tested_commit": "16fca5ac4eff95da180160d363dcd1258a129d16",
+  "fresh_environment_ci": "success",
+  "ci_url": "https://github.com/salehfarooq/cs5326-pa2-small-model-alignment/actions/runs/38388178709",
+  "public_smoke_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "linux_full_suite": {
+    "passed": 378,
+    "skipped": 3,
+    "failed": 0
+  },
+  "local_full_suite": {
+    "passed": 381,
+    "failed": 0
+  },
+  "saved_judgments_verified": 1200,
+  "request_attempts": 250,
+  "retries": 10,
+  "remote_pdf_sha256": "28dbf793cd83f286e3dceef307ac0c2e173d7fc22dcde9b722b89bea611a454f",
+  "remote_pdf_byte_equality": true,
+  "mandatory_hand_in_items": "All five listed in SUBMISSION.md",
+  "persona_evaluation": "Matched qualitative; no external persona judge score claimed",
+  "zip_created": false,
+  "lms_submitted": false
+}
