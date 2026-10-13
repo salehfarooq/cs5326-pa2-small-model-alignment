@@ -1,0 +1,42 @@
+{
+  "status": "verified",
+  "manifest_files": 263,
+  "protected_course_files": 6,
+  "data_rows": {
+    "sft/train": 30000,
+    "sft/validation": 1000,
+    "hh/train": 15000,
+    "hh/validation": 1000,
+    "uf/train": 15000,
+    "uf/validation": 1000,
+    "alpaca_eval/eval": 300
+  },
+  "matched_answers": 2100,
+  "blind_pairs": 1200,
+  "byte_identical_rebuilt_pair_banks": [
+    "pairs-hh-alpaca_eval",
+    "pairs-hh-hh",
+    "pairs-uf-alpaca_eval",
+    "pairs-uf-hh"
+  ],
+  "selected_updates": {
+    "sft": 938,
+    "hh": 400,
+    "uf": 469,
+    "persona": 5
+  },
+  "persona_unchanged_best": 38,
+  "persona_unchanged_final": 34,
+  "tests": {
+    "passed": 381,
+    "failed": 0,
+    "skipped": 0
+  },
+  "report_pages": 6,
+  "pdf_visual_review": "All six rendered pages inspected; no clipping or overlap.",
+  "github_project_url": "https://github.com/salehfarooq/cs5326-pa2-small-model-alignment",
+  "raw_judge_journal_locally_available": true,
+  "zip_created": false,
+  "readiness": "Five manual hand-in items prepared; persona assessment remains qualitative as documented.",
+  "date": "2026-10-13"
+}

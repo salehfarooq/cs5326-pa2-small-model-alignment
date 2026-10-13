@@ -1,0 +1,22 @@
+{
+  "decisions": {
+    "A": 166,
+    "B": 110,
+    "tie": 24,
+    "unknown": 0
+  },
+  "failures": 0,
+  "identity": {
+    "bank_kind": "hh",
+    "batch_size": 5,
+    "judge_model": "google/gemini-3.6-flash",
+    "max_attempts": 3,
+    "pairs_sha256": "97214e1a590d34999ca04ef188194c98135743231fefea06fa0384e817c0dd61",
+    "rubric_version": "pa2-pairwise-v1",
+    "sleep_seconds": 5
+  },
+  "judged": 300,
+  "pending": 0,
+  "status": "completed",
+  "total": 300
+}

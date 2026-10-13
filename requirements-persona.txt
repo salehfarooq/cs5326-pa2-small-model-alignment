@@ -1,0 +1,7 @@
+# Use a separate environment from Qwen. Preserve working CUDA PyTorch.
+transformers==4.51.3
+trl==0.19.1
+peft==0.15.2
+datasets==3.6.0
+accelerate==1.7.0
+safetensors

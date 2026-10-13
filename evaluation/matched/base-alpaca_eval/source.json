@@ -1,0 +1,19 @@
+{
+  "script_sha256": "2eeb50f23b074183a18fb5147b7160cb0ff74e546601d9720a0c254b3493f490",
+  "seed": 42,
+  "source_hashes": {
+    "src/__init__.py": "5eefb2d58c9ede2c81006ade3368f55c120232879c7ee24627c28413a3b49caa",
+    "src/batching.py": "279e126e7999832e428289cf029d3ffc01eab9980486779bc410d148c7c20bda",
+    "src/checkpoints.py": "94de86a7aabd46fd6377652b2d2228eba35692a249c209bcc5bd560d5f07d559",
+    "src/data.py": "62e1fb5338f1247dd70db4abf759e9243d5bb1a70ad0796c2de65b22fceffd2d",
+    "src/data_tokens.py": "72c22077e42c2c8ab29a92b8df5507a7778920c63698cac862fe757121911437",
+    "src/datafiles.py": "a8733b2c55b736d8b322291638c2f20e4c873d440c8afa57278042b3a8456324",
+    "src/generation.py": "5f07791d07271a70a62af748340283b78cc8d9978d12d11be8008bf3f568e0fc",
+    "src/judging.py": "64f93708ab6cf95376980d4cddbc16e52d26c5a089a4fe2838a4172b0e4d69b3",
+    "src/losses.py": "486693253174a501f34e505fa4cd004f0366211b60d2a6bd516867a1680697f6",
+    "src/pairwise.py": "c14e3dcbc0552a2042a3dee90e3763b1d38605558e9f5012ccdbca603617d837",
+    "src/training.py": "0084c84450f6d7d562cff25a66b87601f8ed45394ca08f4eb12fa519e2b0f5b2",
+    "src/training_diagnostics.py": "6976cdb531de00b352a5b976a0c5f417fccff8c4f0f5f296e1c31230e223c5cb"
+  },
+  "source_manifest_sha256": "4b7deda714e222c1c0a1c10d0b0e31b85852a8828c855a8e9d3015b153d3c820"
+}

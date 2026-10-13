@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cs5326-small-model-alignment"
+version = "0.1.0"
+description = "Response-only SFT, custom HH/UltraFeedback DPO, LoRA persona tuning, and reproducible saved evaluation."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools]
+packages = ["src"]
+py-modules = ["submission_adapter"]

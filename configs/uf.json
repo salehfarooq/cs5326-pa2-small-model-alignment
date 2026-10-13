@@ -1,0 +1,18 @@
+{
+  "accumulation": 32,
+  "amp": true,
+  "batch_size": 1,
+  "beta": 0.1,
+  "clip_norm": 1.0,
+  "epochs": 1,
+  "eval_batch_size": 1,
+  "eval_every": 50,
+  "kind": "dpo",
+  "lr": 1e-06,
+  "max_length": 512,
+  "max_updates": null,
+  "schedule": "fixed",
+  "seed": 42,
+  "warmup_ratio": 0.0,
+  "weight_decay": 0.0
+}

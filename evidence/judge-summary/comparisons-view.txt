@@ -1,0 +1,880 @@
+- navigation "Main Kaggle page navigation":
+  - button "Navigation menu": menu
+  - link "Skip to content":
+    - /url: "#site-content"
+    - text: Skip to
+    - text: content
+  - link "Return to Kaggle home page":
+    - /url: /
+  - button "Create":
+    - generic: Create
+  - list:
+    - listitem "Home List Item":
+      - link "Home":
+        - /url: /
+        - generic: explore
+        - paragraph: Home
+    - listitem "Competitions List Item":
+      - link "Competitions":
+        - /url: /competitions
+        - generic: emoji_events
+        - paragraph: Competitions
+    - listitem "Benchmarks List Item":
+      - link "Benchmarks":
+        - /url: /benchmarks
+        - generic: leaderboard
+        - paragraph: Benchmarks
+    - listitem "Game Arena List Item":
+      - link "Game Arena":
+        - /url: /game-arena
+        - generic: smart_toy
+        - paragraph: Game Arena
+  - list:
+    - listitem "Data Hub List Item":
+      - link "Data Hub":
+        - /url: "#"
+        - generic: code
+        - paragraph: Data Hub
+      - button "Expand": expand_more
+  - list:
+    - listitem "More on Kaggle List Item":
+      - link "More on Kaggle":
+        - /url: "#"
+        - generic: format_list_bulleted
+        - paragraph: More
+      - button "Expand": expand_more
+  - separator
+  - list:
+    - listitem "Your Work List Item":
+      - link "Your Work":
+        - /url: /work
+        - generic: note_alt
+        - paragraph: Your Work
+      - button "Collapse Your Work" [expanded]: expand_less
+    - listitem "Collapse Viewed List Item":
+      - link "Collapse Viewed" [expanded]:
+        - /url: "#"
+        - paragraph: Viewed
+      - button "Collapse Viewed": expand_less
+    - list:
+      - listitem "PA2 DPO blind judging List Item":
+        - link "PA2 DPO blind judging":
+          - /url: /code/muhammadsalehfarooq/pa2-dpo-blind-judging
+          - paragraph: PA2 DPO blind judging
+      - listitem "PA2 full SFT v4 verified checkpoint List Item":
+        - link "PA2 full SFT v4 verified checkpoint":
+          - /url: /datasets/muhammadsalehfarooq/pa2-full-sft-v4-verified-checkpoint
+          - paragraph: PA2 full SFT v4 verified checkpoint
+    - listitem "Collapse Edited List Item":
+      - link "Collapse Edited" [expanded]:
+        - /url: "#"
+        - paragraph: Edited
+      - button "Collapse Edited": expand_less
+    - list:
+      - listitem "PA2 DPO blind judging List Item":
+        - link "PA2 DPO blind judging":
+          - /url: /code/muhammadsalehfarooq/pa2-dpo-blind-judging
+          - paragraph: PA2 DPO blind judging
+      - listitem "PA2 matched evaluation List Item":
+        - link "PA2 matched evaluation":
+          - /url: /code/muhammadsalehfarooq/pa2-matched-evaluation
+          - paragraph: PA2 matched evaluation
+      - listitem "Fork of Fork of PA2-AdvGenAI b5e89a List Item":
+        - link "Fork of Fork of PA2-AdvGenAI b5e89a":
+          - /url: /code/muhammadsalehfarooq/fork-of-fork-of-pa2-advgenai-b5e89a
+          - paragraph: Fork of Fork of PA2-AdvGenAI b5e89a
+      - listitem "Fork of PA2-AdvGenAI List Item":
+        - link "Fork of PA2-AdvGenAI":
+          - /url: /code/muhammadsalehfarooq/fork-of-pa2-advgenai
+          - paragraph: Fork of PA2-AdvGenAI
+      - listitem "PA2-AdvGenAI List Item":
+        - link "PA2-AdvGenAI":
+          - /url: /code/muhammadsalehfarooq/pa2-advgenai
+          - paragraph: PA2-AdvGenAI
+  - button "Open Active Events dialog 1 View Active Events":
+    - generic "Open Active Events dialog": auto_awesome_motion
+    - generic: "1"
+    - paragraph: View Active Events
+- navigation "Main menu, search and your account":
+  - generic: search
+  - textbox "Search"
+  - button "Muhammad Saleh Farooq":
+    - generic "Muhammad Saleh Farooq"
+- main:
+  - link "Muhammad Saleh Farooq's profile":
+    - /url: /muhammadsalehfarooq
+    - generic "Muhammad Saleh Farooq"
+  - generic: Muhammad Saleh Farooq
+  - generic: · 2h ago · 8 views · Private
+  - heading "PA2 DPO blind judging" [level=1]
+  - button "Edit title": edit
+  - heading "PA2 DPO blind judging" [level=2]
+  - button "Upvote":
+    - generic: arrow_drop_up
+  - button "0 votes": "0"
+  - button "Share":
+    - generic: lock
+    - generic: Share
+  - link "Edit":
+    - /url: /code/muhammadsalehfarooq/pa2-dpo-blind-judging/edit/run/357378242
+    - button "Edit":
+      - generic: edit
+      - generic: Edit
+  - button "Download":
+    - generic: file_download
+    - generic: Download
+  - button "More options for this notebook": more_vert
+  - tablist:
+    - tab "Notebook, 1 of 6":
+      - generic: Notebook
+    - tab "Input, 2 of 6":
+      - generic: Input
+    - tab "Output, 3 of 6" [selected]:
+      - generic: Output
+    - tab "Logs, 4 of 6":
+      - generic: Logs
+    - tab "Comments (0), 5 of 6":
+      - generic: Comments (0)
+    - tab "Settings, 6 of 6":
+      - generic: Settings
+  - separator
+  - heading "Output Data" [level=2]
+  - button "Back to blind_judging": arrow_back
+  - heading "comparisons.json(4.51 kB)" [level=4]:
+    - text: comparisons.json
+    - generic: (4.51 kB)
+  - button "Download": get_app
+  - button "Hide tree": chevron_right
+  - generic: "\"root\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - generic "Copy to clipboard":
+  - generic: "\"pairs-hh-alpaca_eval\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - text: "\""
+  - generic: perspective
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"dpo_vs_sft\""
+  - generic: "\"counts\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 7 items
+  - text: "\""
+  - generic: total
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: wins
+  - text: "\""
+  - generic: ":"
+  - generic: int101
+  - text: "\""
+  - generic: ties
+  - text: "\""
+  - generic: ":"
+  - generic: int98
+  - text: "\""
+  - generic: losses
+  - text: "\""
+  - generic: ":"
+  - generic: int101
+  - text: "\""
+  - generic: unknown
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: failures
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: pending
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - generic: "}"
+  - generic: "\"rates\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - text: "\""
+  - generic: tie_adjusted
+  - text: "\""
+  - generic: ":"
+  - generic: float0.5
+  - text: "\""
+  - generic: decisive
+  - text: "\""
+  - generic: ":"
+  - generic: float0.5
+  - generic: "}"
+  - generic: "\"bootstrap\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - generic: "\"tie_adjusted\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4533333333333333
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.545
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "\"decisive\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.43126686110098433
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.5687225531544849
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "}"
+  - generic: "\"evidence\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - text: "\""
+  - generic: pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: mapping_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: judgments_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: failures_count
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: valid_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: bankkind
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"alpaca_eval\""
+  - generic: "}"
+  - generic: "\"limitations\""
+  - generic: ":"
+  - generic: "["
+  - generic: ...
+  - generic: "]"
+  - generic: 3 items
+  - generic: "}"
+  - generic: "\"pairs-hh-hh\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - text: "\""
+  - generic: perspective
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"dpo_vs_sft\""
+  - generic: "\"counts\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 7 items
+  - text: "\""
+  - generic: total
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: wins
+  - text: "\""
+  - generic: ":"
+  - generic: int115
+  - text: "\""
+  - generic: ties
+  - text: "\""
+  - generic: ":"
+  - generic: int47
+  - text: "\""
+  - generic: losses
+  - text: "\""
+  - generic: ":"
+  - generic: int138
+  - text: "\""
+  - generic: unknown
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: failures
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: pending
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - generic: "}"
+  - generic: "\"rates\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - text: "\""
+  - generic: tie_adjusted
+  - text: "\""
+  - generic: ":"
+  - generic: float0.46166666666666667
+  - text: "\""
+  - generic: decisive
+  - text: "\""
+  - generic: ":"
+  - generic: float0.45454545454545453
+  - generic: "}"
+  - generic: "\"bootstrap\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - generic: "\"tie_adjusted\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.3894590643274854
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.5324259841507317
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "\"decisive\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.3700787401574803
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.5384698275862068
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "}"
+  - generic: "\"evidence\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 8 items
+  - text: "\""
+  - generic: pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: mapping_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: judgments_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: failures_count
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: valid_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: bankkind
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"hh_rlhf_eval\""
+  - text: "\""
+  - generic: effective_clusters
+  - text: "\""
+  - generic: ":"
+  - generic: int185
+  - text: "\""
+  - generic: valid_clusters
+  - text: "\""
+  - generic: ":"
+  - generic: int185
+  - generic: "}"
+  - generic: "\"limitations\""
+  - generic: ":"
+  - generic: "["
+  - generic: ...
+  - generic: "]"
+  - generic: 3 items
+  - generic: "}"
+  - generic: "\"pairs-uf-alpaca_eval\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - text: "\""
+  - generic: perspective
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"dpo_vs_sft\""
+  - generic: "\"counts\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 7 items
+  - text: "\""
+  - generic: total
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: wins
+  - text: "\""
+  - generic: ":"
+  - generic: int91
+  - text: "\""
+  - generic: ties
+  - text: "\""
+  - generic: ":"
+  - generic: int63
+  - text: "\""
+  - generic: losses
+  - text: "\""
+  - generic: ":"
+  - generic: int146
+  - text: "\""
+  - generic: unknown
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: failures
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: pending
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - generic: "}"
+  - generic: "\"rates\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - text: "\""
+  - generic: tie_adjusted
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4083333333333333
+  - text: "\""
+  - generic: decisive
+  - text: "\""
+  - generic: ":"
+  - generic: float0.38396624472573837
+  - generic: "}"
+  - generic: "\"bootstrap\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - generic: "\"tie_adjusted\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.3616666666666667
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4567083333333331
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "\"decisive\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.3244388020833333
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4444819819819818
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "}"
+  - generic: "\"evidence\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - text: "\""
+  - generic: pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: mapping_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: judgments_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: failures_count
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: valid_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: bankkind
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"alpaca_eval\""
+  - generic: "}"
+  - generic: "\"limitations\""
+  - generic: ":"
+  - generic: "["
+  - generic: ...
+  - generic: "]"
+  - generic: 3 items
+  - generic: "}"
+  - generic: "\"pairs-uf-hh\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 6 items
+  - generic "Copy to clipboard":
+  - text: "\""
+  - generic: perspective
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"dpo_vs_sft\""
+  - generic: "\"counts\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 7 items
+  - text: "\""
+  - generic: total
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: wins
+  - text: "\""
+  - generic: ":"
+  - generic: int103
+  - text: "\""
+  - generic: ties
+  - text: "\""
+  - generic: ":"
+  - generic: int24
+  - text: "\""
+  - generic: losses
+  - text: "\""
+  - generic: ":"
+  - generic: int173
+  - text: "\""
+  - generic: unknown
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: failures
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: pending
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - generic: "}"
+  - generic: "\"rates\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - text: "\""
+  - generic: tie_adjusted
+  - text: "\""
+  - generic: ":"
+  - generic: float0.38333333333333336
+  - text: "\""
+  - generic: decisive
+  - text: "\""
+  - generic: ":"
+  - generic: float0.37318840579710144
+  - generic: "}"
+  - generic: "\"bootstrap\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 2 items
+  - generic: "\"tie_adjusted\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.3101574687701601
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4573833009169213
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "\"decisive\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: ci_low
+  - text: "\""
+  - generic: ":"
+  - generic: float0.2926806684733514
+  - text: "\""
+  - generic: ci_high
+  - text: "\""
+  - generic: ":"
+  - generic: float0.4532095663870864
+  - text: "\""
+  - generic: samples
+  - text: "\""
+  - generic: ":"
+  - generic: int2000
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - generic: "}"
+  - generic: "}"
+  - generic: "\"evidence\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 8 items
+  - text: "\""
+  - generic: pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: mapping_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: judgments_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: failures_count
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: valid_pairs_count
+  - text: "\""
+  - generic: ":"
+  - generic: int300
+  - text: "\""
+  - generic: bankkind
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"hh_rlhf_eval\""
+  - text: "\""
+  - generic: effective_clusters
+  - text: "\""
+  - generic: ":"
+  - generic: int185
+  - text: "\""
+  - generic: valid_clusters
+  - text: "\""
+  - generic: ":"
+  - generic: int185
+  - generic: "}"
+  - generic: "\"limitations\""
+  - generic: ":"
+  - generic: "["
+  - generic: ...
+  - generic: "]"
+  - generic: 3 items
+  - generic: "}"
+  - generic: "}"
+  - heading "Output" [level=2]
+  - button "Output actions": more_vert
+  - list:
+    - button "arrow_drop_down":
+      - generic: arrow_drop_down
+    - generic: folder
+    - paragraph: blind_judging
+    - list:
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: pairs-hh-alpaca_eval
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: pairs-hh-hh
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: pairs-uf-alpaca_eval
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: pairs-uf-hh
+      - generic "Collapse comparisons.json"
+      - paragraph: comparisons.json
+      - generic "Expand completed.json"
+      - paragraph: completed.json
+      - generic "Expand judge_access.json"
+      - paragraph: judge_access.json
+      - generic "Expand setup.json"
+      - paragraph: setup.json
+    - button "arrow_right":
+      - generic: arrow_right
+    - generic: folder
+    - paragraph: judge_source
+    - generic "Expand pa2_dpo_blind_judging.py"
+    - generic: code
+    - paragraph: pa2_dpo_blind_judging.py
+    - generic "Expand pa2_saved_pair_judging-run_id_Run_1_google_gemini-3.6-flash.run.json"
+    - paragraph: pa2_saved_pair_judging-run_id_Run_1_google_gemini-3.6-flash.run.json
+    - generic "Expand pa2_saved_pair_judging.task.json"
+    - paragraph: pa2_saved_pair_judging.task.json
+  - code:
+    - generic: Download notebook output
+    - generic: navigate_next
+    - generic: minimize
+    - textbox "Download notebook output" [disabled]: kaggle kernels output muhammadsalehfarooq/pa2-dpo-blind-judging -p /path/to/dest
+    - button "Copy": content_copy
+    - button "View CLI documentation": help
+    - generic: Download notebook output
+    - paragraph:
+      - alert
+- alert

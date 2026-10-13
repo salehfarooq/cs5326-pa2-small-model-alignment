@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "judged": 1200,
+  "total": 1200,
+  "judge_model": "google/gemini-3.6-flash",
+  "generation_version": 357326672,
+  "score_is_completion_only": true
+}

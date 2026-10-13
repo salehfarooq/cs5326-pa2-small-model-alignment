@@ -1,0 +1,351 @@
+- navigation "Main Kaggle page navigation":
+  - button "Navigation menu": menu
+  - link "Skip to content":
+    - /url: "#site-content"
+    - text: Skip to
+    - text: content
+  - link "Return to Kaggle home page":
+    - /url: /
+  - button "Create":
+    - generic: Create
+  - list:
+    - listitem "Home List Item":
+      - link "Home":
+        - /url: /
+        - generic: explore
+        - paragraph: Home
+    - listitem "Competitions List Item":
+      - link "Competitions":
+        - /url: /competitions
+        - generic: emoji_events
+        - paragraph: Competitions
+    - listitem "Benchmarks List Item":
+      - link "Benchmarks":
+        - /url: /benchmarks
+        - generic: leaderboard
+        - paragraph: Benchmarks
+    - listitem "Game Arena List Item":
+      - link "Game Arena":
+        - /url: /game-arena
+        - generic: smart_toy
+        - paragraph: Game Arena
+  - list:
+    - listitem "Data Hub List Item":
+      - link "Data Hub":
+        - /url: "#"
+        - generic: code
+        - paragraph: Data Hub
+      - button "Expand": expand_more
+  - list:
+    - listitem "More on Kaggle List Item":
+      - link "More on Kaggle":
+        - /url: "#"
+        - generic: format_list_bulleted
+        - paragraph: More
+      - button "Expand": expand_more
+  - separator
+  - list:
+    - listitem "Your Work List Item":
+      - link "Your Work":
+        - /url: /work
+        - generic: note_alt
+        - paragraph: Your Work
+      - button "Collapse Your Work" [expanded]: expand_less
+    - listitem "Collapse Viewed List Item":
+      - link "Collapse Viewed" [expanded]:
+        - /url: "#"
+        - paragraph: Viewed
+      - button "Collapse Viewed": expand_less
+    - list:
+      - listitem "PA2 persona LoRA DPO List Item":
+        - link "PA2 persona LoRA DPO":
+          - /url: /code/muhammadsalehfarooq/pa2-persona-lora-dpo
+          - paragraph: PA2 persona LoRA DPO
+      - listitem "PA2 DPO blind judging List Item":
+        - link "PA2 DPO blind judging":
+          - /url: /code/muhammadsalehfarooq/pa2-dpo-blind-judging
+          - paragraph: PA2 DPO blind judging
+      - listitem "PA2 full SFT v4 verified checkpoint List Item":
+        - link "PA2 full SFT v4 verified checkpoint":
+          - /url: /datasets/muhammadsalehfarooq/pa2-full-sft-v4-verified-checkpoint
+          - paragraph: PA2 full SFT v4 verified checkpoint
+    - listitem "Collapse Edited List Item":
+      - link "Collapse Edited" [expanded]:
+        - /url: "#"
+        - paragraph: Edited
+      - button "Collapse Edited": expand_less
+    - list:
+      - listitem "PA2 persona LoRA DPO List Item":
+        - link "PA2 persona LoRA DPO":
+          - /url: /code/muhammadsalehfarooq/pa2-persona-lora-dpo
+          - paragraph: PA2 persona LoRA DPO
+      - listitem "PA2 DPO blind judging List Item":
+        - link "PA2 DPO blind judging":
+          - /url: /code/muhammadsalehfarooq/pa2-dpo-blind-judging
+          - paragraph: PA2 DPO blind judging
+      - listitem "PA2 matched evaluation List Item":
+        - link "PA2 matched evaluation":
+          - /url: /code/muhammadsalehfarooq/pa2-matched-evaluation
+          - paragraph: PA2 matched evaluation
+      - listitem "Fork of Fork of PA2-AdvGenAI b5e89a List Item":
+        - link "Fork of Fork of PA2-AdvGenAI b5e89a":
+          - /url: /code/muhammadsalehfarooq/fork-of-fork-of-pa2-advgenai-b5e89a
+          - paragraph: Fork of Fork of PA2-AdvGenAI b5e89a
+      - listitem "Fork of PA2-AdvGenAI List Item":
+        - link "Fork of PA2-AdvGenAI":
+          - /url: /code/muhammadsalehfarooq/fork-of-pa2-advgenai
+          - paragraph: Fork of PA2-AdvGenAI
+  - button "Open Active Events dialog 1 View Active Events":
+    - generic "Open Active Events dialog": auto_awesome_motion
+    - generic: "1"
+    - paragraph: View Active Events
+- navigation "Main menu, search and your account":
+  - generic: search
+  - textbox "Search"
+  - button "Muhammad Saleh Farooq":
+    - generic "Muhammad Saleh Farooq"
+- main:
+  - link "Muhammad Saleh Farooq's profile":
+    - /url: /muhammadsalehfarooq
+    - generic "Muhammad Saleh Farooq"
+  - generic: Muhammad Saleh Farooq
+  - generic: · 1h ago · 9 views · Private
+  - heading "PA2 persona LoRA DPO" [level=1]
+  - button "Edit title": edit
+  - heading "PA2 persona LoRA DPO" [level=2]
+  - button "Upvote":
+    - generic: arrow_drop_up
+  - button "0 votes": "0"
+  - button "Share":
+    - generic: lock
+    - generic: Share
+  - link "Edit":
+    - /url: /code/muhammadsalehfarooq/pa2-persona-lora-dpo/edit/run/357420502
+    - button "Edit":
+      - generic: edit
+      - generic: Edit
+  - button "Download":
+    - generic: file_download
+    - generic: Download
+  - button "More options for this notebook": more_vert
+  - tablist:
+    - tab "Notebook, 1 of 6":
+      - generic: Notebook
+    - tab "Input, 2 of 6":
+      - generic: Input
+    - tab "Output, 3 of 6" [selected]:
+      - generic: Output
+    - tab "Logs, 4 of 6":
+      - generic: Logs
+    - tab "Comments (0), 5 of 6":
+      - generic: Comments (0)
+    - tab "Settings, 6 of 6":
+      - generic: Settings
+  - separator
+  - heading "Output Data" [level=2]
+  - button "Back to baseline": arrow_back
+  - heading "run.json(606 B)" [level=4]:
+    - text: run.json
+    - generic: (606 B)
+  - button "Download": get_app
+  - button "Hide tree": chevron_right
+  - generic: "\"root\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 13 items
+  - text: "\""
+  - generic: status
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"completed\""
+  - text: "\""
+  - generic: model_id
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"HuggingFaceTB/SmolLM2-360M-Instruct\""
+  - text: "\""
+  - generic: revision
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"a10cc1512eabd3dde888204e902eca88bddb4951\""
+  - text: "\""
+  - generic: adapter
+  - text: "\""
+  - generic: ":"
+  - generic: "NULL"
+  - text: "\""
+  - generic: bank_sha256
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"d9867a2498753ec62df21e24987de41ae1a4addbc83006eed051ce1d50626bed\""
+  - generic: "\"decoding\""
+  - generic: ":"
+  - generic: "{"
+  - generic: 4 items
+  - text: "\""
+  - generic: do_sample
+  - text: "\""
+  - generic: ":"
+  - generic: boolfalse
+  - text: "\""
+  - generic: max_new_tokens
+  - text: "\""
+  - generic: ":"
+  - generic: int256
+  - text: "\""
+  - generic: repetition_penalty
+  - text: "\""
+  - generic: ":"
+  - generic: float1.1
+  - text: "\""
+  - generic: no_repeat_ngram_size
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - generic: "}"
+  - text: "\""
+  - generic: precision
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"float32\""
+  - text: "\""
+  - generic: prompt_format
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"native_chat_template_no_system\""
+  - text: "\""
+  - generic: seed
+  - text: "\""
+  - generic: ":"
+  - generic: int42
+  - text: "\""
+  - generic: count
+  - text: "\""
+  - generic: ":"
+  - generic: int40
+  - text: "\""
+  - generic: completed
+  - text: "\""
+  - generic: ":"
+  - generic: int40
+  - text: "\""
+  - generic: blanks
+  - text: "\""
+  - generic: ":"
+  - generic: int0
+  - text: "\""
+  - generic: outputs_sha256
+  - text: "\""
+  - generic: ":"
+  - text: string
+  - generic: "\"fb03af823a1184ff1078c28b0c3d99f71f4e707c101fc53c05516101910c2e91\""
+  - generic: "}"
+  - heading "Output" [level=2]
+  - button "Output actions": more_vert
+  - list:
+    - button "arrow_drop_down":
+      - generic: arrow_drop_down
+    - generic: folder
+    - paragraph: persona_env
+    - list:
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: bin
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: lib
+      - generic "Expand .gitignore"
+      - generic: insert_drive_file
+      - paragraph: .gitignore
+      - generic "Expand pyvenv.cfg"
+      - generic: insert_drive_file
+      - paragraph: pyvenv.cfg
+    - button "arrow_drop_down":
+      - generic: arrow_drop_down
+    - generic: folder
+    - paragraph: persona_evaluation
+    - list:
+      - button "arrow_drop_down":
+        - generic: arrow_drop_down
+      - generic: folder
+      - paragraph: baseline
+      - list:
+        - generic "Expand outputs.json"
+        - paragraph: outputs.json
+        - generic "Expand outputs.jsonl"
+        - paragraph: outputs.jsonl
+        - generic "Collapse run.json" [active]
+        - paragraph: run.json
+      - button "arrow_drop_down":
+        - generic: arrow_drop_down
+      - generic: folder
+      - paragraph: best_adapter
+      - list:
+        - generic "Expand outputs.json"
+        - paragraph: outputs.json
+        - generic "Expand outputs.jsonl"
+        - paragraph: outputs.jsonl
+        - generic "Expand run.json"
+        - paragraph: run.json
+      - generic "Expand blind_pairs.jsonl"
+      - paragraph: blind_pairs.jsonl
+      - generic "Expand completed.json"
+      - paragraph: completed.json
+      - generic "Expand hidden_mapping.json"
+      - paragraph: hidden_mapping.json
+    - button "arrow_drop_down":
+      - generic: arrow_drop_down
+    - generic: folder
+    - paragraph: persona_lora_run
+    - list:
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: best_adapter
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: checkpoints
+      - button "arrow_right":
+        - generic: arrow_right
+      - generic: folder
+      - paragraph: final_adapter
+      - generic "Expand best_validation.json"
+      - paragraph: best_validation.json
+      - generic "Expand initial_validation.json"
+      - paragraph: initial_validation.json
+      - generic "Expand metrics.jsonl"
+      - paragraph: metrics.jsonl
+      - generic "Expand run.json"
+      - paragraph: run.json
+      - generic "Expand split.json"
+      - paragraph: split.json
+      - generic "Expand trainer_state.json"
+      - paragraph: trainer_state.json
+    - button "arrow_right":
+      - generic: arrow_right
+    - generic: folder
+    - paragraph: persona_sanity_4
+    - button "arrow_right":
+      - generic: arrow_right
+    - generic: folder
+    - paragraph: persona_source
+  - code:
+    - generic: Download notebook output
+    - generic: navigate_next
+    - generic: minimize
+    - textbox "Download notebook output" [disabled]: kaggle kernels output muhammadsalehfarooq/pa2-persona-lora-dpo -p /path/to/dest
+    - button "Copy": content_copy
+    - button "View CLI documentation": help
+    - generic: Download notebook output
+    - paragraph:
+      - alert
+- alert

@@ -1,0 +1,11 @@
+{
+  "blind_pairs": 1200,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "no_repeat_ngram_size": 0,
+    "repetition_penalty": 1.1
+  },
+  "responses": 2100,
+  "status": "completed"
+}

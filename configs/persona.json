@@ -1,0 +1,30 @@
+{
+  "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+  "seed": 42,
+  "train": 198,
+  "validation": 22,
+  "r": 8,
+  "alpha": 16,
+  "dropout": 0,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "lr": 1e-05,
+  "scheduler": "constant",
+  "warmup": 0,
+  "weight_decay": 0,
+  "clip": 1,
+  "batch_size": 2,
+  "accumulation": 8,
+  "effective_batch": 16,
+  "precision": "float32",
+  "max_length": 1024,
+  "epochs": 1,
+  "steps": 13,
+  "beta": 0.1,
+  "best_step": 5,
+  "reference": "SmolLM2 base, adapter disabled",
+  "caller_system_prompt": null
+}

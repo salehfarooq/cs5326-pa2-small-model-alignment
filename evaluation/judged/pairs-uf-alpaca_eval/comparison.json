@@ -1,0 +1,43 @@
+{
+  "perspective": "dpo_vs_sft",
+  "counts": {
+    "total": 300,
+    "wins": 91,
+    "ties": 63,
+    "losses": 146,
+    "unknown": 0,
+    "failures": 0,
+    "pending": 0
+  },
+  "rates": {
+    "tie_adjusted": 0.4083333333333333,
+    "decisive": 0.38396624472573837
+  },
+  "bootstrap": {
+    "tie_adjusted": {
+      "ci_low": 0.3616666666666667,
+      "ci_high": 0.4567083333333331,
+      "samples": 2000,
+      "seed": 42
+    },
+    "decisive": {
+      "ci_low": 0.3244388020833333,
+      "ci_high": 0.4444819819819818,
+      "samples": 2000,
+      "seed": 42
+    }
+  },
+  "evidence": {
+    "pairs_count": 300,
+    "mapping_pairs_count": 300,
+    "judgments_count": 300,
+    "failures_count": 0,
+    "valid_pairs_count": 300,
+    "bankkind": "alpaca_eval"
+  },
+  "limitations": [
+    "single-seed bootstrap",
+    "intervals condition on successfully judged non-unknown pairs; missing judgments may be selective",
+    "bootstrap intervals do not measure judge bias or training-seed variability"
+  ]
+}

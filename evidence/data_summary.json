@@ -1,0 +1,302 @@
+{
+  "banks": {
+    "alpaca_full_sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+    "hh_sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6"
+  },
+  "development_count": 40,
+  "development_export_sha256": "f40c45916ee8f9209b43ae431d4edd52039ce14755566da89aa2d4c090e2d0b8",
+  "development_prompt_tokens": {
+    "dev-1": 32,
+    "dev-10": 24,
+    "dev-11": 41,
+    "dev-12": 38,
+    "dev-13": 30,
+    "dev-14": 25,
+    "dev-15": 43,
+    "dev-16": 32,
+    "dev-17": 41,
+    "dev-18": 34,
+    "dev-19": 38,
+    "dev-2": 25,
+    "dev-20": 51,
+    "dev-21": 36,
+    "dev-22": 47,
+    "dev-23": 27,
+    "dev-24": 26,
+    "dev-25": 22,
+    "dev-26": 32,
+    "dev-27": 32,
+    "dev-28": 23,
+    "dev-29": 25,
+    "dev-3": 27,
+    "dev-30": 39,
+    "dev-31": 34,
+    "dev-32": 35,
+    "dev-33": 23,
+    "dev-34": 473,
+    "dev-35": 473,
+    "dev-36": 51,
+    "dev-37": 54,
+    "dev-38": 50,
+    "dev-39": 51,
+    "dev-4": 36,
+    "dev-40": 61,
+    "dev-5": 261,
+    "dev-6": 43,
+    "dev-7": 39,
+    "dev-8": 43,
+    "dev-9": 22
+  },
+  "development_sha256": "a75c61b4c29b9f6dbfc81fd36e0efba2d3b7c6729d90ddb7db456d2785c03c75",
+  "group_counts": {
+    "code": 8,
+    "extraction": 8,
+    "formatting": 8,
+    "reasoning": 8,
+    "safety": 8
+  },
+  "overlap_ids": [],
+  "prepared": {
+    "hh": {
+      "config": {
+        "exclusions": {
+          "banks": [
+            {
+              "bytes": 600571,
+              "instructions": 805,
+              "name": "alpaca_eval.jsonl",
+              "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+              "unique_instructions": 805
+            },
+            {
+              "bytes": 94973,
+              "instructions": 300,
+              "name": "hh_rlhf_eval_300_seed42.json",
+              "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+              "unique_instructions": 185
+            }
+          ],
+          "eligible": 48424,
+          "removed": 2
+        },
+        "filter_counts": {
+          "duplicate_prompt": 815,
+          "empty_text": 48,
+          "identical_responses": 37,
+          "input": 160800,
+          "invalid_record": 0,
+          "kept": 48426,
+          "multi_turn": 111474,
+          "prompt_mismatch": 0
+        },
+        "kind": "dpo",
+        "prompt_template": "Instruction:\n{instruction}\n\nResponse:\n",
+        "schema": "hh",
+        "seed": 42,
+        "sizes": {
+          "train": 15000,
+          "validation": 1000
+        },
+        "token_filter": {
+          "counts": {
+            "empty_tokenized_response": 0,
+            "identical_retained_pair": 1,
+            "input": 48424,
+            "kept": 48224,
+            "prompt_too_long": 199
+          },
+          "max_length": 512,
+          "max_prompt_tokens": 256,
+          "model_id": "Qwen/Qwen2.5-0.5B",
+          "policy": "preserve_full_prompt_filter",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+        }
+      },
+      "manifest_sha256": "0092b368f539fc17ccc4c73afa23de2b7d610e54830221da2018cbe6e9d52ddd",
+      "source": {
+        "id": "Anthropic/hh-rlhf",
+        "revision": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+        "split": "train (all four PM subsets)"
+      },
+      "splits": {
+        "train": {
+          "file": "train.jsonl",
+          "rows": 15000,
+          "sha256": "4499d2682754f86e9846dc8547d454eb5df724bbbf43cbb1ff49d97156f71268"
+        },
+        "validation": {
+          "file": "validation.jsonl",
+          "rows": 1000,
+          "sha256": "5bdccde7cf545fec34da2177725e59a7435e15aad3731f16ca4bbcda0f8b4db6"
+        }
+      }
+    },
+    "sft": {
+      "config": {
+        "exclusions": {
+          "banks": [
+            {
+              "bytes": 600571,
+              "instructions": 805,
+              "name": "alpaca_eval.jsonl",
+              "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+              "unique_instructions": 805
+            },
+            {
+              "bytes": 94973,
+              "instructions": 300,
+              "name": "hh_rlhf_eval_300_seed42.json",
+              "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+              "unique_instructions": 185
+            }
+          ],
+          "eligible": 195743,
+          "removed": 1
+        },
+        "filter_counts": {
+          "duplicate_prompt": 0,
+          "empty_text": 31,
+          "identical_responses": 0,
+          "input": 207865,
+          "invalid_record": 0,
+          "kept": 195744,
+          "multi_turn": 0,
+          "prompt_mismatch": 12090
+        },
+        "kind": "sft",
+        "prompt_template": "Instruction:\n{instruction}\n\nResponse:\n",
+        "schema": "ultrachat_first_turn",
+        "seed": 42,
+        "sizes": {
+          "train": 30000,
+          "validation": 1000
+        },
+        "token_filter": {
+          "counts": {
+            "empty_tokenized_response": 0,
+            "identical_retained_pair": 0,
+            "input": 195743,
+            "kept": 163424,
+            "prompt_too_long": 32319
+          },
+          "max_length": 512,
+          "max_prompt_tokens": 256,
+          "model_id": "Qwen/Qwen2.5-0.5B",
+          "policy": "preserve_full_prompt_filter",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+        }
+      },
+      "manifest_sha256": "66a88894df9f6e00ba0b0419be98a4ff54c01106d32e095160d448cc0f70d6b9",
+      "source": {
+        "id": "HuggingFaceH4/ultrachat_200k",
+        "revision": "8049631c405ae6576f93f445c6b8166f76f5505a",
+        "split": "train_sft"
+      },
+      "splits": {
+        "train": {
+          "file": "train.jsonl",
+          "rows": 30000,
+          "sha256": "38036dacd7fb8a78229c1b13ca498cbcc31c96a6384ff12293851682071cc6a3"
+        },
+        "validation": {
+          "file": "validation.jsonl",
+          "rows": 1000,
+          "sha256": "8cd000d01761ea54732e33c1ee8f150d47030aaf0a6dfaac251191600f515b8b"
+        }
+      }
+    },
+    "uf": {
+      "config": {
+        "exclusions": {
+          "banks": [
+            {
+              "bytes": 600571,
+              "instructions": 805,
+              "name": "alpaca_eval.jsonl",
+              "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+              "unique_instructions": 805
+            },
+            {
+              "bytes": 94973,
+              "instructions": 300,
+              "name": "hh_rlhf_eval_300_seed42.json",
+              "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+              "unique_instructions": 185
+            }
+          ],
+          "eligible": 60612,
+          "removed": 8
+        },
+        "filter_counts": {
+          "duplicate_prompt": 10,
+          "empty_text": 81,
+          "identical_responses": 424,
+          "input": 61135,
+          "invalid_record": 0,
+          "kept": 60620,
+          "multi_turn": 0,
+          "prompt_mismatch": 0
+        },
+        "kind": "dpo",
+        "prompt_template": "Instruction:\n{instruction}\n\nResponse:\n",
+        "schema": "ultrafeedback",
+        "seed": 42,
+        "sizes": {
+          "train": 15000,
+          "validation": 1000
+        },
+        "token_filter": {
+          "counts": {
+            "empty_tokenized_response": 0,
+            "identical_retained_pair": 0,
+            "input": 60612,
+            "kept": 49495,
+            "prompt_too_long": 11117
+          },
+          "max_length": 512,
+          "max_prompt_tokens": 256,
+          "model_id": "Qwen/Qwen2.5-0.5B",
+          "policy": "preserve_full_prompt_filter",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+        }
+      },
+      "manifest_sha256": "0d47e08df709f1fb5af6f67a323ca5ed08926fa4e6cbf875ad8d427ca1189f43",
+      "source": {
+        "id": "HuggingFaceH4/ultrafeedback_binarized",
+        "revision": "3949bf5f8c17c394422ccfab0c31ea9c20bdeb85",
+        "split": "train_prefs"
+      },
+      "splits": {
+        "train": {
+          "file": "train.jsonl",
+          "rows": 15000,
+          "sha256": "8b8adaaacb386198b25c1a824cf39f2ef734a77001cd1a9b12c346ce45b53b6c"
+        },
+        "validation": {
+          "file": "validation.jsonl",
+          "rows": 1000,
+          "sha256": "ae83a685b83027a5d33789d33a91f02e84cad0009178a0a182a33863abe94a28"
+        }
+      }
+    }
+  },
+  "prepared_rows": 63000,
+  "quality_review": "pending; diagnostics do not establish preference correctness",
+  "sampling": {
+    "seed": 42,
+    "train_per_track": 50,
+    "validation_per_track": 20
+  },
+  "status": "completed",
+  "tokenizer": {
+    "files": {
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "model_id": "Qwen/Qwen2.5-0.5B",
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "vocab_sha256": "b7a0d4b412fcb6918cf000fd132caad4f953b705c5922747f499e0f60ebc1615"
+  }
+}

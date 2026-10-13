@@ -1,0 +1,194 @@
+{
+  "context": 512,
+  "data_changed": false,
+  "eos": 151643,
+  "prompt_limit": 256,
+  "tracks": {
+    "hh": {
+      "counts": {
+        "train": {
+          "chosen_eos_missing": 28,
+          "chosen_truncated": 28,
+          "rejected_eos_missing": 22,
+          "rejected_truncated": 22,
+          "total": 15000
+        },
+        "validation": {
+          "chosen_eos_missing": 0,
+          "chosen_truncated": 0,
+          "rejected_eos_missing": 1,
+          "rejected_truncated": 1,
+          "total": 1000
+        }
+      },
+      "identity": {
+        "config": {
+          "exclusions": {
+            "banks": [
+              {
+                "bytes": 600571,
+                "instructions": 805,
+                "name": "alpaca_eval.jsonl",
+                "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+                "unique_instructions": 805
+              },
+              {
+                "bytes": 94973,
+                "instructions": 300,
+                "name": "hh_rlhf_eval_300_seed42.json",
+                "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+                "unique_instructions": 185
+              }
+            ],
+            "eligible": 48424,
+            "removed": 2
+          },
+          "filter_counts": {
+            "duplicate_prompt": 815,
+            "empty_text": 48,
+            "identical_responses": 37,
+            "input": 160800,
+            "invalid_record": 0,
+            "kept": 48426,
+            "multi_turn": 111474,
+            "prompt_mismatch": 0
+          },
+          "kind": "dpo",
+          "prompt_template": "Instruction:\n{instruction}\n\nResponse:\n",
+          "schema": "hh",
+          "seed": 42,
+          "sizes": {
+            "train": 15000,
+            "validation": 1000
+          },
+          "token_filter": {
+            "counts": {
+              "empty_tokenized_response": 0,
+              "identical_retained_pair": 1,
+              "input": 48424,
+              "kept": 48224,
+              "prompt_too_long": 199
+            },
+            "max_length": 512,
+            "max_prompt_tokens": 256,
+            "model_id": "Qwen/Qwen2.5-0.5B",
+            "policy": "preserve_full_prompt_filter",
+            "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+          }
+        },
+        "manifest_sha256": "0092b368f539fc17ccc4c73afa23de2b7d610e54830221da2018cbe6e9d52ddd",
+        "source": {
+          "id": "Anthropic/hh-rlhf",
+          "revision": "09be8c5bbc57cb3887f3a9732ad6aa7ec602a1fa",
+          "split": "train (all four PM subsets)"
+        },
+        "splits": {
+          "train": {
+            "file": "train.jsonl",
+            "rows": 15000,
+            "sha256": "4499d2682754f86e9846dc8547d454eb5df724bbbf43cbb1ff49d97156f71268"
+          },
+          "validation": {
+            "file": "validation.jsonl",
+            "rows": 1000,
+            "sha256": "5bdccde7cf545fec34da2177725e59a7435e15aad3731f16ca4bbcda0f8b4db6"
+          }
+        }
+      },
+      "unscoreable_pairs": []
+    },
+    "uf": {
+      "counts": {
+        "train": {
+          "chosen_eos_missing": 3987,
+          "chosen_truncated": 3987,
+          "rejected_eos_missing": 2914,
+          "rejected_truncated": 2914,
+          "total": 15000
+        },
+        "validation": {
+          "chosen_eos_missing": 260,
+          "chosen_truncated": 260,
+          "rejected_eos_missing": 192,
+          "rejected_truncated": 192,
+          "total": 1000
+        }
+      },
+      "identity": {
+        "config": {
+          "exclusions": {
+            "banks": [
+              {
+                "bytes": 600571,
+                "instructions": 805,
+                "name": "alpaca_eval.jsonl",
+                "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+                "unique_instructions": 805
+              },
+              {
+                "bytes": 94973,
+                "instructions": 300,
+                "name": "hh_rlhf_eval_300_seed42.json",
+                "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+                "unique_instructions": 185
+              }
+            ],
+            "eligible": 60612,
+            "removed": 8
+          },
+          "filter_counts": {
+            "duplicate_prompt": 10,
+            "empty_text": 81,
+            "identical_responses": 424,
+            "input": 61135,
+            "invalid_record": 0,
+            "kept": 60620,
+            "multi_turn": 0,
+            "prompt_mismatch": 0
+          },
+          "kind": "dpo",
+          "prompt_template": "Instruction:\n{instruction}\n\nResponse:\n",
+          "schema": "ultrafeedback",
+          "seed": 42,
+          "sizes": {
+            "train": 15000,
+            "validation": 1000
+          },
+          "token_filter": {
+            "counts": {
+              "empty_tokenized_response": 0,
+              "identical_retained_pair": 0,
+              "input": 60612,
+              "kept": 49495,
+              "prompt_too_long": 11117
+            },
+            "max_length": 512,
+            "max_prompt_tokens": 256,
+            "model_id": "Qwen/Qwen2.5-0.5B",
+            "policy": "preserve_full_prompt_filter",
+            "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+          }
+        },
+        "manifest_sha256": "0d47e08df709f1fb5af6f67a323ca5ed08926fa4e6cbf875ad8d427ca1189f43",
+        "source": {
+          "id": "HuggingFaceH4/ultrafeedback_binarized",
+          "revision": "3949bf5f8c17c394422ccfab0c31ea9c20bdeb85",
+          "split": "train_prefs"
+        },
+        "splits": {
+          "train": {
+            "file": "train.jsonl",
+            "rows": 15000,
+            "sha256": "8b8adaaacb386198b25c1a824cf39f2ef734a77001cd1a9b12c346ce45b53b6c"
+          },
+          "validation": {
+            "file": "validation.jsonl",
+            "rows": 1000,
+            "sha256": "ae83a685b83027a5d33789d33a91f02e84cad0009178a0a182a33863abe94a28"
+          }
+        }
+      },
+      "unscoreable_pairs": []
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "alpaca_eval": {
+    "count": 300,
+    "sha256": "3989bb58dae97eb5fded3b21de17f8d76605488d0ba3ab7d17fc77e38fdfd6c1"
+  },
+  "hh": {
+    "count": 300,
+    "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6"
+  }
+}

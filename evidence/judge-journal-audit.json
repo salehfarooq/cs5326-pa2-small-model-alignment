@@ -1,0 +1,41 @@
+{
+  "status": "verified",
+  "judgments": 1200,
+  "retries": {
+    "pairs-hh-alpaca_eval": {
+      "request_attempts": 61,
+      "initial_batches": 60,
+      "retry_attempts": 1,
+      "max_attempt_number": 2,
+      "errors": 0,
+      "unresolved_failures": 0
+    },
+    "pairs-hh-hh": {
+      "request_attempts": 60,
+      "initial_batches": 60,
+      "retry_attempts": 0,
+      "max_attempt_number": 1,
+      "errors": 0,
+      "unresolved_failures": 0
+    },
+    "pairs-uf-alpaca_eval": {
+      "request_attempts": 69,
+      "initial_batches": 60,
+      "retry_attempts": 9,
+      "max_attempt_number": 2,
+      "errors": 0,
+      "unresolved_failures": 0
+    },
+    "pairs-uf-hh": {
+      "request_attempts": 60,
+      "initial_batches": 60,
+      "retry_attempts": 0,
+      "max_attempt_number": 1,
+      "errors": 0,
+      "unresolved_failures": 0
+    }
+  },
+  "request_attempts_total": 250,
+  "retry_attempts_total": 10,
+  "summaries_and_bootstrap_intervals": "Exact equality to saved comparisons.json"
+}

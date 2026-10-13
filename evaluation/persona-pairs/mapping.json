@@ -1,0 +1,209 @@
+{
+  "inputhashes": {},
+  "bankkind": "persona_style",
+  "banksha": "",
+  "decoding": {},
+  "seed": 42,
+  "pairs": [
+    {
+      "id": "persona-cooking-01",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-02",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-03",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-cooking-04",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-05",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-06",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-07",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-08",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-cooking-09",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-cooking-10",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-01",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-02",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-03",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-04",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-05",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-06",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-07",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-coding-08",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-coding-09",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-coding-10",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-general_help-01",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-general_help-02",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-general_help-03",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-general_help-04",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-general_help-05",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-general_help-06",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-general_help-07",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-general_help-08",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-general_help-09",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-general_help-10",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-safety-01",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-02",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-safety-03",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-04",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-05",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-06",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-safety-07",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-08",
+      "a": "sft",
+      "b": "dpo"
+    },
+    {
+      "id": "persona-safety-09",
+      "a": "dpo",
+      "b": "sft"
+    },
+    {
+      "id": "persona-safety-10",
+      "a": "sft",
+      "b": "dpo"
+    }
+  ]
+}

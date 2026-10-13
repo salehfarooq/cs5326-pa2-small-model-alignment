@@ -1,0 +1,19 @@
+{
+  "bank_sha256": "3989bb58dae97eb5fded3b21de17f8d76605488d0ba3ab7d17fc77e38fdfd6c1",
+  "completed": 300,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "no_repeat_ngram_size": 0,
+    "repetition_penalty": 1.1
+  },
+  "empty_outputs": 0,
+  "length_limited": 106,
+  "model_id": "Qwen/Qwen2.5-0.5B",
+  "model_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "outputs_sha256": "283aab035f48be9ebda6ac9da5ee672f962ff1834b53e114ffa0d28f5d92e2a5",
+  "parameter_dtype": "torch.float32",
+  "prompt_policy": "preserve full formatted instruction; no truncation",
+  "status": "completed",
+  "total": 300
+}

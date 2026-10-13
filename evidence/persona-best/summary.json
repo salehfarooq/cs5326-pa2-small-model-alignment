@@ -1,0 +1,25 @@
+{
+  "version": 357420502,
+  "runtime_seconds": 726.0,
+  "updates": 13,
+  "epoch": 1.0,
+  "best_checkpoint_update": 5,
+  "initial_reward_accuracy": 0.0,
+  "best_reward_accuracy": 1.0,
+  "final_reward_accuracy": 1.0,
+  "best_validation_margin": 0.006045532412827015,
+  "final_validation_margin": 0.015985732898116112,
+  "reference_unchanged_reported_and_hashes_match": true,
+  "output_hashes_verified_locally": true,
+  "matched_rows": 40,
+  "identical_outputs": 38,
+  "changed_ids": [
+    "persona-cooking-05",
+    "persona-general_help-08"
+  ],
+  "baseline_blanks": 0,
+  "adapted_blanks": 0,
+  "baseline_length_limits": 22,
+  "adapted_length_limits": 22,
+  "quality_status": "No demonstrated persona shift; formal blind judging pending; final adapter generation pending."
+}

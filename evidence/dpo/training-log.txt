@@ -1,0 +1,1088 @@
+8.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.3s 3 0.00s - to python to disable frozen modules.
+8.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.9s 7 0.00s - to python to disable frozen modules.
+8.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+18.8s 9 {
+18.8s 10 "python": "3.13.15",
+18.8s 11 "torch": "2.11.0+cu128",
+18.8s 12 "cuda": "12.8",
+18.8s 13 "cuda_available": true,
+18.8s 14 "gpu_count": 2,
+18.8s 15 "packages": {
+18.8s 16 "transformers": "5.16.1",
+18.8s 17 "datasets": "4.8.5",
+18.8s 18 "accelerate": "1.14.0",
+18.8s 19 "huggingface_hub": "1.29.0",
+18.8s 20 "peft": "0.20.0",
+18.8s 21 "trl": null,
+18.8s 22 "torchao": "0.10.0"
+18.8s 23 },
+18.8s 24 "devices": [
+18.8s 25 {
+18.8s 26 "index": 0,
+18.8s 27 "name": "Tesla T4",
+18.8s 28 "memory_gib": 14.56
+18.8s 29 },
+18.8s 30 {
+18.8s 31 "index": 1,
+18.8s 32 "name": "Tesla T4",
+18.8s 33 "memory_gib": 14.56
+18.8s 34 }
+18.8s 35 ]
+18.8s 36 }
+18.8s 37 Both T4 GPUs execute tensors.
+39.2s 38 asets==4.8.5) (2.7.1)
+39.2s 39 Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.4.0)
+39.2s 40 Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (26.1.0)
+39.2s 41 Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.8.0)
+39.2s 42 Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (6.7.1)
+39.2s 43 Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (0.5.2)
+39.2s 44 Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.24.5)
+39.2s 45 Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.13/dist-packages (from cuda-bindings<13,>=12.9.4->torch>=2.0.0->accelerate==1.15.0) (1.8.0)
+39.2s 46 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.13/dist-packages (from sympy>=1.13.3->torch>=2.0.0->accelerate==1.15.0) (1.3.0)
+39.2s 47 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.13/dist-packages (from jinja2->torch>=2.0.0->accelerate==1.15.0) (3.0.3)
+39.2s 48 Downloading transformers-4.57.6-py3-none-any.whl (12.0 MB)
+39.2s 49 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 110.0 MB/s eta 0:00:00
+39.2s 50 Downloading accelerate-1.15.0-py3-none-any.whl (394 kB)
+39.2s 51 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 17.9 MB/s eta 0:00:00
+39.2s 52 Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+39.2s 53 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 29.6 MB/s eta 0:00:00
+39.2s 54 Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+39.2s 55 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 96.8 MB/s eta 0:00:00
+39.2s 56 Installing collected packages: huggingface_hub, tokenizers, transformers, accelerate
+39.2s 57 Attempting uninstall: huggingface_hub
+39.2s 58 Found existing installation: huggingface_hub 1.29.0
+39.2s 59 Uninstalling huggingface_hub-1.29.0:
+39.2s 60 Successfully uninstalled huggingface_hub-1.29.0
+39.2s 61 Attempting uninstall: tokenizers
+39.2s 62 Found existing installation: tokenizers 0.23.1
+39.2s 63 Uninstalling tokenizers-0.23.1:
+39.2s 64 Successfully uninstalled tokenizers-0.23.1
+39.2s 65 Attempting uninstall: transformers
+39.2s 66 Found existing installation: transformers 5.16.1
+39.2s 67 Uninstalling transformers-5.16.1:
+39.2s 68 Successfully uninstalled transformers-5.16.1
+39.2s 69 Attempting uninstall: accelerate
+39.2s 70 Found existing installation: accelerate 1.14.0
+39.2s 71 Uninstalling accelerate-1.14.0:
+39.2s 72 Successfully uninstalled accelerate-1.14.0
+39.2s 73 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+39.2s 74 gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+39.2s 75 diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+39.2s 76 Successfully installed accelerate-1.15.0 huggingface_hub-0.36.2 tokenizers-0.22.2 transformers-4.57.6
+39.2s 77 
+77.2s 78 Qwen model imports pass
+77.2s 79 
+77.2s 80 {
+77.2s 81 "torch": "2.11.0+cu128",
+77.2s 82 "transformers": "4.57.6",
+77.2s 83 "datasets": "4.8.5",
+77.2s 84 "accelerate": "1.15.0",
+77.2s 85 "huggingface_hub": "0.36.2"
+77.2s 86 }
+77.2s 87 PA2 dependencies ready. CUDA PyTorch preserved.
+105.8s 88 Verified source, recorded decoder settings, prepared data and full SFT origin938
+105.8s 89 Decoder review status: provisional
+105.9s 90 FULL DPO TRACK: hh LIVE PROGRESS: /kaggle/working/dpo_full_hh_manual_1em6/metrics.jsonl STATE: /kaggle/working/dpo_full_hh_manual_1em6/run.json
+132.4s 91 The tokenizer you are loading from '/kaggle/input/datasets/muhammadsalehfarooq/pa2-full-sft-v4-verified-checkpoint/pa2_runs/sft_full/best' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+136.1s 92 `torch_dtype` is deprecated! Use `dtype` instead!
+171.4s 93 [DPO] starting 15000 training examples, 469 planned updates; progress: /kaggle/working/dpo_full_hh_manual_1em6/metrics.jsonl
+171.4s 94 [DPO] validating 1000 examples at update 0; saving best checkpoint if improved
+365.2s 95 [DPO validation 0/469] loss=0.693147 reward_accuracy=0.000000 reward_margin=0.000000 best=True
+386.4s 96 [DPO update 1/469] loss=0.693147 lr=1e-06 skipped=0
+522.9s 97 [DPO update 10/469] loss=0.663083 lr=1e-06 skipped=0
+677.3s 98 [DPO update 20/469] loss=0.718140 lr=1e-06 skipped=0
+827.3s 99 [DPO update 30/469] loss=0.703810 lr=1e-06 skipped=0
+976.5s 100 [DPO update 40/469] loss=0.733677 lr=1e-06 skipped=0
+1126.9s 101 [DPO update 50/469] loss=0.696774 lr=1e-06 skipped=0
+1126.9s 102 [DPO] validating 1000 examples at update 50; saving best checkpoint if improved
+1322.0s 103 [DPO validation 50/469] loss=0.661444 reward_accuracy=0.597000 reward_margin=0.097559 best=True
+1482.0s 104 [DPO update 60/469] loss=0.637679 lr=1e-06 skipped=0
+1631.3s 105 [DPO update 70/469] loss=0.657893 lr=1e-06 skipped=0
+1781.6s 106 [DPO update 80/469] loss=0.654876 lr=1e-06 skipped=0
+1930.9s 107 [DPO update 90/469] loss=0.637215 lr=1e-06 skipped=0
+2079.5s 108 [DPO update 100/469] loss=0.675118 lr=1e-06 skipped=0
+2079.5s 109 [DPO] validating 1000 examples at update 100; saving best checkpoint if improved
+2271.2s 110 [DPO validation 100/469] loss=0.651875 reward_accuracy=0.602000 reward_margin=0.135956 best=True
+2277.2s 111 [development] update 100: generating 40 prompts
+2277.2s 112 [development] update 100: generating prompt 1/40
+2282.9s 113 [development] update 100: prompt 1/40 done
+2282.9s 114 [development] update 100: generating prompt 2/40
+2285.7s 115 [development] update 100: prompt 2/40 done
+2285.7s 116 [development] update 100: generating prompt 3/40
+2291.8s 117 [development] update 100: prompt 3/40 done
+2291.8s 118 [development] update 100: generating prompt 4/40
+2296.9s 119 [development] update 100: prompt 4/40 done
+2296.9s 120 [development] update 100: generating prompt 5/40
+2297.7s 121 [development] update 100: prompt 5/40 done
+2297.7s 122 [development] update 100: generating prompt 6/40
+2299.0s 123 [development] update 100: prompt 6/40 done
+2299.0s 124 [development] update 100: generating prompt 7/40
+2299.9s 125 [development] update 100: prompt 7/40 done
+2299.9s 126 [development] update 100: generating prompt 8/40
+2302.8s 127 [development] update 100: prompt 8/40 done
+2302.8s 128 [development] update 100: generating prompt 9/40
+2304.3s 129 [development] update 100: prompt 9/40 done
+2304.3s 130 [development] update 100: generating prompt 10/40
+2304.6s 131 [development] update 100: prompt 10/40 done
+2304.6s 132 [development] update 100: generating prompt 11/40
+2307.4s 133 [development] update 100: prompt 11/40 done
+2307.4s 134 [development] update 100: generating prompt 12/40
+2308.1s 135 [development] update 100: prompt 12/40 done
+2308.1s 136 [development] update 100: generating prompt 13/40
+2315.3s 137 [development] update 100: prompt 13/40 done
+2315.3s 138 [development] update 100: generating prompt 14/40
+2322.6s 139 [development] update 100: prompt 14/40 done
+2322.6s 140 [development] update 100: generating prompt 15/40
+2329.1s 141 [development] update 100: prompt 15/40 done
+2329.1s 142 [development] update 100: generating prompt 16/40
+2330.9s 143 [development] update 100: prompt 16/40 done
+2330.9s 144 [development] update 100: generating prompt 17/40
+2333.0s 145 [development] update 100: prompt 17/40 done
+2333.0s 146 [development] update 100: generating prompt 18/40
+2337.5s 147 [development] update 100: prompt 18/40 done
+2337.5s 148 [development] update 100: generating prompt 19/40
+2342.6s 149 [development] update 100: prompt 19/40 done
+2342.6s 150 [development] update 100: generating prompt 20/40
+2344.8s 151 [development] update 100: prompt 20/40 done
+2344.8s 152 [development] update 100: generating prompt 21/40
+2347.3s 153 [development] update 100: prompt 21/40 done
+2347.3s 154 [development] update 100: generating prompt 22/40
+2350.9s 155 [development] update 100: prompt 22/40 done
+2350.9s 156 [development] update 100: generating prompt 23/40
+2352.4s 157 [development] update 100: prompt 23/40 done
+2352.4s 158 [development] update 100: generating prompt 24/40
+2360.1s 159 [development] update 100: prompt 24/40 done
+2360.1s 160 [development] update 100: generating prompt 25/40
+2364.9s 161 [development] update 100: prompt 25/40 done
+2364.9s 162 [development] update 100: generating prompt 26/40
+2366.7s 163 [development] update 100: prompt 26/40 done
+2366.7s 164 [development] update 100: generating prompt 27/40
+2369.9s 165 [development] update 100: prompt 27/40 done
+2369.9s 166 [development] update 100: generating prompt 28/40
+2377.6s 167 [development] update 100: prompt 28/40 done
+2377.6s 168 [development] update 100: generating prompt 29/40
+2377.9s 169 [development] update 100: prompt 29/40 done
+2377.9s 170 [development] update 100: generating prompt 30/40
+2378.4s 171 [development] update 100: prompt 30/40 done
+2378.4s 172 [development] update 100: generating prompt 31/40
+2378.8s 173 [development] update 100: prompt 31/40 done
+2378.8s 174 [development] update 100: generating prompt 32/40
+2379.4s 175 [development] update 100: prompt 32/40 done
+2379.4s 176 [development] update 100: generating prompt 33/40
+2379.8s 177 [development] update 100: prompt 33/40 done
+2379.8s 178 [development] update 100: generating prompt 34/40
+2380.1s 179 [development] update 100: prompt 34/40 done
+2380.1s 180 [development] update 100: generating prompt 35/40
+2380.3s 181 [development] update 100: prompt 35/40 done
+2380.3s 182 [development] update 100: generating prompt 36/40
+2380.7s 183 [development] update 100: prompt 36/40 done
+2380.7s 184 [development] update 100: generating prompt 37/40
+2381.0s 185 [development] update 100: prompt 37/40 done
+2381.0s 186 [development] update 100: generating prompt 38/40
+2381.3s 187 [development] update 100: prompt 38/40 done
+2381.3s 188 [development] update 100: generating prompt 39/40
+2386.4s 189 [development] update 100: prompt 39/40 done
+2386.4s 190 [development] update 100: generating prompt 40/40
+2386.9s 191 [development] update 100: prompt 40/40 done
+2542.1s 192 [DPO update 110/469] loss=0.631668 lr=1e-06 skipped=0
+2690.1s 193 [DPO update 120/469] loss=0.660933 lr=1e-06 skipped=0
+2838.5s 194 [DPO update 130/469] loss=0.643923 lr=1e-06 skipped=0
+2987.3s 195 [DPO update 140/469] loss=0.695796 lr=1e-06 skipped=0
+3135.7s 196 [DPO update 150/469] loss=0.673926 lr=1e-06 skipped=0
+3135.7s 197 [DPO] validating 1000 examples at update 150; saving best checkpoint if improved
+3327.3s 198 [DPO validation 150/469] loss=0.641782 reward_accuracy=0.626000 reward_margin=0.186964 best=True
+3482.3s 199 [DPO update 160/469] loss=0.728216 lr=1e-06 skipped=0
+3630.0s 200 [DPO update 170/469] loss=0.678226 lr=1e-06 skipped=0
+3775.4s 201 [DPO update 180/469] loss=0.616206 lr=1e-06 skipped=0
+3920.8s 202 [DPO update 190/469] loss=0.642418 lr=1e-06 skipped=0
+4067.4s 203 [DPO update 200/469] loss=0.650830 lr=1e-06 skipped=0
+4067.4s 204 [DPO] validating 1000 examples at update 200; saving best checkpoint if improved
+4247.0s 205 [DPO validation 200/469] loss=0.646772 reward_accuracy=0.607000 reward_margin=0.191160 best=False
+4252.9s 206 [development] update 200: generating 40 prompts
+4252.9s 207 [development] update 200: generating prompt 1/40
+4258.4s 208 [development] update 200: prompt 1/40 done
+4258.4s 209 [development] update 200: generating prompt 2/40
+4262.1s 210 [development] update 200: prompt 2/40 done
+4262.1s 211 [development] update 200: generating prompt 3/40
+4267.6s 212 [development] update 200: prompt 3/40 done
+4267.6s 213 [development] update 200: generating prompt 4/40
+4272.4s 214 [development] update 200: prompt 4/40 done
+4272.4s 215 [development] update 200: generating prompt 5/40
+4273.1s 216 [development] update 200: prompt 5/40 done
+4273.1s 217 [development] update 200: generating prompt 6/40
+4274.3s 218 [development] update 200: prompt 6/40 done
+4274.3s 219 [development] update 200: generating prompt 7/40
+4275.2s 220 [development] update 200: prompt 7/40 done
+4275.2s 221 [development] update 200: generating prompt 8/40
+4277.9s 222 [development] update 200: prompt 8/40 done
+4277.9s 223 [development] update 200: generating prompt 9/40
+4279.0s 224 [development] update 200: prompt 9/40 done
+4279.0s 225 [development] update 200: generating prompt 10/40
+4279.3s 226 [development] update 200: prompt 10/40 done
+4279.3s 227 [development] update 200: generating prompt 11/40
+4280.0s 228 [development] update 200: prompt 11/40 done
+4280.0s 229 [development] update 200: generating prompt 12/40
+4280.7s 230 [development] update 200: prompt 12/40 done
+4280.7s 231 [development] update 200: generating prompt 13/40
+4287.2s 232 [development] update 200: prompt 13/40 done
+4287.2s 233 [development] update 200: generating prompt 14/40
+4294.8s 234 [development] update 200: prompt 14/40 done
+4294.8s 235 [development] update 200: generating prompt 15/40
+4301.3s 236 [development] update 200: prompt 15/40 done
+4301.3s 237 [development] update 200: generating prompt 16/40
+4304.7s 238 [development] update 200: prompt 16/40 done
+4304.7s 239 [development] update 200: generating prompt 17/40
+4305.9s 240 [development] update 200: prompt 17/40 done
+4305.9s 241 [development] update 200: generating prompt 18/40
+4309.4s 242 [development] update 200: prompt 18/40 done
+4309.4s 243 [development] update 200: generating prompt 19/40
+4313.8s 244 [development] update 200: prompt 19/40 done
+4313.8s 245 [development] update 200: generating prompt 20/40
+4316.1s 246 [development] update 200: prompt 20/40 done
+4316.1s 247 [development] update 200: generating prompt 21/40
+4317.8s 248 [development] update 200: prompt 21/40 done
+4317.8s 249 [development] update 200: generating prompt 22/40
+4321.3s 250 [development] update 200: prompt 22/40 done
+4321.3s 251 [development] update 200: generating prompt 23/40
+4323.5s 252 [development] update 200: prompt 23/40 done
+4323.5s 253 [development] update 200: generating prompt 24/40
+4331.0s 254 [development] update 200: prompt 24/40 done
+4331.0s 255 [development] update 200: generating prompt 25/40
+4335.0s 256 [development] update 200: prompt 25/40 done
+4335.0s 257 [development] update 200: generating prompt 26/40
+4336.8s 258 [development] update 200: prompt 26/40 done
+4336.8s 259 [development] update 200: generating prompt 27/40
+4339.6s 260 [development] update 200: prompt 27/40 done
+4339.6s 261 [development] update 200: generating prompt 28/40
+4345.4s 262 [development] update 200: prompt 28/40 done
+4345.4s 263 [development] update 200: generating prompt 29/40
+4345.6s 264 [development] update 200: prompt 29/40 done
+4345.6s 265 [development] update 200: generating prompt 30/40
+4346.1s 266 [development] update 200: prompt 30/40 done
+4346.1s 267 [development] update 200: generating prompt 31/40
+4346.4s 268 [development] update 200: prompt 31/40 done
+4346.4s 269 [development] update 200: generating prompt 32/40
+4347.1s 270 [development] update 200: prompt 32/40 done
+4347.1s 271 [development] update 200: generating prompt 33/40
+4347.5s 272 [development] update 200: prompt 33/40 done
+4347.5s 273 [development] update 200: generating prompt 34/40
+4348.0s 274 [development] update 200: prompt 34/40 done
+4348.0s 275 [development] update 200: generating prompt 35/40
+4348.3s 276 [development] update 200: prompt 35/40 done
+4348.3s 277 [development] update 200: generating prompt 36/40
+4348.6s 278 [development] update 200: prompt 36/40 done
+4348.6s 279 [development] update 200: generating prompt 37/40
+4349.0s 280 [development] update 200: prompt 37/40 done
+4349.0s 281 [development] update 200: generating prompt 38/40
+4349.2s 282 [development] update 200: prompt 38/40 done
+4349.2s 283 [development] update 200: generating prompt 39/40
+4349.6s 284 [development] update 200: prompt 39/40 done
+4349.6s 285 [development] update 200: generating prompt 40/40
+4350.0s 286 [development] update 200: prompt 40/40 done
+4502.5s 287 [DPO update 210/469] loss=0.631348 lr=1e-06 skipped=0
+4648.9s 288 [DPO update 220/469] loss=0.684039 lr=1e-06 skipped=0
+4794.2s 289 [DPO update 230/469] loss=0.695421 lr=1e-06 skipped=0
+4940.4s 290 [DPO update 240/469] loss=0.691204 lr=1e-06 skipped=0
+5087.1s 291 [DPO update 250/469] loss=0.620946 lr=1e-06 skipped=0
+5087.1s 292 [DPO] validating 1000 examples at update 250; saving best checkpoint if improved
+5283.6s 293 [DPO validation 250/469] loss=0.633363 reward_accuracy=0.629000 reward_margin=0.211348 best=True
+5439.8s 294 [DPO update 260/469] loss=0.674716 lr=1e-06 skipped=0
+5590.1s 295 [DPO update 270/469] loss=0.646821 lr=1e-06 skipped=0
+5743.8s 296 [DPO update 280/469] loss=0.682266 lr=1e-06 skipped=0
+5896.3s 297 [DPO update 290/469] loss=0.616879 lr=1e-06 skipped=0
+6049.5s 298 [DPO update 300/469] loss=0.616195 lr=1e-06 skipped=0
+6049.5s 299 [DPO] validating 1000 examples at update 300; saving best checkpoint if improved
+6243.2s 300 [DPO validation 300/469] loss=0.630131 reward_accuracy=0.642000 reward_margin=0.234728 best=True
+6249.3s 301 [development] update 300: generating 40 prompts
+6249.3s 302 [development] update 300: generating prompt 1/40
+6255.3s 303 [development] update 300: prompt 1/40 done
+6255.3s 304 [development] update 300: generating prompt 2/40
+6263.0s 305 [development] update 300: prompt 2/40 done
+6263.0s 306 [development] update 300: generating prompt 3/40
+6267.9s 307 [development] update 300: prompt 3/40 done
+6267.9s 308 [development] update 300: generating prompt 4/40
+6272.0s 309 [development] update 300: prompt 4/40 done
+6272.0s 310 [development] update 300: generating prompt 5/40
+6272.7s 311 [development] update 300: prompt 5/40 done
+6272.7s 312 [development] update 300: generating prompt 6/40
+6274.0s 313 [development] update 300: prompt 6/40 done
+6274.0s 314 [development] update 300: generating prompt 7/40
+6274.9s 315 [development] update 300: prompt 7/40 done
+6274.9s 316 [development] update 300: generating prompt 8/40
+6277.7s 317 [development] update 300: prompt 8/40 done
+6277.7s 318 [development] update 300: generating prompt 9/40
+6278.9s 319 [development] update 300: prompt 9/40 done
+6278.9s 320 [development] update 300: generating prompt 10/40
+6279.2s 321 [development] update 300: prompt 10/40 done
+6279.2s 322 [development] update 300: generating prompt 11/40
+6279.9s 323 [development] update 300: prompt 11/40 done
+6279.9s 324 [development] update 300: generating prompt 12/40
+6280.7s 325 [development] update 300: prompt 12/40 done
+6280.7s 326 [development] update 300: generating prompt 13/40
+6287.1s 327 [development] update 300: prompt 13/40 done
+6287.1s 328 [development] update 300: generating prompt 14/40
+6294.7s 329 [development] update 300: prompt 14/40 done
+6294.7s 330 [development] update 300: generating prompt 15/40
+6301.2s 331 [development] update 300: prompt 15/40 done
+6301.2s 332 [development] update 300: generating prompt 16/40
+6303.0s 333 [development] update 300: prompt 16/40 done
+6303.0s 334 [development] update 300: generating prompt 17/40
+6304.1s 335 [development] update 300: prompt 17/40 done
+6304.1s 336 [development] update 300: generating prompt 18/40
+6308.4s 337 [development] update 300: prompt 18/40 done
+6308.4s 338 [development] update 300: generating prompt 19/40
+6313.5s 339 [development] update 300: prompt 19/40 done
+6313.5s 340 [development] update 300: generating prompt 20/40
+6315.8s 341 [development] update 300: prompt 20/40 done
+6315.8s 342 [development] update 300: generating prompt 21/40
+6318.5s 343 [development] update 300: prompt 21/40 done
+6318.5s 344 [development] update 300: generating prompt 22/40
+6321.2s 345 [development] update 300: prompt 22/40 done
+6321.2s 346 [development] update 300: generating prompt 23/40
+6323.1s 347 [development] update 300: prompt 23/40 done
+6323.1s 348 [development] update 300: generating prompt 24/40
+6330.7s 349 [development] update 300: prompt 24/40 done
+6330.7s 350 [development] update 300: generating prompt 25/40
+6337.0s 351 [development] update 300: prompt 25/40 done
+6337.0s 352 [development] update 300: generating prompt 26/40
+6341.9s 353 [development] update 300: prompt 26/40 done
+6341.9s 354 [development] update 300: generating prompt 27/40
+6345.0s 355 [development] update 300: prompt 27/40 done
+6345.0s 356 [development] update 300: generating prompt 28/40
+6352.6s 357 [development] update 300: prompt 28/40 done
+6352.6s 358 [development] update 300: generating prompt 29/40
+6352.8s 359 [development] update 300: prompt 29/40 done
+6352.8s 360 [development] update 300: generating prompt 30/40
+6353.4s 361 [development] update 300: prompt 30/40 done
+6353.4s 362 [development] update 300: generating prompt 31/40
+6353.8s 363 [development] update 300: prompt 31/40 done
+6353.8s 364 [development] update 300: generating prompt 32/40
+6354.5s 365 [development] update 300: prompt 32/40 done
+6354.5s 366 [development] update 300: generating prompt 33/40
+6354.9s 367 [development] update 300: prompt 33/40 done
+6354.9s 368 [development] update 300: generating prompt 34/40
+6355.4s 369 [development] update 300: prompt 34/40 done
+6355.4s 370 [development] update 300: generating prompt 35/40
+6355.7s 371 [development] update 300: prompt 35/40 done
+6355.7s 372 [development] update 300: generating prompt 36/40
+6356.0s 373 [development] update 300: prompt 36/40 done
+6356.0s 374 [development] update 300: generating prompt 37/40
+6356.4s 375 [development] update 300: prompt 37/40 done
+6356.4s 376 [development] update 300: generating prompt 38/40
+6356.7s 377 [development] update 300: prompt 38/40 done
+6356.7s 378 [development] update 300: generating prompt 39/40
+6357.0s 379 [development] update 300: prompt 39/40 done
+6357.0s 380 [development] update 300: generating prompt 40/40
+6357.5s 381 [development] update 300: prompt 40/40 done
+6517.7s 382 [DPO update 310/469] loss=0.562383 lr=1e-06 skipped=0
+6667.1s 383 [DPO update 320/469] loss=0.647875 lr=1e-06 skipped=0
+6814.7s 384 [DPO update 330/469] loss=0.623405 lr=1e-06 skipped=0
+6962.3s 385 [DPO update 340/469] loss=0.588246 lr=1e-06 skipped=0
+7108.9s 386 [DPO update 350/469] loss=0.618568 lr=1e-06 skipped=0
+7108.9s 387 [DPO] validating 1000 examples at update 350; saving best checkpoint if improved
+7290.2s 388 [DPO validation 350/469] loss=0.634316 reward_accuracy=0.630000 reward_margin=0.247703 best=False
+7443.1s 389 [DPO update 360/469] loss=0.710093 lr=1e-06 skipped=0
+7589.2s 390 [DPO update 370/469] loss=0.677021 lr=1e-06 skipped=0
+7735.2s 391 [DPO update 380/469] loss=0.642550 lr=1e-06 skipped=0
+7881.7s 392 [DPO update 390/469] loss=0.721316 lr=1e-06 skipped=0
+8028.1s 393 [DPO update 400/469] loss=0.685232 lr=1e-06 skipped=0
+8028.1s 394 [DPO] validating 1000 examples at update 400; saving best checkpoint if improved
+8216.3s 395 [DPO validation 400/469] loss=0.630991 reward_accuracy=0.645000 reward_margin=0.240880 best=True
+8222.3s 396 [development] update 400: generating 40 prompts
+8222.3s 397 [development] update 400: generating prompt 1/40
+8229.9s 398 [development] update 400: prompt 1/40 done
+8229.9s 399 [development] update 400: generating prompt 2/40
+8233.6s 400 [development] update 400: prompt 2/40 done
+8233.6s 401 [development] update 400: generating prompt 3/40
+8239.9s 402 [development] update 400: prompt 3/40 done
+8239.9s 403 [development] update 400: generating prompt 4/40
+8245.3s 404 [development] update 400: prompt 4/40 done
+8245.3s 405 [development] update 400: generating prompt 5/40
+8246.0s 406 [development] update 400: prompt 5/40 done
+8246.0s 407 [development] update 400: generating prompt 6/40
+8247.3s 408 [development] update 400: prompt 6/40 done
+8247.3s 409 [development] update 400: generating prompt 7/40
+8248.2s 410 [development] update 400: prompt 7/40 done
+8248.2s 411 [development] update 400: generating prompt 8/40
+8251.1s 412 [development] update 400: prompt 8/40 done
+8251.1s 413 [development] update 400: generating prompt 9/40
+8252.2s 414 [development] update 400: prompt 9/40 done
+8252.2s 415 [development] update 400: generating prompt 10/40
+8252.5s 416 [development] update 400: prompt 10/40 done
+8252.5s 417 [development] update 400: generating prompt 11/40
+8253.2s 418 [development] update 400: prompt 11/40 done
+8253.2s 419 [development] update 400: generating prompt 12/40
+8254.0s 420 [development] update 400: prompt 12/40 done
+8254.0s 421 [development] update 400: generating prompt 13/40
+8260.6s 422 [development] update 400: prompt 13/40 done
+8260.6s 423 [development] update 400: generating prompt 14/40
+8267.5s 424 [development] update 400: prompt 14/40 done
+8267.5s 425 [development] update 400: generating prompt 15/40
+8274.0s 426 [development] update 400: prompt 15/40 done
+8274.0s 427 [development] update 400: generating prompt 16/40
+8275.8s 428 [development] update 400: prompt 16/40 done
+8275.8s 429 [development] update 400: generating prompt 17/40
+8276.9s 430 [development] update 400: prompt 17/40 done
+8276.9s 431 [development] update 400: generating prompt 18/40
+8281.1s 432 [development] update 400: prompt 18/40 done
+8281.1s 433 [development] update 400: generating prompt 19/40
+8283.9s 434 [development] update 400: prompt 19/40 done
+8283.9s 435 [development] update 400: generating prompt 20/40
+8286.2s 436 [development] update 400: prompt 20/40 done
+8286.2s 437 [development] update 400: generating prompt 21/40
+8288.1s 438 [development] update 400: prompt 21/40 done
+8288.1s 439 [development] update 400: generating prompt 22/40
+8291.0s 440 [development] update 400: prompt 22/40 done
+8291.0s 441 [development] update 400: generating prompt 23/40
+8292.6s 442 [development] update 400: prompt 23/40 done
+8292.6s 443 [development] update 400: generating prompt 24/40
+8300.2s 444 [development] update 400: prompt 24/40 done
+8300.2s 445 [development] update 400: generating prompt 25/40
+8305.3s 446 [development] update 400: prompt 25/40 done
+8305.3s 447 [development] update 400: generating prompt 26/40
+8310.0s 448 [development] update 400: prompt 26/40 done
+8310.0s 449 [development] update 400: generating prompt 27/40
+8312.8s 450 [development] update 400: prompt 27/40 done
+8312.8s 451 [development] update 400: generating prompt 28/40
+8320.2s 452 [development] update 400: prompt 28/40 done
+8320.2s 453 [development] update 400: generating prompt 29/40
+8320.4s 454 [development] update 400: prompt 29/40 done
+8320.4s 455 [development] update 400: generating prompt 30/40
+8320.9s 456 [development] update 400: prompt 30/40 done
+8320.9s 457 [development] update 400: generating prompt 31/40
+8321.4s 458 [development] update 400: prompt 31/40 done
+8321.4s 459 [development] update 400: generating prompt 32/40
+8322.1s 460 [development] update 400: prompt 32/40 done
+8322.1s 461 [development] update 400: generating prompt 33/40
+8322.5s 462 [development] update 400: prompt 33/40 done
+8322.5s 463 [development] update 400: generating prompt 34/40
+8323.1s 464 [development] update 400: prompt 34/40 done
+8323.1s 465 [development] update 400: generating prompt 35/40
+8323.3s 466 [development] update 400: prompt 35/40 done
+8323.3s 467 [development] update 400: generating prompt 36/40
+8323.7s 468 [development] update 400: prompt 36/40 done
+8323.7s 469 [development] update 400: generating prompt 37/40
+8324.0s 470 [development] update 400: prompt 37/40 done
+8324.0s 471 [development] update 400: generating prompt 38/40
+8324.3s 472 [development] update 400: prompt 38/40 done
+8324.3s 473 [development] update 400: generating prompt 39/40
+8324.7s 474 [development] update 400: prompt 39/40 done
+8324.7s 475 [development] update 400: generating prompt 40/40
+8325.1s 476 [development] update 400: prompt 40/40 done
+8477.5s 477 [DPO update 410/469] loss=0.613313 lr=1e-06 skipped=0
+8623.8s 478 [DPO update 420/469] loss=0.512252 lr=1e-06 skipped=0
+8769.6s 479 [DPO update 430/469] loss=0.582183 lr=1e-06 skipped=0
+8916.1s 480 [DPO update 440/469] loss=0.522753 lr=1e-06 skipped=0
+9063.8s 481 [DPO update 450/469] loss=0.657813 lr=1e-06 skipped=0
+9063.8s 482 [DPO] validating 1000 examples at update 450; saving best checkpoint if improved
+9247.2s 483 [DPO validation 450/469] loss=0.627839 reward_accuracy=0.644000 reward_margin=0.277189 best=False
+9403.0s 484 [DPO update 460/469] loss=0.627505 lr=1e-06 skipped=0
+9531.2s 485 [DPO] validating 1000 examples at update 469; saving best checkpoint if improved
+9710.8s 486 [DPO validation 469/469] loss=0.622583 reward_accuracy=0.643000 reward_margin=0.283763 best=False
+9716.7s 487 [development] update 469: generating 40 prompts
+9716.7s 488 [development] update 469: generating prompt 1/40
+9722.0s 489 [development] update 469: prompt 1/40 done
+9722.0s 490 [development] update 469: generating prompt 2/40
+9725.2s 491 [development] update 469: prompt 2/40 done
+9725.2s 492 [development] update 469: generating prompt 3/40
+9727.3s 493 [development] update 469: prompt 3/40 done
+9727.3s 494 [development] update 469: generating prompt 4/40
+9732.6s 495 [development] update 469: prompt 4/40 done
+9732.6s 496 [development] update 469: generating prompt 5/40
+9733.3s 497 [development] update 469: prompt 5/40 done
+9733.3s 498 [development] update 469: generating prompt 6/40
+9734.5s 499 [development] update 469: prompt 6/40 done
+9734.5s 500 [development] update 469: generating prompt 7/40
+9735.4s 501 [development] update 469: prompt 7/40 done
+9735.4s 502 [development] update 469: generating prompt 8/40
+9738.1s 503 [development] update 469: prompt 8/40 done
+9738.1s 504 [development] update 469: generating prompt 9/40
+9739.3s 505 [development] update 469: prompt 9/40 done
+9739.3s 506 [development] update 469: generating prompt 10/40
+9739.5s 507 [development] update 469: prompt 10/40 done
+9739.5s 508 [development] update 469: generating prompt 11/40
+9740.3s 509 [development] update 469: prompt 11/40 done
+9740.3s 510 [development] update 469: generating prompt 12/40
+9741.0s 511 [development] update 469: prompt 12/40 done
+9741.0s 512 [development] update 469: generating prompt 13/40
+9747.5s 513 [development] update 469: prompt 13/40 done
+9747.5s 514 [development] update 469: generating prompt 14/40
+9754.9s 515 [development] update 469: prompt 14/40 done
+9754.9s 516 [development] update 469: generating prompt 15/40
+9761.7s 517 [development] update 469: prompt 15/40 done
+9761.7s 518 [development] update 469: generating prompt 16/40
+9763.3s 519 [development] update 469: prompt 16/40 done
+9763.3s 520 [development] update 469: generating prompt 17/40
+9764.5s 521 [development] update 469: prompt 17/40 done
+9764.5s 522 [development] update 469: generating prompt 18/40
+9768.4s 523 [development] update 469: prompt 18/40 done
+9768.4s 524 [development] update 469: generating prompt 19/40
+9771.2s 525 [development] update 469: prompt 19/40 done
+9771.2s 526 [development] update 469: generating prompt 20/40
+9773.3s 527 [development] update 469: prompt 20/40 done
+9773.3s 528 [development] update 469: generating prompt 21/40
+9775.6s 529 [development] update 469: prompt 21/40 done
+9775.6s 530 [development] update 469: generating prompt 22/40
+9778.1s 531 [development] update 469: prompt 22/40 done
+9778.1s 532 [development] update 469: generating prompt 23/40
+9779.9s 533 [development] update 469: prompt 23/40 done
+9779.9s 534 [development] update 469: generating prompt 24/40
+9787.4s 535 [development] update 469: prompt 24/40 done
+9787.4s 536 [development] update 469: generating prompt 25/40
+9793.2s 537 [development] update 469: prompt 25/40 done
+9793.2s 538 [development] update 469: generating prompt 26/40
+9799.8s 539 [development] update 469: prompt 26/40 done
+9799.8s 540 [development] update 469: generating prompt 27/40
+9802.6s 541 [development] update 469: prompt 27/40 done
+9802.6s 542 [development] update 469: generating prompt 28/40
+9810.1s 543 [development] update 469: prompt 28/40 done
+9810.1s 544 [development] update 469: generating prompt 29/40
+9811.2s 545 [development] update 469: prompt 29/40 done
+9811.2s 546 [development] update 469: generating prompt 30/40
+9811.7s 547 [development] update 469: prompt 30/40 done
+9811.7s 548 [development] update 469: generating prompt 31/40
+9812.1s 549 [development] update 469: prompt 31/40 done
+9812.1s 550 [development] update 469: generating prompt 32/40
+9812.8s 551 [development] update 469: prompt 32/40 done
+9812.8s 552 [development] update 469: generating prompt 33/40
+9813.2s 553 [development] update 469: prompt 33/40 done
+9813.2s 554 [development] update 469: generating prompt 34/40
+9813.7s 555 [development] update 469: prompt 34/40 done
+9813.7s 556 [development] update 469: generating prompt 35/40
+9814.0s 557 [development] update 469: prompt 35/40 done
+9814.0s 558 [development] update 469: generating prompt 36/40
+9814.3s 559 [development] update 469: prompt 36/40 done
+9814.3s 560 [development] update 469: generating prompt 37/40
+9814.7s 561 [development] update 469: prompt 37/40 done
+9814.7s 562 [development] update 469: generating prompt 38/40
+9815.0s 563 [development] update 469: prompt 38/40 done
+9815.0s 564 [development] update 469: generating prompt 39/40
+9815.3s 565 [development] update 469: prompt 39/40 done
+9815.3s 566 [development] update 469: generating prompt 40/40
+9815.8s 567 [development] update 469: prompt 40/40 done
+9841.9s 568 {
+9841.9s 569 "status": "completed",
+9841.9s 570 "updates": 469,
+9841.9s 571 "skipped_updates": 0,
+9841.9s 572 "best_metrics": {
+9841.9s 573 "reward_accuracy": 0.645,
+9841.9s 574 "reward_margin": 0.2408797250855714,
+9841.9s 575 "chosen_logp": -178.1402697067261,
+9841.9s 576 "rejected_logp": -178.75761762046815,
+9841.9s 577 "loss": 0.6309906442314387
+9841.9s 578 },
+9841.9s 579 "memory": {
+9841.9s 580 "policy_peak_bytes": 10115481600,
+9841.9s 581 "reference_peak_bytes": 2763738624
+9841.9s 582 }
+9841.9s 583 }
+9864.9s 584 FULL TRAINING COMPLETE: hh evaluation pending
+9864.9s 585 FULL DPO TRACK: uf LIVE PROGRESS: /kaggle/working/dpo_full_uf_manual_1em6/metrics.jsonl STATE: /kaggle/working/dpo_full_uf_manual_1em6/run.json
+9888.1s 586 The tokenizer you are loading from '/kaggle/input/datasets/muhammadsalehfarooq/pa2-full-sft-v4-verified-checkpoint/pa2_runs/sft_full/best' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+9900.7s 587 `torch_dtype` is deprecated! Use `dtype` instead!
+9936.1s 588 [DPO] starting 15000 training examples, 469 planned updates; progress: /kaggle/working/dpo_full_uf_manual_1em6/metrics.jsonl
+9936.1s 589 [DPO] validating 1000 examples at update 0; saving best checkpoint if improved
+10172.2s 590 [DPO validation 0/469] loss=0.693147 reward_accuracy=0.000000 reward_margin=0.000000 best=True
+10197.6s 591 [DPO update 1/469] loss=0.693147 lr=1e-06 skipped=0
+10361.0s 592 [DPO update 10/469] loss=0.638730 lr=1e-06 skipped=0
+10541.9s 593 [DPO update 20/469] loss=0.665324 lr=1e-06 skipped=0
+10723.4s 594 [DPO update 30/469] loss=0.682933 lr=1e-06 skipped=0
+10906.4s 595 [DPO update 40/469] loss=0.630110 lr=1e-06 skipped=0
+11091.9s 596 [DPO update 50/469] loss=0.651584 lr=1e-06 skipped=0
+11091.9s 597 [DPO] validating 1000 examples at update 50; saving best checkpoint if improved
+11327.5s 598 [DPO validation 50/469] loss=0.603443 reward_accuracy=0.705000 reward_margin=0.302813 best=True
+11518.7s 599 [DPO update 60/469] loss=0.550910 lr=1e-06 skipped=0
+11703.6s 600 [DPO update 70/469] loss=0.647698 lr=1e-06 skipped=0
+11885.9s 601 [DPO update 80/469] loss=0.653270 lr=1e-06 skipped=0
+12068.6s 602 [DPO update 90/469] loss=0.712637 lr=1e-06 skipped=0
+12249.9s 603 [DPO update 100/469] loss=0.659233 lr=1e-06 skipped=0
+12249.9s 604 [DPO] validating 1000 examples at update 100; saving best checkpoint if improved
+12477.7s 605 [DPO validation 100/469] loss=0.587192 reward_accuracy=0.705000 reward_margin=0.393929 best=False
+12484.3s 606 [development] update 100: generating 40 prompts
+12484.3s 607 [development] update 100: generating prompt 1/40
+12492.0s 608 [development] update 100: prompt 1/40 done
+12492.0s 609 [development] update 100: generating prompt 2/40
+12497.1s 610 [development] update 100: prompt 2/40 done
+12497.1s 611 [development] update 100: generating prompt 3/40
+12500.6s 612 [development] update 100: prompt 3/40 done
+12500.6s 613 [development] update 100: generating prompt 4/40
+12505.2s 614 [development] update 100: prompt 4/40 done
+12505.2s 615 [development] update 100: generating prompt 5/40
+12505.7s 616 [development] update 100: prompt 5/40 done
+12505.7s 617 [development] update 100: generating prompt 6/40
+12506.9s 618 [development] update 100: prompt 6/40 done
+12506.9s 619 [development] update 100: generating prompt 7/40
+12508.6s 620 [development] update 100: prompt 7/40 done
+12508.6s 621 [development] update 100: generating prompt 8/40
+12512.4s 622 [development] update 100: prompt 8/40 done
+12512.4s 623 [development] update 100: generating prompt 9/40
+12513.5s 624 [development] update 100: prompt 9/40 done
+12513.5s 625 [development] update 100: generating prompt 10/40
+12513.7s 626 [development] update 100: prompt 10/40 done
+12513.7s 627 [development] update 100: generating prompt 11/40
+12516.2s 628 [development] update 100: prompt 11/40 done
+12516.2s 629 [development] update 100: generating prompt 12/40
+12516.9s 630 [development] update 100: prompt 12/40 done
+12516.9s 631 [development] update 100: generating prompt 13/40
+12524.3s 632 [development] update 100: prompt 13/40 done
+12524.3s 633 [development] update 100: generating prompt 14/40
+12531.5s 634 [development] update 100: prompt 14/40 done
+12531.5s 635 [development] update 100: generating prompt 15/40
+12538.8s 636 [development] update 100: prompt 15/40 done
+12538.8s 637 [development] update 100: generating prompt 16/40
+12542.9s 638 [development] update 100: prompt 16/40 done
+12542.9s 639 [development] update 100: generating prompt 17/40
+12545.8s 640 [development] update 100: prompt 17/40 done
+12545.8s 641 [development] update 100: generating prompt 18/40
+12550.7s 642 [development] update 100: prompt 18/40 done
+12550.7s 643 [development] update 100: generating prompt 19/40
+12558.1s 644 [development] update 100: prompt 19/40 done
+12558.1s 645 [development] update 100: generating prompt 20/40
+12560.6s 646 [development] update 100: prompt 20/40 done
+12560.6s 647 [development] update 100: generating prompt 21/40
+12564.1s 648 [development] update 100: prompt 21/40 done
+12564.1s 649 [development] update 100: generating prompt 22/40
+12567.2s 650 [development] update 100: prompt 22/40 done
+12567.2s 651 [development] update 100: generating prompt 23/40
+12570.2s 652 [development] update 100: prompt 23/40 done
+12570.2s 653 [development] update 100: generating prompt 24/40
+12577.4s 654 [development] update 100: prompt 24/40 done
+12577.4s 655 [development] update 100: generating prompt 25/40
+12584.8s 656 [development] update 100: prompt 25/40 done
+12584.8s 657 [development] update 100: generating prompt 26/40
+12588.6s 658 [development] update 100: prompt 26/40 done
+12588.6s 659 [development] update 100: generating prompt 27/40
+12593.2s 660 [development] update 100: prompt 27/40 done
+12593.2s 661 [development] update 100: generating prompt 28/40
+12600.5s 662 [development] update 100: prompt 28/40 done
+12600.5s 663 [development] update 100: generating prompt 29/40
+12600.6s 664 [development] update 100: prompt 29/40 done
+12600.6s 665 [development] update 100: generating prompt 30/40
+12601.1s 666 [development] update 100: prompt 30/40 done
+12601.1s 667 [development] update 100: generating prompt 31/40
+12601.5s 668 [development] update 100: prompt 31/40 done
+12601.5s 669 [development] update 100: generating prompt 32/40
+12602.2s 670 [development] update 100: prompt 32/40 done
+12602.2s 671 [development] update 100: generating prompt 33/40
+12602.5s 672 [development] update 100: prompt 33/40 done
+12602.5s 673 [development] update 100: generating prompt 34/40
+12602.8s 674 [development] update 100: prompt 34/40 done
+12602.8s 675 [development] update 100: generating prompt 35/40
+12603.0s 676 [development] update 100: prompt 35/40 done
+12603.0s 677 [development] update 100: generating prompt 36/40
+12603.4s 678 [development] update 100: prompt 36/40 done
+12603.4s 679 [development] update 100: generating prompt 37/40
+12603.7s 680 [development] update 100: prompt 37/40 done
+12603.7s 681 [development] update 100: generating prompt 38/40
+12604.0s 682 [development] update 100: prompt 38/40 done
+12604.0s 683 [development] update 100: generating prompt 39/40
+12604.3s 684 [development] update 100: prompt 39/40 done
+12604.3s 685 [development] update 100: generating prompt 40/40
+12604.7s 686 [development] update 100: prompt 40/40 done
+12793.2s 687 [DPO update 110/469] loss=0.579025 lr=1e-06 skipped=0
+12974.5s 688 [DPO update 120/469] loss=0.534004 lr=1e-06 skipped=0
+13157.9s 689 [DPO update 130/469] loss=0.641843 lr=1e-06 skipped=0
+13340.9s 690 [DPO update 140/469] loss=0.590365 lr=1e-06 skipped=0
+13528.1s 691 [DPO update 150/469] loss=0.568336 lr=1e-06 skipped=0
+13528.1s 692 [DPO] validating 1000 examples at update 150; saving best checkpoint if improved
+13771.6s 693 [DPO validation 150/469] loss=0.577511 reward_accuracy=0.707000 reward_margin=0.448737 best=True
+13963.5s 694 [DPO update 160/469] loss=0.529210 lr=1e-06 skipped=0
+14145.7s 695 [DPO update 170/469] loss=0.647076 lr=1e-06 skipped=0
+14328.8s 696 [DPO update 180/469] loss=0.696943 lr=1e-06 skipped=0
+14513.7s 697 [DPO update 190/469] loss=0.484401 lr=1e-06 skipped=0
+14695.9s 698 [DPO update 200/469] loss=0.493458 lr=1e-06 skipped=0
+14695.9s 699 [DPO] validating 1000 examples at update 200; saving best checkpoint if improved
+14931.5s 700 [DPO validation 200/469] loss=0.568451 reward_accuracy=0.716000 reward_margin=0.488494 best=True
+14938.0s 701 [development] update 200: generating 40 prompts
+14938.0s 702 [development] update 200: generating prompt 1/40
+14945.6s 703 [development] update 200: prompt 1/40 done
+14945.6s 704 [development] update 200: generating prompt 2/40
+14950.0s 705 [development] update 200: prompt 2/40 done
+14950.0s 706 [development] update 200: generating prompt 3/40
+14953.8s 707 [development] update 200: prompt 3/40 done
+14953.8s 708 [development] update 200: generating prompt 4/40
+14958.6s 709 [development] update 200: prompt 4/40 done
+14958.6s 710 [development] update 200: generating prompt 5/40
+14959.3s 711 [development] update 200: prompt 5/40 done
+14959.3s 712 [development] update 200: generating prompt 6/40
+14960.6s 713 [development] update 200: prompt 6/40 done
+14960.6s 714 [development] update 200: generating prompt 7/40
+14963.2s 715 [development] update 200: prompt 7/40 done
+14963.2s 716 [development] update 200: generating prompt 8/40
+14967.0s 717 [development] update 200: prompt 8/40 done
+14967.0s 718 [development] update 200: generating prompt 9/40
+14969.5s 719 [development] update 200: prompt 9/40 done
+14969.5s 720 [development] update 200: generating prompt 10/40
+14969.8s 721 [development] update 200: prompt 10/40 done
+14969.8s 722 [development] update 200: generating prompt 11/40
+14973.6s 723 [development] update 200: prompt 11/40 done
+14973.6s 724 [development] update 200: generating prompt 12/40
+14974.3s 725 [development] update 200: prompt 12/40 done
+14974.3s 726 [development] update 200: generating prompt 13/40
+14981.7s 727 [development] update 200: prompt 13/40 done
+14981.7s 728 [development] update 200: generating prompt 14/40
+14989.0s 729 [development] update 200: prompt 14/40 done
+14989.0s 730 [development] update 200: generating prompt 15/40
+14996.3s 731 [development] update 200: prompt 15/40 done
+14996.3s 732 [development] update 200: generating prompt 16/40
+15003.3s 733 [development] update 200: prompt 16/40 done
+15003.3s 734 [development] update 200: generating prompt 17/40
+15005.6s 735 [development] update 200: prompt 17/40 done
+15005.6s 736 [development] update 200: generating prompt 18/40
+15013.0s 737 [development] update 200: prompt 18/40 done
+15013.0s 738 [development] update 200: generating prompt 19/40
+15020.3s 739 [development] update 200: prompt 19/40 done
+15020.3s 740 [development] update 200: generating prompt 20/40
+15023.6s 741 [development] update 200: prompt 20/40 done
+15023.6s 742 [development] update 200: generating prompt 21/40
+15027.3s 743 [development] update 200: prompt 21/40 done
+15027.3s 744 [development] update 200: generating prompt 22/40
+15030.7s 745 [development] update 200: prompt 22/40 done
+15030.7s 746 [development] update 200: generating prompt 23/40
+15032.7s 747 [development] update 200: prompt 23/40 done
+15032.7s 748 [development] update 200: generating prompt 24/40
+15040.0s 749 [development] update 200: prompt 24/40 done
+15040.0s 750 [development] update 200: generating prompt 25/40
+15047.4s 751 [development] update 200: prompt 25/40 done
+15047.4s 752 [development] update 200: generating prompt 26/40
+15054.4s 753 [development] update 200: prompt 26/40 done
+15054.4s 754 [development] update 200: generating prompt 27/40
+15058.4s 755 [development] update 200: prompt 27/40 done
+15058.4s 756 [development] update 200: generating prompt 28/40
+15068.5s 757 [development] update 200: prompt 28/40 done
+15068.5s 758 [development] update 200: generating prompt 29/40
+15069.5s 759 [development] update 200: prompt 29/40 done
+15069.5s 760 [development] update 200: generating prompt 30/40
+15070.0s 761 [development] update 200: prompt 30/40 done
+15070.0s 762 [development] update 200: generating prompt 31/40
+15070.4s 763 [development] update 200: prompt 31/40 done
+15070.4s 764 [development] update 200: generating prompt 32/40
+15070.7s 765 [development] update 200: prompt 32/40 done
+15070.7s 766 [development] update 200: generating prompt 33/40
+15071.0s 767 [development] update 200: prompt 33/40 done
+15071.0s 768 [development] update 200: generating prompt 34/40
+15071.3s 769 [development] update 200: prompt 34/40 done
+15071.3s 770 [development] update 200: generating prompt 35/40
+15071.5s 771 [development] update 200: prompt 35/40 done
+15071.5s 772 [development] update 200: generating prompt 36/40
+15071.9s 773 [development] update 200: prompt 36/40 done
+15071.9s 774 [development] update 200: generating prompt 37/40
+15072.2s 775 [development] update 200: prompt 37/40 done
+15072.2s 776 [development] update 200: generating prompt 38/40
+15072.4s 777 [development] update 200: prompt 38/40 done
+15072.4s 778 [development] update 200: generating prompt 39/40
+15072.8s 779 [development] update 200: prompt 39/40 done
+15072.8s 780 [development] update 200: generating prompt 40/40
+15073.2s 781 [development] update 200: prompt 40/40 done
+15264.3s 782 [DPO update 210/469] loss=0.481684 lr=1e-06 skipped=0
+15444.5s 783 [DPO update 220/469] loss=0.594108 lr=1e-06 skipped=0
+15633.0s 784 [DPO update 230/469] loss=0.647240 lr=1e-06 skipped=0
+15814.6s 785 [DPO update 240/469] loss=0.566799 lr=1e-06 skipped=0
+15996.4s 786 [DPO update 250/469] loss=0.471722 lr=1e-06 skipped=0
+15996.4s 787 [DPO] validating 1000 examples at update 250; saving best checkpoint if improved
+16237.1s 788 [DPO validation 250/469] loss=0.562371 reward_accuracy=0.718000 reward_margin=0.511774 best=True
+16430.5s 789 [DPO update 260/469] loss=0.532886 lr=1e-06 skipped=0
+16614.4s 790 [DPO update 270/469] loss=0.596002 lr=1e-06 skipped=0
+16800.3s 791 [DPO update 280/469] loss=0.540937 lr=1e-06 skipped=0
+16987.2s 792 [DPO update 290/469] loss=0.625357 lr=1e-06 skipped=0
+17175.0s 793 [DPO update 300/469] loss=0.646935 lr=1e-06 skipped=0
+17175.0s 794 [DPO] validating 1000 examples at update 300; saving best checkpoint if improved
+17414.5s 795 [DPO validation 300/469] loss=0.559526 reward_accuracy=0.725000 reward_margin=0.545739 best=True
+17421.2s 796 [development] update 300: generating 40 prompts
+17421.2s 797 [development] update 300: generating prompt 1/40
+17429.0s 798 [development] update 300: prompt 1/40 done
+17429.0s 799 [development] update 300: generating prompt 2/40
+17433.4s 800 [development] update 300: prompt 2/40 done
+17433.4s 801 [development] update 300: generating prompt 3/40
+17438.2s 802 [development] update 300: prompt 3/40 done
+17438.2s 803 [development] update 300: generating prompt 4/40
+17443.9s 804 [development] update 300: prompt 4/40 done
+17443.9s 805 [development] update 300: generating prompt 5/40
+17444.6s 806 [development] update 300: prompt 5/40 done
+17444.6s 807 [development] update 300: generating prompt 6/40
+17452.1s 808 [development] update 300: prompt 6/40 done
+17452.1s 809 [development] update 300: generating prompt 7/40
+17454.9s 810 [development] update 300: prompt 7/40 done
+17454.9s 811 [development] update 300: generating prompt 8/40
+17458.8s 812 [development] update 300: prompt 8/40 done
+17458.8s 813 [development] update 300: generating prompt 9/40
+17461.4s 814 [development] update 300: prompt 9/40 done
+17461.4s 815 [development] update 300: generating prompt 10/40
+17462.1s 816 [development] update 300: prompt 10/40 done
+17462.1s 817 [development] update 300: generating prompt 11/40
+17466.3s 818 [development] update 300: prompt 11/40 done
+17466.3s 819 [development] update 300: generating prompt 12/40
+17467.0s 820 [development] update 300: prompt 12/40 done
+17467.0s 821 [development] update 300: generating prompt 13/40
+17474.5s 822 [development] update 300: prompt 13/40 done
+17474.5s 823 [development] update 300: generating prompt 14/40
+17482.0s 824 [development] update 300: prompt 14/40 done
+17482.0s 825 [development] update 300: generating prompt 15/40
+17489.4s 826 [development] update 300: prompt 15/40 done
+17489.4s 827 [development] update 300: generating prompt 16/40
+17493.9s 828 [development] update 300: prompt 16/40 done
+17493.9s 829 [development] update 300: generating prompt 17/40
+17496.6s 830 [development] update 300: prompt 17/40 done
+17496.6s 831 [development] update 300: generating prompt 18/40
+17504.1s 832 [development] update 300: prompt 18/40 done
+17504.1s 833 [development] update 300: generating prompt 19/40
+17511.5s 834 [development] update 300: prompt 19/40 done
+17511.5s 835 [development] update 300: generating prompt 20/40
+17515.0s 836 [development] update 300: prompt 20/40 done
+17515.0s 837 [development] update 300: generating prompt 21/40
+17518.5s 838 [development] update 300: prompt 21/40 done
+17518.5s 839 [development] update 300: generating prompt 22/40
+17522.1s 840 [development] update 300: prompt 22/40 done
+17522.1s 841 [development] update 300: generating prompt 23/40
+17524.6s 842 [development] update 300: prompt 23/40 done
+17524.6s 843 [development] update 300: generating prompt 24/40
+17532.0s 844 [development] update 300: prompt 24/40 done
+17532.0s 845 [development] update 300: generating prompt 25/40
+17539.4s 846 [development] update 300: prompt 25/40 done
+17539.4s 847 [development] update 300: generating prompt 26/40
+17543.4s 848 [development] update 300: prompt 26/40 done
+17543.4s 849 [development] update 300: generating prompt 27/40
+17552.9s 850 [development] update 300: prompt 27/40 done
+17552.9s 851 [development] update 300: generating prompt 28/40
+17560.3s 852 [development] update 300: prompt 28/40 done
+17560.3s 853 [development] update 300: generating prompt 29/40
+17561.3s 854 [development] update 300: prompt 29/40 done
+17561.3s 855 [development] update 300: generating prompt 30/40
+17561.8s 856 [development] update 300: prompt 30/40 done
+17561.8s 857 [development] update 300: generating prompt 31/40
+17562.2s 858 [development] update 300: prompt 31/40 done
+17562.2s 859 [development] update 300: generating prompt 32/40
+17562.5s 860 [development] update 300: prompt 32/40 done
+17562.5s 861 [development] update 300: generating prompt 33/40
+17562.8s 862 [development] update 300: prompt 33/40 done
+17562.8s 863 [development] update 300: generating prompt 34/40
+17563.1s 864 [development] update 300: prompt 34/40 done
+17563.1s 865 [development] update 300: generating prompt 35/40
+17563.3s 866 [development] update 300: prompt 35/40 done
+17563.3s 867 [development] update 300: generating prompt 36/40
+17563.7s 868 [development] update 300: prompt 36/40 done
+17563.7s 869 [development] update 300: generating prompt 37/40
+17564.0s 870 [development] update 300: prompt 37/40 done
+17564.0s 871 [development] update 300: generating prompt 38/40
+17564.3s 872 [development] update 300: prompt 38/40 done
+17564.3s 873 [development] update 300: generating prompt 39/40
+17564.6s 874 [development] update 300: prompt 39/40 done
+17564.6s 875 [development] update 300: generating prompt 40/40
+17565.1s 876 [development] update 300: prompt 40/40 done
+17754.2s 877 [DPO update 310/469] loss=0.685449 lr=1e-06 skipped=0
+17936.3s 878 [DPO update 320/469] loss=0.572468 lr=1e-06 skipped=0
+18122.1s 879 [DPO update 330/469] loss=0.449933 lr=1e-06 skipped=0
+18303.3s 880 [DPO update 340/469] loss=0.456453 lr=1e-06 skipped=0
+18487.2s 881 [DPO update 350/469] loss=0.589053 lr=1e-06 skipped=0
+18487.2s 882 [DPO] validating 1000 examples at update 350; saving best checkpoint if improved
+18715.3s 883 [DPO validation 350/469] loss=0.561288 reward_accuracy=0.718000 reward_margin=0.555022 best=False
+18907.8s 884 [DPO update 360/469] loss=0.552762 lr=1e-06 skipped=0
+19095.7s 885 [DPO update 370/469] loss=0.515730 lr=1e-06 skipped=0
+19280.6s 886 [DPO update 380/469] loss=0.541077 lr=1e-06 skipped=0
+19465.7s 887 [DPO update 390/469] loss=0.585174 lr=1e-06 skipped=0
+19648.2s 888 [DPO update 400/469] loss=0.565860 lr=1e-06 skipped=0
+19648.2s 889 [DPO] validating 1000 examples at update 400; saving best checkpoint if improved
+19876.9s 890 [DPO validation 400/469] loss=0.559932 reward_accuracy=0.720000 reward_margin=0.568794 best=False
+19883.5s 891 [development] update 400: generating 40 prompts
+19883.5s 892 [development] update 400: generating prompt 1/40
+19890.8s 893 [development] update 400: prompt 1/40 done
+19890.8s 894 [development] update 400: generating prompt 2/40
+19895.0s 895 [development] update 400: prompt 2/40 done
+19895.0s 896 [development] update 400: generating prompt 3/40
+19900.4s 897 [development] update 400: prompt 3/40 done
+19900.4s 898 [development] update 400: generating prompt 4/40
+19906.2s 899 [development] update 400: prompt 4/40 done
+19906.2s 900 [development] update 400: generating prompt 5/40
+19907.0s 901 [development] update 400: prompt 5/40 done
+19907.0s 902 [development] update 400: generating prompt 6/40
+19913.4s 903 [development] update 400: prompt 6/40 done
+19913.4s 904 [development] update 400: generating prompt 7/40
+19914.9s 905 [development] update 400: prompt 7/40 done
+19914.9s 906 [development] update 400: generating prompt 8/40
+19917.1s 907 [development] update 400: prompt 8/40 done
+19917.1s 908 [development] update 400: generating prompt 9/40
+19920.6s 909 [development] update 400: prompt 9/40 done
+19920.6s 910 [development] update 400: generating prompt 10/40
+19921.3s 911 [development] update 400: prompt 10/40 done
+19921.3s 912 [development] update 400: generating prompt 11/40
+19923.4s 913 [development] update 400: prompt 11/40 done
+19923.4s 914 [development] update 400: generating prompt 12/40
+19924.1s 915 [development] update 400: prompt 12/40 done
+19924.1s 916 [development] update 400: generating prompt 13/40
+19931.6s 917 [development] update 400: prompt 13/40 done
+19931.6s 918 [development] update 400: generating prompt 14/40
+19939.0s 919 [development] update 400: prompt 14/40 done
+19939.0s 920 [development] update 400: generating prompt 15/40
+19946.3s 921 [development] update 400: prompt 15/40 done
+19946.3s 922 [development] update 400: generating prompt 16/40
+19950.1s 923 [development] update 400: prompt 16/40 done
+19950.1s 924 [development] update 400: generating prompt 17/40
+19953.9s 925 [development] update 400: prompt 17/40 done
+19953.9s 926 [development] update 400: generating prompt 18/40
+19960.4s 927 [development] update 400: prompt 18/40 done
+19960.4s 928 [development] update 400: generating prompt 19/40
+19967.7s 929 [development] update 400: prompt 19/40 done
+19967.7s 930 [development] update 400: generating prompt 20/40
+19971.0s 931 [development] update 400: prompt 20/40 done
+19971.0s 932 [development] update 400: generating prompt 21/40
+19975.3s 933 [development] update 400: prompt 21/40 done
+19975.3s 934 [development] update 400: generating prompt 22/40
+19978.5s 935 [development] update 400: prompt 22/40 done
+19978.5s 936 [development] update 400: generating prompt 23/40
+19980.9s 937 [development] update 400: prompt 23/40 done
+19980.9s 938 [development] update 400: generating prompt 24/40
+19988.6s 939 [development] update 400: prompt 24/40 done
+19988.6s 940 [development] update 400: generating prompt 25/40
+19996.0s 941 [development] update 400: prompt 25/40 done
+19996.0s 942 [development] update 400: generating prompt 26/40
+20002.0s 943 [development] update 400: prompt 26/40 done
+20002.0s 944 [development] update 400: generating prompt 27/40
+20006.2s 945 [development] update 400: prompt 27/40 done
+20006.2s 946 [development] update 400: generating prompt 28/40
+20013.6s 947 [development] update 400: prompt 28/40 done
+20013.6s 948 [development] update 400: generating prompt 29/40
+20014.7s 949 [development] update 400: prompt 29/40 done
+20014.7s 950 [development] update 400: generating prompt 30/40
+20015.1s 951 [development] update 400: prompt 30/40 done
+20015.1s 952 [development] update 400: generating prompt 31/40
+20015.5s 953 [development] update 400: prompt 31/40 done
+20015.5s 954 [development] update 400: generating prompt 32/40
+20016.5s 955 [development] update 400: prompt 32/40 done
+20016.5s 956 [development] update 400: generating prompt 33/40
+20016.8s 957 [development] update 400: prompt 33/40 done
+20016.8s 958 [development] update 400: generating prompt 34/40
+20017.1s 959 [development] update 400: prompt 34/40 done
+20017.1s 960 [development] update 400: generating prompt 35/40
+20017.3s 961 [development] update 400: prompt 35/40 done
+20017.3s 962 [development] update 400: generating prompt 36/40
+20017.7s 963 [development] update 400: prompt 36/40 done
+20017.7s 964 [development] update 400: generating prompt 37/40
+20018.0s 965 [development] update 400: prompt 37/40 done
+20018.0s 966 [development] update 400: generating prompt 38/40
+20018.3s 967 [development] update 400: prompt 38/40 done
+20018.3s 968 [development] update 400: generating prompt 39/40
+20018.7s 969 [development] update 400: prompt 39/40 done
+20018.7s 970 [development] update 400: generating prompt 40/40
+20019.1s 971 [development] update 400: prompt 40/40 done
+20209.3s 972 [DPO update 410/469] loss=0.624917 lr=1e-06 skipped=0
+20395.3s 973 [DPO update 420/469] loss=0.550062 lr=1e-06 skipped=0
+20581.0s 974 [DPO update 430/469] loss=0.590157 lr=1e-06 skipped=0
+20764.5s 975 [DPO update 440/469] loss=0.579426 lr=1e-06 skipped=0
+20949.3s 976 [DPO update 450/469] loss=0.681243 lr=1e-06 skipped=0
+20949.3s 977 [DPO] validating 1000 examples at update 450; saving best checkpoint if improved
+21184.6s 978 [DPO validation 450/469] loss=0.556357 reward_accuracy=0.727000 reward_margin=0.588499 best=True
+21374.2s 979 [DPO update 460/469] loss=0.471558 lr=1e-06 skipped=0
+21533.0s 980 [DPO] validating 1000 examples at update 469; saving best checkpoint if improved
+21768.7s 981 [DPO validation 469/469] loss=0.553575 reward_accuracy=0.728000 reward_margin=0.603458 best=True
+21775.2s 982 [development] update 469: generating 40 prompts
+21775.2s 983 [development] update 469: generating prompt 1/40
+21783.2s 984 [development] update 469: prompt 1/40 done
+21783.2s 985 [development] update 469: generating prompt 2/40
+21789.2s 986 [development] update 469: prompt 2/40 done
+21789.2s 987 [development] update 469: generating prompt 3/40
+21796.8s 988 [development] update 469: prompt 3/40 done
+21796.8s 989 [development] update 469: generating prompt 4/40
+21803.6s 990 [development] update 469: prompt 4/40 done
+21803.6s 991 [development] update 469: generating prompt 5/40
+21804.3s 992 [development] update 469: prompt 5/40 done
+21804.3s 993 [development] update 469: generating prompt 6/40
+21811.6s 994 [development] update 469: prompt 6/40 done
+21811.6s 995 [development] update 469: generating prompt 7/40
+21813.8s 996 [development] update 469: prompt 7/40 done
+21813.8s 997 [development] update 469: generating prompt 8/40
+21815.9s 998 [development] update 469: prompt 8/40 done
+21815.9s 999 [development] update 469: generating prompt 9/40
+21819.2s 1000 [development] update 469: prompt 9/40 done
+21819.2s 1001 [development] update 469: generating prompt 10/40
+21819.9s 1002 [development] update 469: prompt 10/40 done
+21819.9s 1003 [development] update 469: generating prompt 11/40
+21821.3s 1004 [development] update 469: prompt 11/40 done
+21821.3s 1005 [development] update 469: generating prompt 12/40
+21822.0s 1006 [development] update 469: prompt 12/40 done
+21822.0s 1007 [development] update 469: generating prompt 13/40
+21829.3s 1008 [development] update 469: prompt 13/40 done
+21829.3s 1009 [development] update 469: generating prompt 14/40
+21836.7s 1010 [development] update 469: prompt 14/40 done
+21836.7s 1011 [development] update 469: generating prompt 15/40
+21844.0s 1012 [development] update 469: prompt 15/40 done
+21844.0s 1013 [development] update 469: generating prompt 16/40
+21852.9s 1014 [development] update 469: prompt 16/40 done
+21852.9s 1015 [development] update 469: generating prompt 17/40
+21855.9s 1016 [development] update 469: prompt 17/40 done
+21855.9s 1017 [development] update 469: generating prompt 18/40
+21863.3s 1018 [development] update 469: prompt 18/40 done
+21863.3s 1019 [development] update 469: generating prompt 19/40
+21870.6s 1020 [development] update 469: prompt 19/40 done
+21870.6s 1021 [development] update 469: generating prompt 20/40
+21873.6s 1022 [development] update 469: prompt 20/40 done
+21873.6s 1023 [development] update 469: generating prompt 21/40
+21878.4s 1024 [development] update 469: prompt 21/40 done
+21878.4s 1025 [development] update 469: generating prompt 22/40
+21881.5s 1026 [development] update 469: prompt 22/40 done
+21881.5s 1027 [development] update 469: generating prompt 23/40
+21883.8s 1028 [development] update 469: prompt 23/40 done
+21883.8s 1029 [development] update 469: generating prompt 24/40
+21891.1s 1030 [development] update 469: prompt 24/40 done
+21891.1s 1031 [development] update 469: generating prompt 25/40
+21898.5s 1032 [development] update 469: prompt 25/40 done
+21898.5s 1033 [development] update 469: generating prompt 26/40
+21905.7s 1034 [development] update 469: prompt 26/40 done
+21905.7s 1035 [development] update 469: generating prompt 27/40
+21910.2s 1036 [development] update 469: prompt 27/40 done
+21910.2s 1037 [development] update 469: generating prompt 28/40
+21917.5s 1038 [development] update 469: prompt 28/40 done
+21917.5s 1039 [development] update 469: generating prompt 29/40
+21918.5s 1040 [development] update 469: prompt 29/40 done
+21918.5s 1041 [development] update 469: generating prompt 30/40
+21919.0s 1042 [development] update 469: prompt 30/40 done
+21919.0s 1043 [development] update 469: generating prompt 31/40
+21919.4s 1044 [development] update 469: prompt 31/40 done
+21919.4s 1045 [development] update 469: generating prompt 32/40
+21920.6s 1046 [development] update 469: prompt 32/40 done
+21920.6s 1047 [development] update 469: generating prompt 33/40
+21921.0s 1048 [development] update 469: prompt 33/40 done
+21921.0s 1049 [development] update 469: generating prompt 34/40
+21921.2s 1050 [development] update 469: prompt 34/40 done
+21921.2s 1051 [development] update 469: generating prompt 35/40
+21921.5s 1052 [development] update 469: prompt 35/40 done
+21921.5s 1053 [development] update 469: generating prompt 36/40
+21921.8s 1054 [development] update 469: prompt 36/40 done
+21921.8s 1055 [development] update 469: generating prompt 37/40
+21922.2s 1056 [development] update 469: prompt 37/40 done
+21922.2s 1057 [development] update 469: generating prompt 38/40
+21922.5s 1058 [development] update 469: prompt 38/40 done
+21922.5s 1059 [development] update 469: generating prompt 39/40
+21922.8s 1060 [development] update 469: prompt 39/40 done
+21922.8s 1061 [development] update 469: generating prompt 40/40
+21923.2s 1062 [development] update 469: prompt 40/40 done
+21951.0s 1063 {
+21951.0s 1064 "status": "completed",
+21951.0s 1065 "updates": 469,
+21951.0s 1066 "skipped_updates": 0,
+21951.0s 1067 "best_metrics": {
+21951.0s 1068 "reward_accuracy": 0.728,
+21951.0s 1069 "reward_margin": 0.6034575575925409,
+21951.0s 1070 "chosen_logp": -344.70194248595834,
+21951.0s 1071 "rejected_logp": -315.5843812007904,
+21951.0s 1072 "loss": 0.5535754773980006
+21951.0s 1073 },
+21951.0s 1074 "memory": {
+21951.0s 1075 "policy_peak_bytes": 10131170816,
+21951.0s 1076 "reference_peak_bytes": 2763738624
+21951.0s 1077 }
+21951.0s 1078 }
+21974.0s 1079 FULL TRAINING COMPLETE: uf evaluation pending
+21974.0s 1080 Both manual DPO training tracks complete; no DPO-versus-SFT quality claim yet.
+21977.3s 1081 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+21977.3s 1082 cells[i][c] = re.sub('\\\\\|', '|', cell)
+21977.5s 1083 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+21977.5s 1084 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+21978.2s 1085 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+21978.4s 1086 [NbConvertApp] Writing 746543 bytes to __notebook__.ipynb
+21980.8s 1087 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+21981.4s 1088 [NbConvertApp] Writing 1040090 bytes to __results__.html

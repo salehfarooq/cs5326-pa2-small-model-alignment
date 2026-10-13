@@ -1,0 +1,350 @@
+Time#Log Message7.5s00.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.5s10.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.5s20.00s - to python to disable frozen modules.
+7.5s30.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s40.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s50.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s60.00s - to python to disable frozen modules.
+8.2s70.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+17.0s8{
+17.0s9  "python": "3.13.15",
+17.0s10  "torch": "2.11.0+cu128",
+17.0s11  "cuda": "12.8",
+17.0s12  "cuda_available": true,
+17.0s13  "gpu_count": 2,
+17.0s14  "packages": {
+17.0s15    "transformers": "5.16.1",
+17.0s16    "datasets": "4.8.5",
+17.0s17    "accelerate": "1.14.0",
+17.0s18    "huggingface_hub": "1.29.0",
+17.0s19    "peft": "0.20.0",
+17.0s20    "trl": null,
+17.0s21    "torchao": "0.10.0"
+17.0s22  },
+17.0s23  "devices": [
+17.0s24    {
+17.0s25      "index": 0,
+17.0s26      "name": "Tesla T4",
+17.0s27      "memory_gib": 14.56
+17.0s28    },
+17.0s29    {
+17.0s30      "index": 1,
+17.0s31      "name": "Tesla T4",
+17.0s32      "memory_gib": 14.56
+17.0s33    }
+17.0s34  ]
+17.0s35}
+17.0s36Both T4 GPUs execute tensors.
+38.4s37tasets==4.8.5) (2.7.1)
+38.4s38Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.4.0)
+38.4s39Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (26.1.0)
+38.4s40Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.8.0)
+38.4s41Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (6.7.1)
+38.4s42Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (0.5.2)
+38.4s43Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets==4.8.5) (1.24.5)
+38.4s44Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.13/dist-packages (from cuda-bindings<13,>=12.9.4->torch>=2.0.0->accelerate==1.15.0) (1.8.0)
+38.4s45Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.13/dist-packages (from sympy>=1.13.3->torch>=2.0.0->accelerate==1.15.0) (1.3.0)
+38.4s46Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.13/dist-packages (from jinja2->torch>=2.0.0->accelerate==1.15.0) (3.0.3)
+38.4s47Downloading transformers-4.57.6-py3-none-any.whl (12.0 MB)
+38.4s48   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 83.1 MB/s eta 0:00:00
+38.4s49Downloading accelerate-1.15.0-py3-none-any.whl (394 kB)
+38.4s50   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 17.7 MB/s eta 0:00:00
+38.4s51Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+38.4s52   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 23.4 MB/s eta 0:00:00
+38.4s53Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+38.4s54   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 74.0 MB/s eta 0:00:00
+38.4s55Installing collected packages: huggingface_hub, tokenizers, transformers, accelerate
+38.4s56  Attempting uninstall: huggingface_hub
+38.4s57    Found existing installation: huggingface_hub 1.29.0
+38.4s58    Uninstalling huggingface_hub-1.29.0:
+38.4s59      Successfully uninstalled huggingface_hub-1.29.0
+38.4s60  Attempting uninstall: tokenizers
+38.4s61    Found existing installation: tokenizers 0.23.1
+38.4s62    Uninstalling tokenizers-0.23.1:
+38.4s63      Successfully uninstalled tokenizers-0.23.1
+38.4s64  Attempting uninstall: transformers
+38.4s65    Found existing installation: transformers 5.16.1
+38.4s66    Uninstalling transformers-5.16.1:
+38.4s67      Successfully uninstalled transformers-5.16.1
+38.4s68  Attempting uninstall: accelerate
+38.4s69    Found existing installation: accelerate 1.14.0
+38.4s70    Uninstalling accelerate-1.14.0:
+38.4s71      Successfully uninstalled accelerate-1.14.0
+38.4s72ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+38.4s73gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+38.4s74diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+38.4s75Successfully installed accelerate-1.15.0 huggingface_hub-0.36.2 tokenizers-0.22.2 transformers-4.57.6
+38.4s76
+75.5s77Qwen model imports pass
+75.5s78
+75.5s79{
+75.5s80  "torch": "2.11.0+cu128",
+75.5s81  "transformers": "4.57.6",
+75.5s82  "datasets": "4.8.5",
+75.5s83  "accelerate": "1.15.0",
+75.5s84  "huggingface_hub": "0.36.2"
+75.5s85}
+75.5s86PA2 dependencies ready. CUDA PyTorch preserved.
+76.8s87Obtaining file:///kaggle/working/pa2-reviewed-4d55f6187e47
+76.8s88  Installing build dependencies: started
+77.0s89Obtaining file:///kaggle/working/pa2-reviewed-4d55f6187e47
+77.0s90  Installing build dependencies: started
+81.9s91  Installing build dependencies: finished with status 'done'
+81.9s92  Checking if build backend supports build_editable: started
+82.1s93  Checking if build backend supports build_editable: finished with status 'done'
+82.1s94  Getting requirements to build editable: started
+82.1s95  Installing build dependencies: finished with status 'done'
+82.1s96  Checking if build backend supports build_editable: started
+82.1s97  Checking if build backend supports build_editable: finished with status 'done'
+82.1s98  Getting requirements to build editable: started
+82.3s99  Getting requirements to build editable: finished with status 'done'
+82.3s100  Preparing editable metadata (pyproject.toml): started
+82.5s101  Getting requirements to build editable: finished with status 'done'
+82.5s102  Preparing editable metadata (pyproject.toml): started
+82.6s103  Preparing editable metadata (pyproject.toml): finished with status 'done'
+82.8s104  Preparing editable metadata (pyproject.toml): finished with status 'done'
+83.0s105Building wheels for collected packages: small-model-alignment-starter
+83.0s106  Building editable for small-model-alignment-starter (pyproject.toml): started
+83.2s107Building wheels for collected packages: small-model-alignment-starter
+83.2s108  Building editable for small-model-alignment-starter (pyproject.toml): started
+83.2s109  Building editable for small-model-alignment-starter (pyproject.toml): finished with status 'done'
+83.2s110  Created wheel for small-model-alignment-starter: filename=small_model_alignment_starter-0.1.0-0.editable-py3-none-any.whl size=3060 sha256=6bed73e2fadc609fcfde080962e15fe77f424da4f439f9cc2cd3abf35af9a7c4
+83.2s111  Stored in directory: /tmp/pip-ephem-wheel-cache-q9vfxbf7/wheels/07/a9/18/3b5eaa21345532af2bac5c8f8c7f9607c4d35ce74ec9fdfbeb
+83.2s112Successfully built small-model-alignment-starter
+83.2s113Installing collected packages: small-model-alignment-starter
+83.3s114Successfully installed small-model-alignment-starter-0.1.0
+83.4s115  Building editable for small-model-alignment-starter (pyproject.toml): finished with status 'done'
+83.4s116  Created wheel for small-model-alignment-starter: filename=small_model_alignment_starter-0.1.0-0.editable-py3-none-any.whl size=3060 sha256=6bed73e2fadc609fcfde080962e15fe77f424da4f439f9cc2cd3abf35af9a7c4
+83.4s117  Stored in directory: /tmp/pip-ephem-wheel-cache-q9vfxbf7/wheels/07/a9/18/3b5eaa21345532af2bac5c8f8c7f9607c4d35ce74ec9fdfbeb
+83.4s118Successfully built small-model-alignment-starter
+83.4s119Installing collected packages: small-model-alignment-starter
+83.4s120Successfully installed small-model-alignment-starter-0.1.0
+83.4s121Reviewed source installed: /kaggle/working/pa2-reviewed-4d55f6187e47
+83.4s122Source archive SHA256: 4d55f6187e4708a60789394bb7c237c26e87bf664038a78faff6c2c987456ff8
+83.4s123Verified source files: 39
+95.0s124.......s.........s............................s......................... [ 26%]
+95.0s125........................................................................ [ 53%]
+95.0s126........................................................................ [ 80%]
+95.0s127....................................................                     [100%]
+95.0s128265 passed, 3 skipped in 8.08s
+95.0s129
+95.0s130Kaggle suite passed.
+97.7s131Verified all prepared inputs: /kaggle/input/datasets/muhammadsalehfarooq/pa2-reviewed-training-data-seed42
+104.3s132`torch_dtype` is deprecated! Use `dtype` instead!
+132.2s133[BASE sanity] {"instruction": "A colleague thinks assigning b = a copies a Python list. Explain the mistake and give a tiny example using a fresh list of two planets.", "output": "The mistake is that you are trying to assign a copy of a list, not a reference to it. In Python, when you use the assignment operator (=), you are creating a new variable with the same value as the left-hand side. However, when you try to assign a list to a variable, you are creating an entirely new list object, which is different from the original list.\n\nHere's a tiny example:\n\n```python\n# Original list\nplanet_list = [1, 2, 3]\n\n# Trying to assign a new list to a reference\nnew_planet_list = planet_list\n\nprint(planet_list)  # Output: [1,2,3]\nprint(new_planet_list)  #\n\n# Assigning a copy of the list\nplanet_copy = planet_list.copy()\n\nprint(planet_copy)  # Now we have a new list\nprint(planet_lists)  # We still have the original list\n```\n\nIn this example, `planet_list` is a reference to the original list, so when you try `planet_list = planet_copy`, you are creating another reference to the same list. This is why you see two lists in the output.", "prompt_tokens": 32, "response_tokens": 240, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 238, "repeated_ngrams": 25, "repeated_ngram_fraction": 0.10504201680672269}
+132.2s134[BASE sanity] {"instruction": "In exactly three short bullet points, explain why the Moon does not fall straight onto Earth. Avoid equations.", "output": "The Moon orbits around Earth in an elliptical path, with the center of the orbit being at the point where Earth and the Sun are closest together (perigee) and farthest apart (apogee). The distance between the Moon and Earth varies throughout its orbit, which is why it takes approximately 27.3 days for the Moon to complete one full orbit around Earth. This means that the Moon's path is not a straight line, but rather an ellipse.", "prompt_tokens": 25, "response_tokens": 96, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 94, "repeated_ngrams": 0, "repeated_ngram_fraction": 0.0}
+132.2s135[BASE sanity] {"instruction": "A message asks me to reveal a coworker's private medical diagnosis. Give a respectful response and a useful alternative.", "output": "I am sorry, but I cannot provide a confidential medical diagnosis without the individual's explicit consent. It is important to respect their privacy and confidentiality. If you have any questions or concerns about your coworker's health, please consult with a healthcare professional for guidance.", "prompt_tokens": 27, "response_tokens": 52, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 50, "repeated_ngrams": 0, "repeated_ngram_fraction": 0.0}
+140.2s136`torch_dtype` is deprecated! Use `dtype` instead!
+159.1s137[BASE sanity] {"instruction": "A colleague thinks assigning b = a copies a Python list. Explain the mistake and give a tiny example using a fresh list of two planets.", "output": "The mistake is that you are trying to assign a copy of a list, not a reference to it. In Python, when you use the assignment operator (=), you are creating a new variable with the same value as the left-hand side. However, when you try to assign a list to a variable, you are creating an entirely new list object, which is different from the original list.\n\nHere's a tiny example:\n\n```python\n# Original list\nplanet_list = [1, 2, 3]\n\n# Trying to assign a new list to a reference\nnew_planet_list = planet_list\n\nprint(planet_list)  # Output: [1,2,3]\nprint(new_planet_list)  #\n\n# Assigning a copy of the list\nplanet_copy = planet_list.copy()\n\nprint(planet_copy)  # Now we have a new list\nprint(planet_lists)  # We still have the original list\n```\n\nIn this example, `planet_list` is a reference to the original list, so when you try `planet_list = planet_copy`, you are creating another reference to the same list. This is why you see two lists in the output.", "prompt_tokens": 32, "response_tokens": 240, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 238, "repeated_ngrams": 25, "repeated_ngram_fraction": 0.10504201680672269}
+159.1s138[BASE sanity] {"instruction": "In exactly three short bullet points, explain why the Moon does not fall straight onto Earth. Avoid equations.", "output": "The Moon orbits around Earth in an elliptical path, with the center of the orbit being at the point where Earth and the Sun are closest together (perigee) and farthest apart (apogee). The distance between the Moon and Earth varies throughout its orbit, which is why it takes approximately 27.3 days for the Moon to complete one full orbit around Earth. This means that the Moon's path is not a straight line, but rather an ellipse.", "prompt_tokens": 25, "response_tokens": 96, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 94, "repeated_ngrams": 0, "repeated_ngram_fraction": 0.0}
+159.1s139[BASE sanity] {"instruction": "A message asks me to reveal a coworker's private medical diagnosis. Give a respectful response and a useful alternative.", "output": "I am sorry, but I cannot provide a confidential medical diagnosis without the individual's explicit consent. It is important to respect their privacy and confidentiality. If you have any questions or concerns about your coworker's health, please consult with a healthcare professional for guidance.", "prompt_tokens": 27, "response_tokens": 52, "empty_output": false, "finish_reason": "eos", "settings": {"do_sample": false, "max_new_tokens": 256, "repetition_penalty": 1.05, "no_repeat_ngram_size": 4, "eos_token_id": 151643, "pad_token_id": 151643}, "ngram_size": 3, "ngram_count": 50, "repeated_ngrams": 0, "repeated_ngram_fraction": 0.0}
+166.8s140[BASE 1/300] tokens=256 finish=length empty=False
+171.4s141[BASE 2/300] tokens=157 finish=eos empty=False
+174.1s142[BASE 3/300] tokens=87 finish=eos empty=False
+197.1s143[BASE 10/300] tokens=112 finish=eos empty=False
+238.3s144[BASE 20/300] tokens=63 finish=eos empty=False
+296.7s145[BASE 30/300] tokens=256 finish=length empty=False
+349.9s146[BASE 40/300] tokens=94 finish=eos empty=False
+403.8s147[BASE 50/300] tokens=8 finish=eos empty=False
+436.8s148[BASE 60/300] tokens=154 finish=eos empty=False
+505.6s149[BASE 70/300] tokens=14 finish=eos empty=False
+542.0s150[BASE 80/300] tokens=31 finish=eos empty=False
+584.5s151[BASE 90/300] tokens=69 finish=eos empty=False
+628.5s152[BASE 100/300] tokens=109 finish=eos empty=False
+670.4s153[BASE 110/300] tokens=158 finish=eos empty=False
+712.9s154[BASE 120/300] tokens=32 finish=eos empty=False
+758.5s155[BASE 130/300] tokens=66 finish=eos empty=False
+812.1s156[BASE 140/300] tokens=14 finish=eos empty=False
+863.7s157[BASE 150/300] tokens=225 finish=eos empty=False
+915.0s158[BASE 160/300] tokens=256 finish=length empty=False
+967.0s159[BASE 170/300] tokens=90 finish=eos empty=False
+1024.7s160[BASE 180/300] tokens=103 finish=eos empty=False
+1068.4s161[BASE 190/300] tokens=167 finish=eos empty=False
+1123.8s162[BASE 200/300] tokens=210 finish=eos empty=False
+1166.7s163[BASE 210/300] tokens=256 finish=length empty=False
+1215.3s164[BASE 220/300] tokens=42 finish=eos empty=False
+1257.8s165[BASE 230/300] tokens=256 finish=length empty=False
+1305.7s166[BASE 240/300] tokens=119 finish=eos empty=False
+1356.8s167[BASE 250/300] tokens=256 finish=length empty=False
+1398.9s168[BASE 260/300] tokens=128 finish=eos empty=False
+1463.1s169[BASE 270/300] tokens=256 finish=length empty=False
+1518.0s170[BASE 280/300] tokens=174 finish=eos empty=False
+1575.4s171[BASE 290/300] tokens=84 finish=eos empty=False
+1627.5s172[BASE 300/300] tokens=5 finish=eos empty=False
+1627.5s173{
+1627.5s174  "status": "completed",
+1627.5s175  "completed": 300,
+1627.5s176  "total": 300,
+1627.5s177  "model_id": "Qwen/Qwen2.5-0.5B",
+1627.5s178  "model_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+1627.5s179  "bank_sha256": "3989bb58dae97eb5fded3b21de17f8d76605488d0ba3ab7d17fc77e38fdfd6c1",
+1627.5s180  "decoding": {
+1627.5s181    "do_sample": false,
+1627.5s182    "max_new_tokens": 256,
+1627.5s183    "repetition_penalty": 1.05,
+1627.5s184    "no_repeat_ngram_size": 4
+1627.5s185  },
+1627.5s186  "parameter_dtype": "torch.float32",
+1627.5s187  "prompt_policy": "preserve full formatted instruction; no truncation",
+1627.5s188  "outputs_sha256": "2d1e6166833b43192d37cc62fc73043aa3600f594876deed67e34c766e689613",
+1627.5s189  "empty_outputs": 0,
+1627.5s190  "length_limited": 113
+1627.5s191}
+1629.6s192BASELINE COMPLETE: 300/300. Full SFT is next.
+1656.1s193`torch_dtype` is deprecated! Use `dtype` instead!
+1662.9s194[SFT] starting 30000 training examples, 938 planned updates; progress: /kaggle/working/pa2_runs/sft_full/metrics.jsonl
+1662.9s195[SFT] validating 1000 examples at update 0; saving best checkpoint if improved
+1741.8s196[SFT validation 0/938] loss=1.374749 best=True
+1748.4s197[SFT update 1/938] loss=1.405086 lr=6.9e-07 skipped=0
+1810.7s198[SFT update 10/938] loss=1.299811 lr=6.9e-06 skipped=0
+1877.5s199[SFT update 20/938] loss=1.290920 lr=1.38e-05 skipped=0
+1948.8s200[SFT update 30/938] loss=1.402934 lr=2e-05 skipped=0
+2016.4s201[SFT update 40/938] loss=1.376560 lr=2e-05 skipped=0
+2083.4s202[SFT update 50/938] loss=1.501843 lr=2e-05 skipped=0
+2083.4s203[SFT] validating 1000 examples at update 50; saving best checkpoint if improved
+2153.4s204[SFT validation 50/938] loss=1.394346 best=False
+2221.2s205[SFT update 60/938] loss=1.421141 lr=1.99e-05 skipped=0
+2288.0s206[SFT update 70/938] loss=1.421921 lr=1.99e-05 skipped=0
+2355.4s207[SFT update 80/938] loss=1.614652 lr=1.99e-05 skipped=0
+2423.0s208[SFT update 90/938] loss=1.525974 lr=1.98e-05 skipped=0
+2488.8s209[SFT update 100/938] loss=1.482758 lr=1.97e-05 skipped=0
+2488.8s210[SFT] validating 1000 examples at update 100; saving best checkpoint if improved
+2559.0s211[SFT validation 100/938] loss=1.401381 best=False
+2625.7s212[SFT update 110/938] loss=1.378094 lr=1.96e-05 skipped=0
+2691.9s213[SFT update 120/938] loss=1.343177 lr=1.95e-05 skipped=0
+2759.3s214[SFT update 130/938] loss=1.542290 lr=1.94e-05 skipped=0
+2826.2s215[SFT update 140/938] loss=1.477001 lr=1.93e-05 skipped=0
+2894.2s216[SFT update 150/938] loss=1.457021 lr=1.92e-05 skipped=0
+2894.2s217[SFT] validating 1000 examples at update 150; saving best checkpoint if improved
+2964.3s218[SFT validation 150/938] loss=1.403595 best=False
+3031.8s219[SFT update 160/938] loss=1.508658 lr=1.9e-05 skipped=0
+3099.2s220[SFT update 170/938] loss=1.337907 lr=1.89e-05 skipped=0
+3168.7s221[SFT update 180/938] loss=1.203884 lr=1.87e-05 skipped=0
+3235.2s222[SFT update 190/938] loss=1.604318 lr=1.85e-05 skipped=0
+3302.6s223[SFT update 200/938] loss=1.404874 lr=1.83e-05 skipped=0
+3302.6s224[SFT] validating 1000 examples at update 200; saving best checkpoint if improved
+3372.6s225[SFT validation 200/938] loss=1.403624 best=False
+3440.9s226[SFT update 210/938] loss=1.525809 lr=1.81e-05 skipped=0
+3507.9s227[SFT update 220/938] loss=1.583365 lr=1.79e-05 skipped=0
+3576.1s228[SFT update 230/938] loss=1.447911 lr=1.77e-05 skipped=0
+3644.3s229[SFT update 240/938] loss=1.451538 lr=1.75e-05 skipped=0
+3712.6s230[SFT update 250/938] loss=1.320600 lr=1.72e-05 skipped=0
+3712.6s231[SFT] validating 1000 examples at update 250; saving best checkpoint if improved
+3782.6s232[SFT validation 250/938] loss=1.398119 best=False
+3850.5s233[SFT update 260/938] loss=1.373708 lr=1.7e-05 skipped=0
+3918.1s234[SFT update 270/938] loss=1.392807 lr=1.68e-05 skipped=0
+3985.6s235[SFT update 280/938] loss=1.512970 lr=1.65e-05 skipped=0
+4052.4s236[SFT update 290/938] loss=1.417780 lr=1.62e-05 skipped=0
+4121.5s237[SFT update 300/938] loss=1.441393 lr=1.6e-05 skipped=0
+4121.5s238[SFT] validating 1000 examples at update 300; saving best checkpoint if improved
+4191.3s239[SFT validation 300/938] loss=1.394744 best=False
+4260.9s240[SFT update 310/938] loss=1.439219 lr=1.57e-05 skipped=0
+4327.1s241[SFT update 320/938] loss=1.426983 lr=1.54e-05 skipped=0
+4397.0s242[SFT update 330/938] loss=1.553414 lr=1.51e-05 skipped=0
+4467.1s243[SFT update 340/938] loss=1.334333 lr=1.48e-05 skipped=0
+4534.3s244[SFT update 350/938] loss=1.308813 lr=1.45e-05 skipped=0
+4534.3s245[SFT] validating 1000 examples at update 350; saving best checkpoint if improved
+4604.3s246[SFT validation 350/938] loss=1.389210 best=False
+4672.7s247[SFT update 360/938] loss=1.254417 lr=1.42e-05 skipped=0
+4740.1s248[SFT update 370/938] loss=1.511425 lr=1.39e-05 skipped=0
+4808.8s249[SFT update 380/938] loss=1.379749 lr=1.35e-05 skipped=0
+4875.3s250[SFT update 390/938] loss=1.480814 lr=1.32e-05 skipped=0
+4942.3s251[SFT update 400/938] loss=1.435221 lr=1.29e-05 skipped=0
+4942.3s252[SFT] validating 1000 examples at update 400; saving best checkpoint if improved
+5012.1s253[SFT validation 400/938] loss=1.384185 best=False
+5078.5s254[SFT update 410/938] loss=1.431342 lr=1.25e-05 skipped=0
+5145.4s255[SFT update 420/938] loss=1.327985 lr=1.22e-05 skipped=0
+5214.6s256[SFT update 430/938] loss=1.290897 lr=1.19e-05 skipped=0
+5283.7s257[SFT update 440/938] loss=1.468949 lr=1.15e-05 skipped=0
+5351.1s258[SFT update 450/938] loss=1.445478 lr=1.12e-05 skipped=0
+5351.1s259[SFT] validating 1000 examples at update 450; saving best checkpoint if improved
+5421.0s260[SFT validation 450/938] loss=1.380094 best=False
+5488.5s261[SFT update 460/938] loss=1.422794 lr=1.08e-05 skipped=0
+5556.3s262[SFT update 470/938] loss=1.439258 lr=1.05e-05 skipped=0
+5622.6s263[SFT update 480/938] loss=1.288385 lr=1.02e-05 skipped=0
+5690.1s264[SFT update 490/938] loss=1.271893 lr=9.81e-06 skipped=0
+5756.2s265[SFT update 500/938] loss=1.370529 lr=9.46e-06 skipped=0
+5756.2s266[SFT] validating 1000 examples at update 500; saving best checkpoint if improved
+5834.4s267[SFT validation 500/938] loss=1.373875 best=True
+5901.8s268[SFT update 510/938] loss=1.344435 lr=9.12e-06 skipped=0
+5970.9s269[SFT update 520/938] loss=1.419985 lr=8.78e-06 skipped=0
+6045.2s270[SFT update 530/938] loss=1.425025 lr=8.43e-06 skipped=0
+6113.6s271[SFT update 540/938] loss=1.398529 lr=8.09e-06 skipped=0
+6180.9s272[SFT update 550/938] loss=1.225126 lr=7.76e-06 skipped=0
+6180.9s273[SFT] validating 1000 examples at update 550; saving best checkpoint if improved
+6259.9s274[SFT validation 550/938] loss=1.369020 best=True
+6329.1s275[SFT update 560/938] loss=1.447187 lr=7.42e-06 skipped=0
+6394.7s276[SFT update 570/938] loss=1.227924 lr=7.09e-06 skipped=0
+6465.3s277[SFT update 580/938] loss=1.223075 lr=6.76e-06 skipped=0
+6531.6s278[SFT update 590/938] loss=1.318936 lr=6.43e-06 skipped=0
+6599.0s279[SFT update 600/938] loss=1.408444 lr=6.11e-06 skipped=0
+6599.0s280[SFT] validating 1000 examples at update 600; saving best checkpoint if improved
+6677.4s281[SFT validation 600/938] loss=1.363931 best=True
+6746.7s282[SFT update 610/938] loss=1.359059 lr=5.8e-06 skipped=0
+6818.3s283[SFT update 620/938] loss=1.370837 lr=5.49e-06 skipped=0
+6885.5s284[SFT update 630/938] loss=1.316971 lr=5.18e-06 skipped=0
+6953.5s285[SFT update 640/938] loss=1.467036 lr=4.88e-06 skipped=0
+7020.1s286[SFT update 650/938] loss=1.602673 lr=4.59e-06 skipped=0
+7020.1s287[SFT] validating 1000 examples at update 650; saving best checkpoint if improved
+7098.4s288[SFT validation 650/938] loss=1.359089 best=True
+7167.4s289[SFT update 660/938] loss=1.380766 lr=4.3e-06 skipped=0
+7237.8s290[SFT update 670/938] loss=1.522131 lr=4.02e-06 skipped=0
+7307.4s291[SFT update 680/938] loss=1.480939 lr=3.75e-06 skipped=0
+7376.3s292[SFT update 690/938] loss=1.502115 lr=3.48e-06 skipped=0
+7444.5s293[SFT update 700/938] loss=1.217381 lr=3.22e-06 skipped=0
+7444.5s294[SFT] validating 1000 examples at update 700; saving best checkpoint if improved
+7522.8s295[SFT validation 700/938] loss=1.355426 best=True
+7592.2s296[SFT update 710/938] loss=1.445703 lr=2.97e-06 skipped=0
+7662.8s297[SFT update 720/938] loss=1.236030 lr=2.73e-06 skipped=0
+7731.6s298[SFT update 730/938] loss=1.470683 lr=2.5e-06 skipped=0
+7798.9s299[SFT update 740/938] loss=1.377815 lr=2.27e-06 skipped=0
+7867.6s300[SFT update 750/938] loss=1.396339 lr=2.06e-06 skipped=0
+7867.6s301[SFT] validating 1000 examples at update 750; saving best checkpoint if improved
+7946.0s302[SFT validation 750/938] loss=1.352305 best=True
+8019.3s303[SFT update 760/938] loss=1.376054 lr=1.85e-06 skipped=0
+8086.7s304[SFT update 770/938] loss=1.509752 lr=1.66e-06 skipped=0
+8153.3s305[SFT update 780/938] loss=1.486236 lr=1.47e-06 skipped=0
+8220.8s306[SFT update 790/938] loss=1.258892 lr=1.3e-06 skipped=0
+8287.4s307[SFT update 800/938] loss=1.368690 lr=1.13e-06 skipped=0
+8287.4s308[SFT] validating 1000 examples at update 800; saving best checkpoint if improved
+8365.8s309[SFT validation 800/938] loss=1.350144 best=True
+8432.1s310[SFT update 810/938] loss=1.480294 lr=9.77e-07 skipped=0
+8504.2s311[SFT update 820/938] loss=1.585836 lr=8.34e-07 skipped=0
+8572.0s312[SFT update 830/938] loss=1.575111 lr=7.01e-07 skipped=0
+8639.4s313[SFT update 840/938] loss=1.356489 lr=5.8e-07 skipped=0
+8708.6s314[SFT update 850/938] loss=1.212703 lr=4.69e-07 skipped=0
+8708.6s315[SFT] validating 1000 examples at update 850; saving best checkpoint if improved
+8787.0s316[SFT validation 850/938] loss=1.348913 best=True
+8855.3s317[SFT update 860/938] loss=1.343867 lr=3.7e-07 skipped=0
+8924.5s318[SFT update 870/938] loss=1.396902 lr=2.83e-07 skipped=0
+8993.3s319[SFT update 880/938] loss=1.223634 lr=2.07e-07 skipped=0
+9059.6s320[SFT update 890/938] loss=1.280201 lr=1.43e-07 skipped=0
+9127.8s321[SFT update 900/938] loss=1.349707 lr=9.07e-08 skipped=0
+9127.8s322[SFT] validating 1000 examples at update 900; saving best checkpoint if improved
+9206.4s323[SFT validation 900/938] loss=1.348458 best=True
+9276.1s324[SFT update 910/938] loss=1.522789 lr=5.02e-08 skipped=0
+9346.6s325[SFT update 920/938] loss=1.483360 lr=2.16e-08 skipped=0
+9414.3s326[SFT update 930/938] loss=1.268491 lr=4.84e-09 skipped=0
+9464.8s327[SFT] validating 1000 examples at update 938; saving best checkpoint if improved
+9543.2s328[SFT validation 938/938] loss=1.348410 best=True
+9560.8s329{
+9560.8s330  "status": "completed",
+9560.8s331  "updates": 938,
+9560.8s332  "skipped_updates": 0,
+9560.8s333  "best_metrics": {
+9560.8s334    "loss": 1.3484098222834733
+9560.8s335  },
+9560.8s336  "memory": {
+9560.8s337    "policy_peak_bytes": 11223079424,
+9560.8s338    "reference_peak_bytes": null
+9560.8s339  }
+9560.8s340}
+9563.0s341FULL SFT COMPLETE. Review validation curves and development outputs before DPO.
+9566.3s342/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+9566.3s343  cells[i][c] = re.sub('\\\\\|', '|', cell)
+9566.5s344/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+9566.5s345  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+9567.3s346[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+9567.4s347[NbConvertApp] Writing 654514 bytes to __notebook__.ipynb
+9569.9s348[NbConvertApp] Converting notebook __notebook__.ipynb to html
+9570.5s349[NbConvertApp] Writing 954490 bytes to __results__.html

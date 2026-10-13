@@ -1,0 +1,185 @@
+{
+  "evaluation_bank_unique_instructions": 990,
+  "status": "success",
+  "tracks": {
+    "alpaca_eval": {
+      "evaluation_prompt_leakage": null,
+      "exclusions": null,
+      "filter_counts": {
+        "duplicate_prompt": 0,
+        "empty_text": 0,
+        "identical_responses": 0,
+        "input": 805,
+        "invalid_record": 0,
+        "kept": 805,
+        "multi_turn": 0,
+        "prompt_mismatch": 0
+      },
+      "manifest_sha256": "06060e0a02f2b736ae590732e0939c364849830c113ee70cceb84eb20dd46d87",
+      "sizes": {
+        "eval": 300
+      },
+      "source_aligned_rows": 300,
+      "token_filter": null
+    },
+    "hh": {
+      "evaluation_prompt_leakage": 0,
+      "exclusions": {
+        "banks": [
+          {
+            "bytes": 600571,
+            "instructions": 805,
+            "name": "alpaca_eval.jsonl",
+            "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+            "unique_instructions": 805
+          },
+          {
+            "bytes": 94973,
+            "instructions": 300,
+            "name": "hh_rlhf_eval_300_seed42.json",
+            "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+            "unique_instructions": 185
+          }
+        ],
+        "eligible": 48424,
+        "removed": 2
+      },
+      "filter_counts": {
+        "duplicate_prompt": 815,
+        "empty_text": 48,
+        "identical_responses": 37,
+        "input": 160800,
+        "invalid_record": 0,
+        "kept": 48426,
+        "multi_turn": 111474,
+        "prompt_mismatch": 0
+      },
+      "manifest_sha256": "0092b368f539fc17ccc4c73afa23de2b7d610e54830221da2018cbe6e9d52ddd",
+      "sizes": {
+        "train": 15000,
+        "validation": 1000
+      },
+      "source_aligned_rows": 16000,
+      "token_filter": {
+        "counts": {
+          "empty_tokenized_response": 0,
+          "identical_retained_pair": 1,
+          "input": 48424,
+          "kept": 48224,
+          "prompt_too_long": 199
+        },
+        "max_length": 512,
+        "max_prompt_tokens": 256,
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "policy": "preserve_full_prompt_filter",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      }
+    },
+    "sft": {
+      "evaluation_prompt_leakage": 0,
+      "exclusions": {
+        "banks": [
+          {
+            "bytes": 600571,
+            "instructions": 805,
+            "name": "alpaca_eval.jsonl",
+            "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+            "unique_instructions": 805
+          },
+          {
+            "bytes": 94973,
+            "instructions": 300,
+            "name": "hh_rlhf_eval_300_seed42.json",
+            "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+            "unique_instructions": 185
+          }
+        ],
+        "eligible": 195743,
+        "removed": 1
+      },
+      "filter_counts": {
+        "duplicate_prompt": 0,
+        "empty_text": 31,
+        "identical_responses": 0,
+        "input": 207865,
+        "invalid_record": 0,
+        "kept": 195744,
+        "multi_turn": 0,
+        "prompt_mismatch": 12090
+      },
+      "manifest_sha256": "66a88894df9f6e00ba0b0419be98a4ff54c01106d32e095160d448cc0f70d6b9",
+      "sizes": {
+        "train": 30000,
+        "validation": 1000
+      },
+      "source_aligned_rows": 31000,
+      "token_filter": {
+        "counts": {
+          "empty_tokenized_response": 0,
+          "identical_retained_pair": 0,
+          "input": 195743,
+          "kept": 163424,
+          "prompt_too_long": 32319
+        },
+        "max_length": 512,
+        "max_prompt_tokens": 256,
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "policy": "preserve_full_prompt_filter",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      }
+    },
+    "uf": {
+      "evaluation_prompt_leakage": 0,
+      "exclusions": {
+        "banks": [
+          {
+            "bytes": 600571,
+            "instructions": 805,
+            "name": "alpaca_eval.jsonl",
+            "sha256": "33476981afb84dbdd4692d2892c32e82c926f53b90e94cb81a405b7d35398e84",
+            "unique_instructions": 805
+          },
+          {
+            "bytes": 94973,
+            "instructions": 300,
+            "name": "hh_rlhf_eval_300_seed42.json",
+            "sha256": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6",
+            "unique_instructions": 185
+          }
+        ],
+        "eligible": 60612,
+        "removed": 8
+      },
+      "filter_counts": {
+        "duplicate_prompt": 10,
+        "empty_text": 81,
+        "identical_responses": 424,
+        "input": 61135,
+        "invalid_record": 0,
+        "kept": 60620,
+        "multi_turn": 0,
+        "prompt_mismatch": 0
+      },
+      "manifest_sha256": "0d47e08df709f1fb5af6f67a323ca5ed08926fa4e6cbf875ad8d427ca1189f43",
+      "sizes": {
+        "train": 15000,
+        "validation": 1000
+      },
+      "source_aligned_rows": 16000,
+      "token_filter": {
+        "counts": {
+          "empty_tokenized_response": 0,
+          "identical_retained_pair": 0,
+          "input": 60612,
+          "kept": 49495,
+          "prompt_too_long": 11117
+        },
+        "max_length": 512,
+        "max_prompt_tokens": 256,
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "policy": "preserve_full_prompt_filter",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      }
+    }
+  }
+}

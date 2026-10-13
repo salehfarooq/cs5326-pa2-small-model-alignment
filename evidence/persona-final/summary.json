@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "training_version": 357420502,
+  "final_update": 13,
+  "final_adapter_sha256": "0f9c156c5fd85773bef61488d0978c731e3c7d44ed6697b4fb226f36ddb8ffb3",
+  "count": 40,
+  "final_blanks": 0,
+  "final_length_limits": 22,
+  "comparisons": {
+    "baseline": {
+      "identical": 34,
+      "changed_ids": [
+        "persona-cooking-03",
+        "persona-cooking-05",
+        "persona-general_help-08",
+        "persona-safety-01",
+        "persona-safety-02",
+        "persona-safety-05"
+      ]
+    },
+    "best_adapter": {
+      "identical": 36,
+      "changed_ids": [
+        "persona-cooking-03",
+        "persona-safety-01",
+        "persona-safety-02",
+        "persona-safety-05"
+      ]
+    }
+  }
+}

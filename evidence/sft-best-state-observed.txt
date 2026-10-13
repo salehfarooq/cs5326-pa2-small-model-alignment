@@ -1,0 +1,301 @@
+menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+note_alt
+
+Your Work
+
+expand_less
+
+Viewed
+
+expand_less
+
+PA2-AdvGenAI
+
+Edited
+
+expand_less
+
+PA2-AdvGenAI
+
+update
+1
+
+View Active Events
+
+search
+​
+MUHAMMAD SALEH FAROOQ · 3H AGO · 1 VIEW · PRIVATE
+PA2-AdvGenAI
+edit
+PA2-AdvGenAI
+arrow_drop_up
+0
+lock
+Share
+edit
+Edit
+file_download
+Download
+more_vert
+Notebook
+Input
+Output
+Logs
+Comments (0)
+Settings
+Output Data
+arrow_back
+state.json(5.85 kB)
+get_app
+chevron_right
+"root":{11 items
+"attempts":int938
+"best_metrics":{1 item
+"loss":float1.3484098222834733
+}
+"checkpoint":string"best"
+"config":{16 items
+"accumulation":int16
+"amp":booltrue
+"batch_size":int2
+"beta":float0.1
+"clip_norm":int1
+"epochs":int1
+"eval_batch_size":int1
+"eval_every":int50
+"kind":string"sft"
+"lr":float0.00002
+"max_length":int512
+"max_updates":NULL
+"schedule":string"cosine"
+"seed":int42
+"warmup_ratio":float0.03
+"weight_decay":float0.1
+}
+"files":{10 items
+"added_tokens.json":{...}2 items
+"chat_template.jinja":{...}2 items
+"config.json":{...}2 items
+"generation_config.json":{...}2 items
+"merges.txt":{...}2 items
+"model.safetensors":{...}2 items
+"special_tokens_map.json":{...}2 items
+"tokenizer.json":{...}2 items
+"tokenizer_config.json":{...}2 items
+"vocab.json":{...}2 items
+}
+"metadata":{18 items
+"autocast_dtype":string"float16"
+"data":{...}4 items
+"git_head":string"7f2e6bc6a6f48f0843bda5e4e7be3b2151ce4a45"
+"gradient_checkpointing":booltrue
+"model_id":string"Qwen/Qwen2.5-0.5B"
+"model_revision":string"060db6499f32faf8b98477b0a26969ef7d8b9987"
+"parameter_dtype":string"float32"
+"policy_device":string"cuda:0"
+"python":string"3.13.15"
+"reference_device":NULL
+"reference_dtype":NULL
+"run_scope":string"full"
+"script_sha256":string"69a526e5c54cb4e70af0cd89ee3743d3661d203ed87d4894d41df6de55753e29"
+"seeded_not_claimed_bitwise_deterministic":booltrue
+"sft_origin":NULL
+"source_hashes":{...}8 items
+"track":string"sft"
+"versions":{...}3 items
+}
+"planned_updates":int938
+"resume_supported":boolfalse
+"skipped_updates":int0
+"status":string"running"
+"updates":int938
+}
+Output
+more_vert
+arrow_drop_down
+folder
+
+pa2-reviewed-4d55f6187e47
+
+arrow_right
+folder
+
+__pycache__
+
+arrow_right
+folder
+
+.pytest_cache
+
+arrow_right
+folder
+
+data
+
+arrow_right
+folder
+
+docs
+
+arrow_right
+folder
+
+eval_sets
+
+arrow_right
+folder
+
+scripts
+
+arrow_right
+folder
+
+small_model_alignment_starter.egg-info
+
+arrow_right
+folder
+
+src
+
+arrow_right
+folder
+
+tests
+
+article
+
+AI_USAGE.md
+
+insert_drive_file
+
+pyproject.toml
+
+article
+
+README.md
+
+article
+
+requirements.txt
+
+source_manifest.json
+
+code
+
+submission_adapter.py
+
+arrow_right
+folder
+
+pa2_outputs
+
+arrow_drop_down
+folder
+
+pa2_runs
+
+arrow_right
+folder
+
+base_alpaca
+
+arrow_drop_down
+folder
+
+sft_full
+
+arrow_drop_down
+folder
+
+best
+
+added_tokens.json
+
+insert_drive_file
+
+chat_template.jinja
+
+config.json
+
+generation_config.json
+
+article
+
+merges.txt
+
+insert_drive_file
+
+model.safetensors
+
+special_tokens_map.json
+
+state.json
+
+tokenizer_config.json
+
+tokenizer.json
+
+vocab.json
+
+arrow_right
+folder
+
+final
+
+cuda_memory.json
+
+metrics.jsonl
+
+run.json
+
+insert_drive_file
+
+base_generation.log
+
+base_sanity_controls.json
+
+insert_drive_file
+
+base_sanity_controls.log
+
+insert_drive_file
+
+sft_full.log
+
+DOWNLOAD NOTEBOOK OUTPUT
+navigate_next
+minimize
+content_copy
+help
+DOWNLOAD NOTEBOOK OUTPUT
+
+state.json (5.85 kB)

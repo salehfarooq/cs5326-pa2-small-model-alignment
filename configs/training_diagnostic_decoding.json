@@ -1,0 +1,6 @@
+{
+  "max_new_tokens": 256,
+  "no_repeat_ngram_size": 0,
+  "repetition_penalty": 1.05,
+  "do_sample": false
+}

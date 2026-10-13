@@ -1,0 +1,68 @@
+{
+  "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "scope": "all selected training/validation rows through actual adapters; no model/optimizer",
+  "status": "success",
+  "tokenizer_id": "Qwen/Qwen2.5-0.5B",
+  "tracks": {
+    "hh/train": {
+      "eos_retained_sides": 29950,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 248,
+      "minimum_scoreable_response_tokens": 2,
+      "response_sides": 30000,
+      "rows": 15000,
+      "sha256": "4499d2682754f86e9846dc8547d454eb5df724bbbf43cbb1ff49d97156f71268",
+      "zero_scoreable_response_rows": 0
+    },
+    "hh/validation": {
+      "eos_retained_sides": 1999,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 247,
+      "minimum_scoreable_response_tokens": 2,
+      "response_sides": 2000,
+      "rows": 1000,
+      "sha256": "5bdccde7cf545fec34da2177725e59a7435e15aad3731f16ca4bbcda0f8b4db6",
+      "zero_scoreable_response_rows": 0
+    },
+    "sft/train": {
+      "eos_retained_sides": 19548,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 256,
+      "minimum_scoreable_response_tokens": 3,
+      "response_sides": 30000,
+      "rows": 30000,
+      "sha256": "38036dacd7fb8a78229c1b13ca498cbcc31c96a6384ff12293851682071cc6a3",
+      "zero_scoreable_response_rows": 0
+    },
+    "sft/validation": {
+      "eos_retained_sides": 660,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 256,
+      "minimum_scoreable_response_tokens": 10,
+      "response_sides": 1000,
+      "rows": 1000,
+      "sha256": "8cd000d01761ea54732e33c1ee8f150d47030aaf0a6dfaac251191600f515b8b",
+      "zero_scoreable_response_rows": 0
+    },
+    "uf/train": {
+      "eos_retained_sides": 23099,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 256,
+      "minimum_scoreable_response_tokens": 2,
+      "response_sides": 30000,
+      "rows": 15000,
+      "sha256": "8b8adaaacb386198b25c1a824cf39f2ef734a77001cd1a9b12c346ce45b53b6c",
+      "zero_scoreable_response_rows": 0
+    },
+    "uf/validation": {
+      "eos_retained_sides": 1548,
+      "indistinguishable_pairs": 0,
+      "maximum_full_prompt_tokens": 255,
+      "minimum_scoreable_response_tokens": 2,
+      "response_sides": 2000,
+      "rows": 1000,
+      "sha256": "ae83a685b83027a5d33789d33a91f02e84cad0009178a0a182a33863abe94a28",
+      "zero_scoreable_response_rows": 0
+    }
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "saved_version": 357186707,
+  "url": "https://www.kaggle.com/code/muhammadsalehfarooq/fork-of-pa2-advgenai/log?scriptVersionId=357186707",
+  "runtime_seconds": 21982.0,
+  "tracks": {
+    "hh": {
+      "status": "completed",
+      "updates": 469,
+      "skipped_updates": 0,
+      "train_examples": 15000,
+      "config": {
+        "accumulation": 32,
+        "amp": true,
+        "batch_size": 1,
+        "beta": 0.1,
+        "clip_norm": 1.0,
+        "epochs": 1,
+        "eval_batch_size": 1,
+        "eval_every": 50,
+        "kind": "dpo",
+        "lr": 1e-06,
+        "max_length": 512,
+        "max_updates": null,
+        "schedule": "fixed",
+        "seed": 42,
+        "warmup_ratio": 0.0,
+        "weight_decay": 0.0
+      },
+      "best_update": 400,
+      "best_reward_accuracy": 0.645,
+      "final_reward_accuracy": 0.643,
+      "reference_unchanged": true,
+      "validation": [
+        {
+          "attempts": 0,
+          "best": true,
+          "chosen_logp": -173.46190647554397,
+          "event": "validation",
+          "loss": 0.6931471824645996,
+          "rejected_logp": -171.67045717811584,
+          "reward_accuracy": 0.0,
+          "reward_margin": 0.0,
+          "updates": 0
+        },
+        {
+          "attempts": 50,
+          "best": true,
+          "chosen_logp": -174.30877011346817,
+          "event": "validation",
+          "loss": 0.6614437168985605,
+          "rejected_logp": -173.49290854787827,
+          "reward_accuracy": 0.597,
+          "reward_margin": 0.09755877469247207,
+          "updates": 50
+        },
+        {
+          "attempts": 100,
+          "best": true,
+          "chosen_logp": -174.0748146595955,
+          "event": "validation",
+          "loss": 0.6518748543709516,
+          "rejected_logp": -173.64292745304107,
+          "reward_accuracy": 0.602,
+          "reward_margin": 0.13595621084608137,
+          "updates": 100
+        },
+        {
+          "attempts": 150,
+          "best": true,
+          "chosen_logp": -174.7637499871254,
+          "event": "validation",
+          "loss": 0.64178178075701,
+          "rejected_logp": -174.84193963432313,
+          "reward_accuracy": 0.626,
+          "reward_margin": 0.18696389850601555,
+          "updates": 150
+        },
+        {
+          "attempts": 200,
+          "best": false,
+          "chosen_logp": -173.2998944196701,
+          "event": "validation",
+          "loss": 0.6467721892297268,
+          "rejected_logp": -173.4200486536026,
+          "reward_accuracy": 0.607,
+          "reward_margin": 0.19116035658540204,
+          "updates": 200
+        },
+        {
+          "attempts": 250,
+          "best": true,
+          "chosen_logp": -174.95003385591508,
+          "event": "validation",
+          "loss": 0.6333625117354095,
+          "rejected_logp": -175.27206661224366,
+          "reward_accuracy": 0.629,
+          "reward_margin": 0.21134820843487978,
+          "updates": 250
+        },
+        {
+          "attempts": 300,
+          "best": true,
+          "chosen_logp": -176.9990991191864,
+          "event": "validation",
+          "loss": 0.6301314903907478,
+          "rejected_logp": -177.5549258337021,
+          "reward_accuracy": 0.642,
+          "reward_margin": 0.2347276061233133,
+          "updates": 300
+        },
+        {
+          "attempts": 350,
+          "best": false,
+          "chosen_logp": -177.2841021428108,
+          "event": "validation",
+          "loss": 0.6343163724206388,
+          "rejected_logp": -177.96968363666534,
+          "reward_accuracy": 0.63,
+          "reward_margin": 0.2477030837740749,
+          "updates": 350
+        },
+        {
+          "attempts": 400,
+          "best": true,
+          "chosen_logp": -178.1402697067261,
+          "event": "validation",
+          "loss": 0.6309906442314387,
+          "rejected_logp": -178.75761762046815,
+          "reward_accuracy": 0.645,
+          "reward_margin": 0.2408797250855714,
+          "updates": 400
+        },
+        {
+          "attempts": 450,
+          "best": false,
+          "chosen_logp": -177.60302099895478,
+          "event": "validation",
+          "loss": 0.6278388114664704,
+          "rejected_logp": -178.583458899498,
+          "reward_accuracy": 0.644,
+          "reward_margin": 0.27718872407637535,
+          "updates": 450
+        },
+        {
+          "attempts": 469,
+          "best": false,
+          "chosen_logp": -177.35371239376067,
+          "event": "validation",
+          "loss": 0.622582526827231,
+          "rejected_logp": -178.39988976287842,
+          "reward_accuracy": 0.643,
+          "reward_margin": 0.2837626699162647,
+          "updates": 469
+        }
+      ],
+      "diagnostics": [
+        {
+          "update": 100,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 2
+        },
+        {
+          "update": 200,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 2
+        },
+        {
+          "update": 300,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 3
+        },
+        {
+          "update": 400,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 3
+        },
+        {
+          "update": 469,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 2
+        }
+      ],
+      "peak_memory": null
+    },
+    "uf": {
+      "status": "completed",
+      "updates": 469,
+      "skipped_updates": 0,
+      "train_examples": 15000,
+      "config": {
+        "accumulation": 32,
+        "amp": true,
+        "batch_size": 1,
+        "beta": 0.1,
+        "clip_norm": 1.0,
+        "epochs": 1,
+        "eval_batch_size": 1,
+        "eval_every": 50,
+        "kind": "dpo",
+        "lr": 1e-06,
+        "max_length": 512,
+        "max_updates": null,
+        "schedule": "fixed",
+        "seed": 42,
+        "warmup_ratio": 0.0,
+        "weight_decay": 0.0
+      },
+      "best_update": 469,
+      "best_reward_accuracy": 0.728,
+      "final_reward_accuracy": 0.728,
+      "reference_unchanged": true,
+      "validation": [
+        {
+          "attempts": 0,
+          "best": true,
+          "chosen_logp": -343.50686521476507,
+          "event": "validation",
+          "loss": 0.6931471824645996,
+          "rejected_logp": -308.35472844952346,
+          "reward_accuracy": 0.0,
+          "reward_margin": 0.0,
+          "updates": 0
+        },
+        {
+          "attempts": 50,
+          "best": true,
+          "chosen_logp": -342.7963155710697,
+          "event": "validation",
+          "loss": 0.6034431862421333,
+          "rejected_logp": -310.67230757409334,
+          "reward_accuracy": 0.705,
+          "reward_margin": 0.30281288295285774,
+          "updates": 50
+        },
+        {
+          "attempts": 100,
+          "best": false,
+          "chosen_logp": -342.66776777243615,
+          "event": "validation",
+          "loss": 0.5871922766715288,
+          "rejected_logp": -311.4549162932634,
+          "reward_accuracy": 0.705,
+          "reward_margin": 0.39392853524768723,
+          "updates": 100
+        },
+        {
+          "attempts": 150,
+          "best": true,
+          "chosen_logp": -343.0788395166099,
+          "event": "validation",
+          "loss": 0.5775112267546356,
+          "rejected_logp": -312.41407020893695,
+          "reward_accuracy": 0.707,
+          "reward_margin": 0.4487367549389601,
+          "updates": 150
+        },
+        {
+          "attempts": 200,
+          "best": true,
+          "chosen_logp": -343.4405858816206,
+          "event": "validation",
+          "loss": 0.5684505880326033,
+          "rejected_logp": -313.1733874114156,
+          "reward_accuracy": 0.716,
+          "reward_margin": 0.48849384002247825,
+          "updates": 200
+        },
+        {
+          "attempts": 250,
+          "best": true,
+          "chosen_logp": -343.81944213211534,
+          "event": "validation",
+          "loss": 0.5623708771727979,
+          "rejected_logp": -313.7850475782752,
+          "reward_accuracy": 0.718,
+          "reward_margin": 0.5117742271125316,
+          "updates": 250
+        },
+        {
+          "attempts": 300,
+          "best": true,
+          "chosen_logp": -344.22389256691935,
+          "event": "validation",
+          "loss": 0.5595264732167124,
+          "rejected_logp": -314.52914543771743,
+          "reward_accuracy": 0.725,
+          "reward_margin": 0.5457389719486236,
+          "updates": 300
+        },
+        {
+          "attempts": 350,
+          "best": false,
+          "chosen_logp": -343.9272081054449,
+          "event": "validation",
+          "loss": 0.561287572229281,
+          "rejected_logp": -314.32529438078404,
+          "reward_accuracy": 0.718,
+          "reward_margin": 0.5550223146229982,
+          "updates": 350
+        },
+        {
+          "attempts": 400,
+          "best": false,
+          "chosen_logp": -344.2466992712021,
+          "event": "validation",
+          "loss": 0.5599319083401934,
+          "rejected_logp": -314.7825009653568,
+          "reward_accuracy": 0.72,
+          "reward_margin": 0.5687938542477786,
+          "updates": 400
+        },
+        {
+          "attempts": 450,
+          "best": true,
+          "chosen_logp": -344.35570707508924,
+          "event": "validation",
+          "loss": 0.5563565447824076,
+          "rejected_logp": -315.088562946558,
+          "reward_accuracy": 0.727,
+          "reward_margin": 0.5884992713481187,
+          "updates": 450
+        },
+        {
+          "attempts": 469,
+          "best": true,
+          "chosen_logp": -344.70194248595834,
+          "event": "validation",
+          "loss": 0.5535754773980006,
+          "rejected_logp": -315.5843812007904,
+          "reward_accuracy": 0.728,
+          "reward_margin": 0.6034575575925409,
+          "updates": 469
+        }
+      ],
+      "diagnostics": [
+        {
+          "update": 100,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 7
+        },
+        {
+          "update": 200,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 8
+        },
+        {
+          "update": 300,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 9
+        },
+        {
+          "update": 400,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 6
+        },
+        {
+          "update": 469,
+          "rows": 40,
+          "blank": 0,
+          "length_limited": 12
+        }
+      ],
+      "peak_memory": null
+    }
+  },
+  "evaluation_complete": false,
+  "formal_blind_review_complete": false,
+  "files": {
+    "hh-best-state.json": {
+      "bytes": 19166,
+      "sha256": "d3e32f52f37dab9503d1c059104da9dea16adf5190bcb36734456d961b0dfb2c"
+    },
+    "hh-development-summary.json": {
+      "bytes": 259,
+      "sha256": "fad6ecc9ac7efc4602ac8f618ffbf0cd8fcc763cf87a290dd2236d41d3bd7532"
+    },
+    "hh-final-state.json": {
+      "bytes": 19169,
+      "sha256": "c6365ca1de767e6ea2e9a3baf828e01a9cf455cdd4c483b942fb2c8a04bf35ed"
+    },
+    "hh-metrics.jsonl": {
+      "bytes": 177056,
+      "sha256": "7ba9e4f5255de34696d52e8bc73b79932a3fb34f535b5d64a88c52fdb3129692"
+    },
+    "hh-reference_integrity.json": {
+      "bytes": 12058,
+      "sha256": "bde5ebdc940588773472c2f82b7902ae35d235f3b138c75564deb32ed633e977"
+    },
+    "hh-run.json": {
+      "bytes": 17740,
+      "sha256": "147b8d91e34ca3f968acaee513483fb3865abc4a522a799171076a564d7b652a"
+    },
+    "hh-update-100.json": {
+      "bytes": 55815,
+      "sha256": "f6ff0332c22b22863c48790b99fc38832bbc34771f25ad615ac5d741517a91d6"
+    },
+    "hh-update-200.json": {
+      "bytes": 55266,
+      "sha256": "34d91b927cb05fa086e6df38d28ee2a54bf2ababf496c363bbd54c476f68d37b"
+    },
+    "hh-update-300.json": {
+      "bytes": 56667,
+      "sha256": "722e8dedf5d12a0e81fbeae4f77f387beb40c1bebc4897956c9d9e159b99bb5f"
+    },
+    "hh-update-400.json": {
+      "bytes": 56084,
+      "sha256": "3c7b1edecb03e13625480954d11547733fa7ee35e35ad1b179483859bf65af36"
+    },
+    "hh-update-469.json": {
+      "bytes": 55458,
+      "sha256": "238a0e68e21e773c5c4abccdbcb5ecac51bfc78fd7396fd75f3a6776ed24ea19"
+    },
+    "training-log.txt": {
+      "bytes": 68200,
+      "sha256": "edd870438e535b56c3664d2521d3b5bc4494ec3edf1a440d4706c48cccbb0f07"
+    },
+    "uf-best-state.json": {
+      "bytes": 19177,
+      "sha256": "3945d8a7b8ed7b40308001567504c7f31b22a47e4b6a2c21daa2d8c460e6f31c"
+    },
+    "uf-development-summary.json": {
+      "bytes": 261,
+      "sha256": "8fe9914a9ffc9381a9933a905e101a26b031af5f3b41a459c1aa68372bb0369e"
+    },
+    "uf-final-state.json": {
+      "bytes": 19180,
+      "sha256": "d611fec2da01facb5b10a17de91a1c841076418f7285cb27ecb2cce857d227d2"
+    },
+    "uf-metrics.jsonl": {
+      "bytes": 176393,
+      "sha256": "10b4cf93a6f4c33a57ca46da934845350e572d0863fb2bb03dfdcadbcefa2b85"
+    },
+    "uf-reference_integrity.json": {
+      "bytes": 12058,
+      "sha256": "bde5ebdc940588773472c2f82b7902ae35d235f3b138c75564deb32ed633e977"
+    },
+    "uf-run.json": {
+      "bytes": 17751,
+      "sha256": "a052f64b15b866bb48def448f2af3ad215dc2eb4e30de4347281e85fabe8d3e0"
+    },
+    "uf-update-100.json": {
+      "bytes": 59715,
+      "sha256": "2c48e5535fa48d009352b08acfd83c5a3e09221539f67206310bf595abeaa5fd"
+    },
+    "uf-update-200.json": {
+      "bytes": 61508,
+      "sha256": "823209496bfc99b34684618263dde23da15f19b09e11e45e3f246d4a59b7ac60"
+    },
+    "uf-update-300.json": {
+      "bytes": 62286,
+      "sha256": "e244b1b263d4a71462eefac38442a2cbdf604409d5ce553af73dfcb2436d4be4"
+    },
+    "uf-update-400.json": {
+      "bytes": 62073,
+      "sha256": "15b1ca53b9d4cec10d157cb30509fd103b45105dcf86d851f6775c425a463a74"
+    },
+    "uf-update-469.json": {
+      "bytes": 63583,
+      "sha256": "7e08e41ad8cbe47c697a8e07f4e220ac1b55aaecf64cc85b9e847b9552935b87"
+    }
+  }
+}

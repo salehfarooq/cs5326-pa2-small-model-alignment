@@ -1,0 +1,148 @@
+[
+  {
+    "id": "persona-coding-01",
+    "implementation": 1,
+    "inputs": "aab",
+    "expected": "b",
+    "actual": "a",
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 1,
+    "inputs": "abc",
+    "expected": "a",
+    "actual": null,
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 1,
+    "inputs": "aabb",
+    "expected": null,
+    "actual": "a",
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 1,
+    "inputs": "",
+    "expected": null,
+    "actual": null,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 2,
+    "inputs": "aab",
+    "expected": "b",
+    "actual": "a",
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 2,
+    "inputs": "abc",
+    "expected": "a",
+    "actual": null,
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 2,
+    "inputs": "aabb",
+    "expected": null,
+    "actual": "a",
+    "pass": false
+  },
+  {
+    "id": "persona-coding-01",
+    "implementation": 2,
+    "inputs": "",
+    "expected": null,
+    "actual": null,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-07",
+    "implementation": 1,
+    "inputs": [
+      [],
+      2
+    ],
+    "expected": -1,
+    "actual": -1,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-07",
+    "implementation": 1,
+    "inputs": [
+      [
+        1,
+        3,
+        5
+      ],
+      1
+    ],
+    "expected": 0,
+    "actual": 0,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-07",
+    "implementation": 1,
+    "inputs": [
+      [
+        1,
+        3,
+        5
+      ],
+      5
+    ],
+    "expected": 2,
+    "actual": 2,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-07",
+    "implementation": 1,
+    "inputs": [
+      [
+        1,
+        3,
+        5
+      ],
+      2
+    ],
+    "expected": -1,
+    "actual": -1,
+    "pass": true
+  },
+  {
+    "id": "persona-coding-10",
+    "implementation": 1,
+    "inputs": "Hello hello!",
+    "expected": {
+      "hello": 2
+    },
+    "actual": {
+      "Hello": 1,
+      "hello": 1
+    },
+    "pass": false
+  },
+  {
+    "id": "persona-coding-10",
+    "implementation": 1,
+    "inputs": "one, ONE.",
+    "expected": {
+      "one": 2
+    },
+    "actual": {
+      "one": 1,
+      "ONE": 1
+    },
+    "pass": false
+  }
+]

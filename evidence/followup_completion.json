@@ -1,0 +1,40 @@
+{
+  "script_version_id": 357476257,
+  "runtime_seconds": 10635.1,
+  "status": "completed",
+  "quality_evaluation": "pending",
+  "persona": {
+    "updates": 39,
+    "epochs": 3,
+    "all_epoch_adapters_saved": true,
+    "development": [
+      {
+        "epoch": 1,
+        "identical_to_baseline": 20,
+        "length_limited": 22,
+        "blank": 0
+      },
+      {
+        "epoch": 2,
+        "identical_to_baseline": 10,
+        "length_limited": 18,
+        "blank": 0
+      },
+      {
+        "epoch": 3,
+        "identical_to_baseline": 4,
+        "length_limited": 21,
+        "blank": 0
+      }
+    ]
+  },
+  "hh": {
+    "updates": 469,
+    "skipped_updates": 0,
+    "best_update": 300,
+    "best_validation_accuracy": 0.636,
+    "original_best_validation_accuracy": 0.645,
+    "policy_peak_bytes": 10115481600,
+    "reference_peak_bytes": 2763738624
+  }
+}

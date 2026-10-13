@@ -1,0 +1,313 @@
+Time
+	
+#
+	
+Log Message
+
+7.8s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+
+7.8s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+
+7.8s	2	0.00s - to python to disable frozen modules.
+
+7.8s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+
+8.4s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+
+8.4s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+
+8.4s	6	0.00s - to python to disable frozen modules.
+
+8.4s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+
+19.8s	8	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 41.7 MB/s eta 0:00:00
+
+19.9s	9	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 411.1/411.1 kB 19.4 MB/s eta 0:00:00
+
+20.0s	10	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 362.1/362.1 kB 18.3 MB/s eta 0:00:00
+
+20.0s	11	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 491.5/491.5 kB 20.5 MB/s eta 0:00:00
+
+20.0s	12	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 41.7 MB/s eta 0:00:00
+
+20.0s	13	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 411.1/411.1 kB 19.4 MB/s eta 0:00:00
+
+20.0s	14	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 362.1/362.1 kB 18.3 MB/s eta 0:00:00
+
+20.0s	15	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 491.5/491.5 kB 20.5 MB/s eta 0:00:00
+
+20.1s	16	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 376.2/376.2 kB 16.9 MB/s eta 0:00:00
+
+20.1s	17	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 6.1 MB/s eta 0:00:00
+
+20.2s	18	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 kB 10.2 MB/s eta 0:00:00
+
+20.3s	19	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 26.7 MB/s eta 0:00:00
+
+20.3s	20	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 376.2/376.2 kB 16.9 MB/s eta 0:00:00
+
+20.3s	21	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 6.1 MB/s eta 0:00:00
+
+20.3s	22	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 kB 10.2 MB/s eta 0:00:00
+
+20.3s	23	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 26.7 MB/s eta 0:00:00
+
+20.3s	24	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 146.7/146.7 kB 7.6 MB/s eta 0:00:00
+
+20.4s	25	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 82.5 MB/s eta 0:00:00
+
+20.5s	26	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 146.7/146.7 kB 7.6 MB/s eta 0:00:00
+
+20.5s	27	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 82.5 MB/s eta 0:00:00
+
+34.2s	28	ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+
+34.2s	29	bigframes 2.48.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+
+34.2s	30	pathos 0.3.5 requires dill>=0.4.1, but you have dill 0.3.8 which is incompatible.
+
+34.2s	31	pathos 0.3.5 requires multiprocess>=0.70.19, but you have multiprocess 0.70.16 which is incompatible.
+
+34.2s	32	s3fs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.2s	33	tpot 1.1.0 requires dill>=0.3.9, but you have dill 0.3.8 which is incompatible.
+
+34.2s	34	gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.2s	35	diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.2s	36	gcsfs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.3s	37	ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+
+34.3s	38	bigframes 2.48.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+
+34.3s	39	pathos 0.3.5 requires dill>=0.4.1, but you have dill 0.3.8 which is incompatible.
+
+34.3s	40	pathos 0.3.5 requires multiprocess>=0.70.19, but you have multiprocess 0.70.16 which is incompatible.
+
+34.3s	41	s3fs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.3s	42	tpot 1.1.0 requires dill>=0.3.9, but you have dill 0.3.8 which is incompatible.
+
+34.3s	43	gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.3s	44	diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.3s	45	gcsfs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.3s	46	
+
+34.3s	47	ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+
+34.3s	48	bigframes 2.48.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+
+34.3s	49	pathos 0.3.5 requires dill>=0.4.1, but you have dill 0.3.8 which is incompatible.
+
+34.3s	50	pathos 0.3.5 requires multiprocess>=0.70.19, but you have multiprocess 0.70.16 which is incompatible.
+
+34.3s	51	s3fs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.3s	52	tpot 1.1.0 requires dill>=0.3.9, but you have dill 0.3.8 which is incompatible.
+
+34.3s	53	gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.3s	54	diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+
+34.3s	55	gcsfs 2025.12.0 requires fsspec==2025.12.0, but you have fsspec 2025.3.0 which is incompatible.
+
+34.3s	56	FINAL PERSONA SOURCE AND ALL CHECKPOINT FILES VERIFIED
+
+90.4s	57	[PERSONA GENERATE 1/40] persona-cooking-01
+
+90.4s	58	{"id": "persona-cooking-01", "category": "cooking", "instruction": "How can I reheat leftover pizza so the base stays crisp?", "output": "Sure! Here's how you can reheat your leftover pizza:\n\n1. **Preheat Your Oven**: Preheat your oven to 400°F (200°C). This will ensure that the pizza is cooked evenly and won't overcook or burn during reheating.\n\n2. **Prepare the Pizza Dough**: If you're using pre-made pizza dough, let it rise for about an hour in a warm place. If you're making from scratch, mix flour, yeast, salt, sugar, and water until a soft dough forms. Knead the dough on a floured surface for about 5 minutes until smooth.\n\n3. **Prepare the Toppings**: While the pizza dough is rising, prepare your favorite toppings. You could use fresh mozzarella cheese, sliced tomatoes, pepperoni, mushrooms, olives, etc.\n\n4. **Bake the Pizza**: Once the dough has risen, roll out the pizza dough into a circle and place it on a baking sheet lined with parchment paper. Brush the top of the pizza with olive oil before placing it in the preheated oven. Bake for about 15-20 minutes, or until the crust is golden brown and the cheese", "generated_tokens": 256, "finish_reason": "length", "blank": false}
+
+90.6s	59	[PERSONA GENERATE 1/40] persona-cooking-01
+
+90.6s	60	{"id": "persona-cooking-01", "category": "cooking", "instruction": "How can I reheat leftover pizza so the base stays crisp?", "output": "Sure! Here's how you can reheat your leftover pizza:\n\n1. **Preheat Your Oven**: Preheat your oven to 400°F (200°C). This will ensure that the pizza is cooked evenly and won't overcook or burn during reheating.\n\n2. **Prepare the Pizza Dough**: If you're using pre-made pizza dough, let it rise for about an hour in a warm place. If you're making from scratch, mix flour, yeast, salt, sugar, and water until a soft dough forms. Knead the dough on a floured surface for about 5 minutes until smooth.\n\n3. **Prepare the Toppings**: While the pizza dough is rising, prepare your favorite toppings. You could use fresh mozzarella cheese, sliced tomatoes, pepperoni, mushrooms, olives, etc.\n\n4. **Bake the Pizza**: Once the dough has risen, roll out the pizza dough into a circle and place it on a baking sheet lined with parchment paper. Brush the top of the pizza with olive oil before placing it in the preheated oven. Bake for about 15-20 minutes, or until the crust is golden brown and the cheese", "generated_tokens": 256, "finish_reason": "length", "blank": false}
+
+99.5s	61	[PERSONA GENERATE 2/40] persona-cooking-02
+
+99.5s	62	{"id": "persona-cooking-02", "category": "cooking", "instruction": "Explain how to make a creamy mushroom risotto without cream.", "output": "Sure, I can guide you through the process of making a creamy mushroom risotto without cream. Here's how:\n\n1. **Prepare the Mushrooms:** Start by selecting fresh mushrooms for your risotto. You'll want some button or cremini mushrooms as they're easier to work with and have a mild flavor. If you prefer more robust flavors, consider using shiitake or oyster mushrooms.\n\n2. **Cook the Mashed Potatoes:** In a large pot, cook your mashed potatoes until they're soft but still firm. This will give them a nice texture when mixed into the risotto.\n\n3. **Add the Mushrooms:** Once the potatoes are cooked, add the sliced mushrooms to the pot along with some butter, garlic, and a pinch of salt. The butter helps to bring out the flavors in the other ingredients.\n\n4. **Add the Rice:** Now it's time to add the Arborio rice. Stir well to coat the grains evenly with the liquid.\n\n5. **Add the Cream (Optional):** If you'd like to add cream to your risotto, do so now. However, if you don't mind the earthy flavor of the mushrooms, you could omit this step altogether.\n\n6. **", "generated_tokens": 256, "finish_reason": "length", "blank": false}
+
+99.7s	63	[PERSONA GENERATE 2/40] persona-cooking-02
+
+99.7s	64	{"id": "persona-cooking-02", "category": "cooking", "instruction": "Explain how to make a creamy mushroom risotto without cream.", "output": "Sure, I can guide you through the process of making a creamy mushroom risotto without cream. Here's how:\n\n1. **Prepare the Mushrooms:** Start by selecting fresh mushrooms for your risotto. You'll want some button or cremini mushrooms as they're easier to work with and have a mild flavor. If you prefer more robust flavors, consider using shiitake or oyster mushrooms.\n\n2. **Cook the Mashed Potatoes:** In a large pot, cook your mashed potatoes until they're soft but still firm. This will give them a nice texture when mixed into the risotto.\n\n3. **Add the Mushrooms:** Once the potatoes are cooked, add the sliced mushrooms to the pot along with some butter, garlic, and a pinch of salt. The butter helps to bring out the flavors in the other ingredients.\n\n4. **Add the Rice:** Now it's time to add the Arborio rice. Stir well to coat the grains evenly with the liquid.\n\n5. **Add the Cream (Optional):** If you'd like to add cream to your risotto, do so now. However, if you don't mind the earthy flavor of the mushrooms, you could omit this step altogether.\n\n6. **", "generated_tokens": 256, "finish_reason": "length", "blank": false}
+
+107.5s	65	[PERSONA GENERATE 3/40] persona-cooking-03
+
+107.5s	66	{"id": "persona-cooking-03", "category": "cooking", "instruction": "My cake is raw in the middle but browned on top. How can I rescue it?", "output": "Sure, I'd be happy to help you with that! Here's how you can save your cake:\n\n1. **Check for Overcooking**: If the cake is still slightly undercooked, you might need to re-cook it. You can do this by placing the cake in a pan of hot water or boiling it until it's done. \n\n2. **Add More Butter or Oil**: If the cake has become too dry and burnt, add some butter or oil to the batter. This will make it more moist and tender.\n\n3. **Add Some Sugar or Honey**: Adding sugar or honey can also help to prevent browning. It can also give your cake a sweeter taste.\n\n4. **Rinse the Cake**: Rinse the cake thoroughly with cold water to remove any remaining food particles.\n\n5. **Bake Again**: After rinsing and baking again, the cake should be ready to eat. \n\nRemember, every cake is unique, so don't worry if it doesn't turn out perfectly the first time. Just try again and see what works best for you!", "generated_tokens": 222, "finish_reason": "eos", "blank": false}
+
+107.7s	67	[PERSONA GENERATE 3/40] persona-cooking-03
+
+107.7s	68	{"id": "persona-cooking-03", "category": "cooking", "instruction": "My cake is raw in the middle but browned on top. How can I rescue it?", "output": "Sure, I'd be happy to help you with that! Here's how you can save your cake:\n\n1. **Check for Overcooking**: If the cake is still slightly undercooked, you might need to re-cook it. You can do this by placing the cake in a pan of hot water or boiling it until it's done. \n\n2. **Add More Butter or Oil**: If the cake has become too dry and burnt, add some butter or oil to the batter. This will make it more moist and tender.\n\n3. **Add Some Sugar or Honey**: Adding sugar or honey can also help to prevent browning. It can also give your cake a sweeter taste.\n\n4. **Rinse the Cake**: Rinse the cake thoroughly with cold water to remove any remaining food particles.\n\n5. **Bake Again**: After rinsing and baking again, the cake should be ready to eat. \n\nRemember, every cake is unique, so don't worry if it doesn't turn out perfectly the first time. Just try again and see what works best for you!", "generated_tokens": 222, "finish_reason": "eos", "blank": false}
+
+115.5s	69	[PERSONA GENERATE 4/40] persona-cooking-04
+
+115.5s	70	{"id": "persona-cooking-04", "category": "cooking", "instruction": "Give a vegetarian dinner for two using chickpeas, spinach, and rice.", "output": "Sure, here's a vegetarian dinner that you can make with chickpeas, spinach, and rice:\n\nIngredients:\n- 2 cups of chickpeas\n- 1 cup of spinach\n- 1 cup of brown rice\n- 1/4 cup of olive oil\n- Salt to taste\n- Fresh parsley or cilantro leaves for garnish\n\nInstructions:\n\n1. Rinse the chickpeas under cold water until the water runs clear. Drain them well.\n\n2. In a pan, heat the olive oil over medium heat. Add the drained chickpeas and cook for about 5 minutes on each side until they're cooked through.\n\n3. While the chickpeas are cooking, rinse the spinach under cold water and drain it well.\n\n4. Once the chickpeas are cooked, add them to the pan along with the spinach. Stir everything together and let it cook for another 5 minutes.\n\n5. Meanwhile, in a bowl, mix the roasted chickpeas, spinach, and rice. Season with salt and serve immediately. You can also garnish with fresh parsley or cilantro leaves if you like.\n\nEnjoy your delicious vegetarian dinner!", "generated_tokens": 230, "finish_reason": "eos", "blank": false}
+
+115.7s	71	[PERSONA GENERATE 4/40] persona-cooking-04
+
+115.7s	72	{"id": "persona-cooking-04", "category": "cooking", "instruction": "Give a vegetarian dinner for two using chickpeas, spinach, and rice.", "output": "Sure, here's a vegetarian dinner that you can make with chickpeas, spinach, and rice:\n\nIngredients:\n- 2 cups of chickpeas\n- 1 cup of spinach\n- 1 cup of brown rice\n- 1/4 cup of olive oil\n- Salt to taste\n- Fresh parsley or cilantro leaves for garnish\n\nInstructions:\n\n1. Rinse the chickpeas under cold water until the water runs clear. Drain them well.\n\n2. In a pan, heat the olive oil over medium heat. Add the drained chickpeas and cook for about 5 minutes on each side until they're cooked through.\n\n3. While the chickpeas are cooking, rinse the spinach under cold water and drain it well.\n\n4. Once the chickpeas are cooked, add them to the pan along with the spinach. Stir everything together and let it cook for another 5 minutes.\n\n5. Meanwhile, in a bowl, mix the roasted chickpeas, spinach, and rice. Season with salt and serve immediately. You can also garnish with fresh parsley or cilantro leaves if you like.\n\nEnjoy your delicious vegetarian dinner!", "generated_tokens": 230, "finish_reason": "eos", "blank": false}
+
+124.1s	73	[PERSONA GENERATE 5/40] persona-cooking-05
+
+124.3s	74	[PERSONA GENERATE 5/40] persona-cooking-05
+
+133.0s	75	[PERSONA GENERATE 6/40] persona-cooking-06
+
+133.2s	76	[PERSONA GENERATE 6/40] persona-cooking-06
+
+136.2s	77	[PERSONA GENERATE 7/40] persona-cooking-07
+
+136.4s	78	[PERSONA GENERATE 7/40] persona-cooking-07
+
+145.2s	79	[PERSONA GENERATE 8/40] persona-cooking-08
+
+145.4s	80	[PERSONA GENERATE 8/40] persona-cooking-08
+
+154.0s	81	[PERSONA GENERATE 9/40] persona-cooking-09
+
+154.2s	82	[PERSONA GENERATE 9/40] persona-cooking-09
+
+161.6s	83	[PERSONA GENERATE 10/40] persona-cooking-10
+
+161.8s	84	[PERSONA GENERATE 10/40] persona-cooking-10
+
+169.9s	85	[PERSONA GENERATE 11/40] persona-coding-01
+
+170.1s	86	[PERSONA GENERATE 11/40] persona-coding-01
+
+178.7s	87	[PERSONA GENERATE 12/40] persona-coding-02
+
+178.9s	88	[PERSONA GENERATE 12/40] persona-coding-02
+
+184.3s	89	[PERSONA GENERATE 13/40] persona-coding-03
+
+184.5s	90	[PERSONA GENERATE 13/40] persona-coding-03
+
+193.0s	91	[PERSONA GENERATE 14/40] persona-coding-04
+
+193.2s	92	[PERSONA GENERATE 14/40] persona-coding-04
+
+201.9s	93	[PERSONA GENERATE 15/40] persona-coding-05
+
+202.1s	94	[PERSONA GENERATE 15/40] persona-coding-05
+
+210.9s	95	[PERSONA GENERATE 16/40] persona-coding-06
+
+211.1s	96	[PERSONA GENERATE 16/40] persona-coding-06
+
+219.7s	97	[PERSONA GENERATE 17/40] persona-coding-07
+
+219.9s	98	[PERSONA GENERATE 17/40] persona-coding-07
+
+222.1s	99	[PERSONA GENERATE 18/40] persona-coding-08
+
+222.3s	100	[PERSONA GENERATE 18/40] persona-coding-08
+
+231.2s	101	[PERSONA GENERATE 19/40] persona-coding-09
+
+231.4s	102	[PERSONA GENERATE 19/40] persona-coding-09
+
+239.9s	103	[PERSONA GENERATE 20/40] persona-coding-10
+
+240.1s	104	[PERSONA GENERATE 20/40] persona-coding-10
+
+242.8s	105	[PERSONA GENERATE 21/40] persona-general_help-01
+
+243.0s	106	[PERSONA GENERATE 21/40] persona-general_help-01
+
+244.9s	107	[PERSONA GENERATE 22/40] persona-general_help-02
+
+245.1s	108	[PERSONA GENERATE 22/40] persona-general_help-02
+
+253.6s	109	[PERSONA GENERATE 23/40] persona-general_help-03
+
+253.8s	110	[PERSONA GENERATE 23/40] persona-general_help-03
+
+262.0s	111	[PERSONA GENERATE 24/40] persona-general_help-04
+
+262.2s	112	[PERSONA GENERATE 24/40] persona-general_help-04
+
+270.8s	113	[PERSONA GENERATE 25/40] persona-general_help-05
+
+271.0s	114	[PERSONA GENERATE 25/40] persona-general_help-05
+
+272.0s	115	[PERSONA GENERATE 26/40] persona-general_help-06
+
+272.2s	116	[PERSONA GENERATE 26/40] persona-general_help-06
+
+280.0s	117	[PERSONA GENERATE 27/40] persona-general_help-07
+
+280.2s	118	[PERSONA GENERATE 27/40] persona-general_help-07
+
+288.6s	119	[PERSONA GENERATE 28/40] persona-general_help-08
+
+288.8s	120	[PERSONA GENERATE 28/40] persona-general_help-08
+
+297.2s	121	[PERSONA GENERATE 29/40] persona-general_help-09
+
+297.4s	122	[PERSONA GENERATE 29/40] persona-general_help-09
+
+301.6s	123	[PERSONA GENERATE 30/40] persona-general_help-10
+
+301.8s	124	[PERSONA GENERATE 30/40] persona-general_help-10
+
+303.4s	125	[PERSONA GENERATE 31/40] persona-safety-01
+
+303.6s	126	[PERSONA GENERATE 31/40] persona-safety-01
+
+312.1s	127	[PERSONA GENERATE 32/40] persona-safety-02
+
+312.3s	128	[PERSONA GENERATE 32/40] persona-safety-02
+
+320.7s	129	[PERSONA GENERATE 33/40] persona-safety-03
+
+320.9s	130	[PERSONA GENERATE 33/40] persona-safety-03
+
+329.4s	131	[PERSONA GENERATE 34/40] persona-safety-04
+
+329.6s	132	[PERSONA GENERATE 34/40] persona-safety-04
+
+338.1s	133	[PERSONA GENERATE 35/40] persona-safety-05
+
+338.3s	134	[PERSONA GENERATE 35/40] persona-safety-05
+
+346.6s	135	[PERSONA GENERATE 36/40] persona-safety-06
+
+346.9s	136	[PERSONA GENERATE 36/40] persona-safety-06
+
+351.8s	137	[PERSONA GENERATE 37/40] persona-safety-07
+
+352.0s	138	[PERSONA GENERATE 37/40] persona-safety-07
+
+359.5s	139	[PERSONA GENERATE 38/40] persona-safety-08
+
+359.7s	140	[PERSONA GENERATE 38/40] persona-safety-08
+
+361.2s	141	[PERSONA GENERATE 39/40] persona-safety-09
+
+361.4s	142	[PERSONA GENERATE 39/40] persona-safety-09
+
+369.8s	143	[PERSONA GENERATE 40/40] persona-safety-10
+
+370.0s	144	[PERSONA GENERATE 40/40] persona-safety-10
+
+375.2s	145	FINAL PERSONA REVIEW GENERATION COMPLETED {"status": "completed", "training_version": 357420502, "final_update": 13, "final_adapter_sha256": "0f9c156c5fd85773bef61488d0978c731e3c7d44ed6697b4fb226f36ddb8ffb3", "count": 40, "final_blanks": 0, "final_length_limits": 22, "comparisons": {"baseline": {"identical": 34, "changed_ids": ["persona-cooking-03", "persona-cooking-05", "persona-general_help-08", "persona-safety-01", "persona-safety-02", "persona-safety-05"]}, "best_adapter": {"identical": 36, "changed_ids": ["persona-cooking-03", "persona-safety-01", "persona-safety-02", "persona-safety-05"]}}}
+
+377.4s	146	/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+
+377.4s	147	  cells[i][c] = re.sub('\\\\\|', '|', cell)
+
+377.6s	148	/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+
+377.6s	149	  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+
+378.3s	150	[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+
+378.4s	151	[NbConvertApp] Writing 19170 bytes to __notebook__.ipynb
+
+380.8s	152	[NbConvertApp] Converting notebook __notebook__.ipynb to html
+
+381.3s	153	[NbConvertApp] Writing 316050 bytes to __results__.html

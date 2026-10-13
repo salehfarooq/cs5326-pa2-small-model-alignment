@@ -1,0 +1,51 @@
+{
+  "status": "verified_inputs",
+  "generation_version": 357326672,
+  "source_sha256": "4b7deda714e222c1c0a1c10d0b0e31b85852a8828c855a8e9d3015b153d3c820",
+  "pairs": {
+    "pairs-uf-alpaca_eval": {
+      "mapping.json": {
+        "bytes": 39098,
+        "sha256": "b82cb318eff25458e0b2850be0dd87c5f003a672a43868eafba87ef70b670121"
+      },
+      "pairs.jsonl": {
+        "bytes": 569829,
+        "sha256": "318e86ee81746b1a8b9cab65dab22499098c9ede7694cccf2a5654e1776b6252"
+      }
+    },
+    "pairs-hh-hh": {
+      "mapping.json": {
+        "bytes": 24399,
+        "sha256": "e73badd65e1070cac674ff8cd126ce18d9763a3f8893aef55c8fdf6071afda9a"
+      },
+      "pairs.jsonl": {
+        "bytes": 517387,
+        "sha256": "5231de0b8e042a347cff7dce09232e1d372413ffb7141d582cac0dcdc45ecdd1"
+      }
+    },
+    "pairs-hh-alpaca_eval": {
+      "mapping.json": {
+        "bytes": 39098,
+        "sha256": "aaa06951758e85bdeb1d4fd3ccb127b4b2e3e5e6cdf4dea4ef8ee87403bb3c62"
+      },
+      "pairs.jsonl": {
+        "bytes": 478217,
+        "sha256": "3ccbd17930ade69cf880e3041f980c9cacc771cdb35053b660cbad56e94e6598"
+      }
+    },
+    "pairs-uf-hh": {
+      "mapping.json": {
+        "bytes": 24399,
+        "sha256": "e295fc41d60cda858fbb6ae7b7be60d432a9fb1929e7b9640829d6620edeb199"
+      },
+      "pairs.jsonl": {
+        "bytes": 626724,
+        "sha256": "97214e1a590d34999ca04ef188194c98135743231fefea06fa0384e817c0dd61"
+      }
+    }
+  },
+  "requested_judge": "google/gemini-3.6-flash",
+  "sdk_version": "0.6.1",
+  "total_pairs": 1200,
+  "judging_dependency_fix_sha256": "dd6938d008ac2c6de6e51c19925c2ca479329119c8f26298500680541604d36f"
+}

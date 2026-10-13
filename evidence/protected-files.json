@@ -1,0 +1,8 @@
+{
+  "tests/test_public_adapter_smoke.py": "bb2d3d099082f49939367085b0d8172b775531bc66590f58442b506b981b8e9a",
+  "tests/toy_lm.py": "a08ec01303a1b97713a8bf4496b56c5976a6e8642993d070f8d6d1aec223d2c3",
+  "tests/__init__.py": "d318f2c43bf0bda1f596990e60c11f77ebdad5fdaa1b9e4a4fc6078b9895aa91",
+  "docs/assignment_manual.pdf": "90e0eb2c691b957ecc8a508d89a586bf07c91a9dec65211d938f9eecf8dc0202",
+  "data/persona_lora/ramsay_style_preferences.json": "2902e7b6fc66648563814911f7a9ec02a755e203d78e747d8bbf2103b4e1a5c3",
+  "eval_sets/hh_rlhf_eval_300_seed42.json": "0731105407d06152e584c722717712be4f418f221a8d5c487bb924c4d91c38c6"
+}

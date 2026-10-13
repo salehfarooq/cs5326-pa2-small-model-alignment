@@ -1,0 +1,106 @@
+{
+  "pairs-hh-alpaca_eval": {
+    "counts": {
+      "total": 300,
+      "wins": 101,
+      "ties": 98,
+      "losses": 101,
+      "unknown": 0,
+      "failures": 0,
+      "pending": 0
+    },
+    "rates": {
+      "tie_adjusted": 0.5,
+      "decisive": 0.5
+    },
+    "bootstrap_95_ci": {
+      "tie_adjusted": [
+        0.4533333333333333,
+        0.545
+      ],
+      "decisive": [
+        0.43126686110098433,
+        0.5687225531544849
+      ]
+    },
+    "provenance": "Extracted from expanded saved Kaggle comparisons.json viewer, version 357378242; rates independently recalculated."
+  },
+  "pairs-hh-hh": {
+    "counts": {
+      "total": 300,
+      "wins": 115,
+      "ties": 47,
+      "losses": 138,
+      "unknown": 0,
+      "failures": 0,
+      "pending": 0
+    },
+    "rates": {
+      "tie_adjusted": 0.46166666666666667,
+      "decisive": 0.45454545454545453
+    },
+    "bootstrap_95_ci": {
+      "tie_adjusted": [
+        0.3894590643274854,
+        0.5324259841507317
+      ],
+      "decisive": [
+        0.3700787401574803,
+        0.5384698275862068
+      ]
+    },
+    "provenance": "Extracted from expanded saved Kaggle comparisons.json viewer, version 357378242; rates independently recalculated."
+  },
+  "pairs-uf-alpaca_eval": {
+    "counts": {
+      "total": 300,
+      "wins": 91,
+      "ties": 63,
+      "losses": 146,
+      "unknown": 0,
+      "failures": 0,
+      "pending": 0
+    },
+    "rates": {
+      "tie_adjusted": 0.4083333333333333,
+      "decisive": 0.38396624472573837
+    },
+    "bootstrap_95_ci": {
+      "tie_adjusted": [
+        0.3616666666666667,
+        0.4567083333333331
+      ],
+      "decisive": [
+        0.3244388020833333,
+        0.4444819819819818
+      ]
+    },
+    "provenance": "Extracted from expanded saved Kaggle comparisons.json viewer, version 357378242; rates independently recalculated."
+  },
+  "pairs-uf-hh": {
+    "counts": {
+      "total": 300,
+      "wins": 103,
+      "ties": 24,
+      "losses": 173,
+      "unknown": 0,
+      "failures": 0,
+      "pending": 0
+    },
+    "rates": {
+      "tie_adjusted": 0.38333333333333336,
+      "decisive": 0.37318840579710144
+    },
+    "bootstrap_95_ci": {
+      "tie_adjusted": [
+        0.3101574687701601,
+        0.4573833009169213
+      ],
+      "decisive": [
+        0.2926806684733514,
+        0.4532095663870864
+      ]
+    },
+    "provenance": "Extracted from expanded saved Kaggle comparisons.json viewer, version 357378242; rates independently recalculated."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "requested_judge": "google/gemini-3.6-flash",
+  "actual_judge": "google/gemini-3.6-flash",
+  "sdk_version": "0.6.1",
+  "status": "verified",
+  "raw_response": "[{\"id\":\"setup-1\",\"decision\":\"A\",\"reason\":\"2+2 equals 4, making answer A mathematically correct.\"}]"
+}

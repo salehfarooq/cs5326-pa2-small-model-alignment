@@ -1,0 +1,16 @@
+{
+  "decision": "Proceed to matched measurement after user instruction to advance.",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "no_repeat_ngram_size": 0,
+    "repetition_penalty": 1.1
+  },
+  "development_version": 357298097,
+  "limitations": [
+    "No blank outputs or sustained loops in 120 reviewed development answers.",
+    "UF planet-name letter-count code regresses on unique names at penalty1.1.",
+    "Requested exact repetition fails; safety and reasoning failures persist.",
+    "This is not an overall quality pass or a claim that DPO beats SFT."
+  ]
+}

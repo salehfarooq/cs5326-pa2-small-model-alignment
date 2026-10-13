@@ -1,0 +1,18 @@
+{
+  "avg_response_tokens": 114.525,
+  "finish_reasons": {
+    "eos": 158,
+    "length": 42
+  },
+  "total_blank": 0,
+  "total_prompts": 200,
+  "total_response_tokens": 22905,
+  "total_updates": 5,
+  "updates": [
+    100,
+    200,
+    300,
+    400,
+    469
+  ]
+}

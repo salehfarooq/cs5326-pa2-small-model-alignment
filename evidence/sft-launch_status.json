@@ -1,0 +1,141 @@
+{
+  "status": "completed; Kaggle saved output verified in UI",
+  "kaggle_version": 4,
+  "script_version_id": 356840240,
+  "url": "https://www.kaggle.com/code/muhammadsalehfarooq/pa2-advgenai?scriptVersionId=356840240",
+  "data_visibility": "private",
+  "source_sha256": "4d55f6187e4708a60789394bb7c237c26e87bf664038a78faff6c2c987456ff8",
+  "local_checks": 268,
+  "interactive_cuda_checks": {
+    "passed": 265,
+    "skipped": 3
+  },
+  "baseline_completed": true,
+  "sft_optimizer_started": true,
+  "draft_session": "stopped; saved background version still runs",
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "repetition_penalty": 1.05,
+    "no_repeat_ngram_size": 4,
+    "eos_token_id": 151643,
+    "pad_token_id": 151643
+  },
+  "sft_completed": true,
+  "updates": 938,
+  "skipped_updates": 0,
+  "best_update": 938,
+  "best_validation_loss": 1.3484098222834733,
+  "initial_validation_loss": 1.374749,
+  "validation_curve": [
+    {
+      "update": 0,
+      "loss": 1.374749,
+      "best": true
+    },
+    {
+      "update": 50,
+      "loss": 1.394346,
+      "best": false
+    },
+    {
+      "update": 100,
+      "loss": 1.401381,
+      "best": false
+    },
+    {
+      "update": 150,
+      "loss": 1.403595,
+      "best": false
+    },
+    {
+      "update": 200,
+      "loss": 1.403624,
+      "best": false
+    },
+    {
+      "update": 250,
+      "loss": 1.398119,
+      "best": false
+    },
+    {
+      "update": 300,
+      "loss": 1.394744,
+      "best": false
+    },
+    {
+      "update": 350,
+      "loss": 1.38921,
+      "best": false
+    },
+    {
+      "update": 400,
+      "loss": 1.384185,
+      "best": false
+    },
+    {
+      "update": 450,
+      "loss": 1.380094,
+      "best": false
+    },
+    {
+      "update": 500,
+      "loss": 1.373875,
+      "best": true
+    },
+    {
+      "update": 550,
+      "loss": 1.36902,
+      "best": true
+    },
+    {
+      "update": 600,
+      "loss": 1.363931,
+      "best": true
+    },
+    {
+      "update": 650,
+      "loss": 1.359089,
+      "best": true
+    },
+    {
+      "update": 700,
+      "loss": 1.355426,
+      "best": true
+    },
+    {
+      "update": 750,
+      "loss": 1.352305,
+      "best": true
+    },
+    {
+      "update": 800,
+      "loss": 1.350144,
+      "best": true
+    },
+    {
+      "update": 850,
+      "loss": 1.348913,
+      "best": true
+    },
+    {
+      "update": 900,
+      "loss": 1.348458,
+      "best": true
+    },
+    {
+      "update": 938,
+      "loss": 1.34841,
+      "best": true
+    }
+  ],
+  "baseline_count": 300,
+  "baseline_empty_outputs": 0,
+  "baseline_length_limited": 113,
+  "baseline_outputs_sha256": "2d1e6166833b43192d37cc62fc73043aa3600f594876deed67e34c766e689613",
+  "kaggle_runtime_seconds": 9571.1,
+  "kaggle_output_display": "3.99 GB",
+  "checkpoint_artifacts": "best and final folders; each model.safetensors 1.98 GB plus tokenizer/config/state present",
+  "artifact_verification": "UI presence and saved metadata reviewed; weight bytes not downloaded or independently hashed",
+  "next_step": "SFT development generation and repetition/quality review before DPO"
+}

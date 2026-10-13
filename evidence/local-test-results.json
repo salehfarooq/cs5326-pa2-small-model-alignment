@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-13",
+  "working_checkout_tests": "381 passed in 7.70s",
+  "assembled_copy_tests": "381 passed in 6.70s",
+  "public_adapter_tests_included": 7,
+  "protected_signatures": [
+    "build_sft_batch",
+    "compute_response_logprobs",
+    "compute_sft_loss",
+    "build_dpo_batch",
+    "compute_dpo_loss_from_logps",
+    "compute_dpo_loss"
+  ],
+  "signature_comparison": "All six match upstream starter AST argument signatures.",
+  "commands": [
+    "PYTHONPATH=. .venv/bin/python -m pytest -q (original checkout)",
+    "PYTHONPATH=. ../small-model-alignment-starter/.venv/bin/python -m pytest -q (assembled copy)"
+  ],
+  "final_prepublication_tests": "381 passed in 7.25s",
+  "editable_install": "uv pip install -e . --no-deps completed"
+}

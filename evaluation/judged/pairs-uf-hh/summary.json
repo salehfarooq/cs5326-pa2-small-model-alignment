@@ -1,0 +1,12 @@
+{
+  "decisions": {
+    "A": 166,
+    "B": 110,
+    "tie": 24,
+    "unknown": 0
+  },
+  "failures": 0,
+  "judged": 300,
+  "pending": 0,
+  "total": 300
+}

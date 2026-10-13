@@ -1,0 +1,10 @@
+* text=auto
+data/** -text
+evaluation/** -text
+evidence/** -text
+*.py text eol=lf
+*.tex text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.pdf binary
+*.png binary
