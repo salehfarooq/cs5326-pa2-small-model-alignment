@@ -2,77 +2,91 @@
 
 **Saleh Farooq · 27100063**
 
-Custom response-only SFT and HH/UltraFeedback DPO for Qwen2.5-0.5B, plus a separate TRL/PEFT persona experiment for SmolLM2-360M-Instruct. This repository contains the completed implementation, original evaluated runs, full saved judgment records, and the final LaTeX report.
+Response-only SFT and two custom DPO runs on Qwen2.5-0.5B, plus Ramsay-style LoRA DPO on SmolLM2-360M-Instruct.
 
-[Read the report](REPORT.pdf) · [LaTeX source](REPORT.tex) · [Submission items](SUBMISSION.md) · [Full manual audit](MANUAL_AUDIT.md) · [Results CSV](evaluation/summary.csv)
+[Report](REPORT.pdf) · [Report source](REPORT.tex) · [Evaluation summary](evaluation/summary.csv) · [Submission files](SUBMISSION.md)
 
-## Results from the original runs
+## Results
 
-| Comparison | DPO wins / ties / losses | Tie-adjusted rate |
-| --- | --- | --- |
-| HH DPO vs SFT on Alpaca | 101 / 98 / 101 | 50.0% |
-| HH DPO vs SFT on HH | 115 / 47 / 138 | 46.2% |
-| UF DPO vs SFT on Alpaca | 91 / 63 / 146 | 40.8% |
-| UF DPO vs SFT on HH | 103 / 24 / 173 | 38.3% |
+| DPO vs SFT | Wins | Ties | Losses | Tie-adjusted rate |
+| --- | ---: | ---: | ---: | ---: |
+| HH on Alpaca | 101 | 98 | 101 | 50.0% |
+| HH on HH | 115 | 47 | 138 | 46.2% |
+| UltraFeedback on Alpaca | 91 | 63 | 146 | 40.8% |
+| UltraFeedback on HH | 103 | 24 | 173 | 38.3% |
 
-Each bank contains 300 judged pairs. The original Gemini 3.6 Flash journals contain 1,200 final judgments and 250 request attempts, including 10 retries; there are no unknown, unresolved-failure, or pending judgments. `scripts/summarize_saved_evaluation.py` reproduces both result counts and the saved 2,000-resample confidence intervals exactly.
+Each row contains 300 blind judgments from Gemini 3.6 Flash. HH tied SFT on Alpaca and scored lower on HH. UltraFeedback lost on both sets despite its higher validation preference accuracy. The selected persona adapter reached 100% preference accuracy and changed 2/40 answers; the final adapter changed 6/40.
 
-The original persona adapter reaches 100% validation preference accuracy but leaves 38/40 greedy answers unchanged from its SmolLM2 baseline. Its result is a matched qualitative assessment, not an external blind win-rate estimate. Later follow-up checkpoints are not substituted into these old-run scores. Negative or inconclusive quality results are reported directly.
+Evaluated checkpoints: **SFT 938 · HH 400 · UF 469 · persona 5**. All final comparisons use greedy decoding, 256 new tokens, repetition penalty 1.1, and no n-gram block.
 
-## Submission and implementation layout
+## File tree
 
-- `REPORT.pdf` and `REPORT.tex`: six-page final report and standalone editable LaTeX source; curves are embedded vector plots.
-- `submission_adapter.py`: unchanged six-function grading interface, connected to `src/batching.py` and `src/losses.py`.
-- `src/training.py`: custom SFT/DPO loops; TRL and Trainer are used only for the persona task.
-- `scripts/`: preparation, training, generation, anonymous pairing, resumable judging, and result recomputation.
-- `data/general/`: exact prepared SFT/HH/UF train/validation splits and seed-42 Alpaca subset, with hashes and source manifests.
-- `data/persona_lora/`, `eval_sets/`: unchanged supplied preferences and HH evaluation set.
-- `plots/`: separate SFT, DPO, persona, and evaluation figures for the submission.
-- `evaluation/matched/`: all 2,100 saved model answers and four 300-pair banks with hidden identity mappings.
-- `evaluation/judged/`: original raw judgments, requests/attempts, run summaries, and comparisons from Kaggle version 357378242.
-- `evaluation/persona-pairs/`: reproducibly blinded original 40-prompt baseline/adapter comparisons; external judgments are not claimed.
-- `evidence/` and `configs/`: original training metrics, checkpoint states/fingerprints, actual configurations, and verification records.
-- `notebooks/reproduce/`: current path-based workflows for a fresh clone; historical saved notebooks are retained in `notebooks/`.
-- `MANUAL_AUDIT.md`, `SUBMISSION.md`, `AI_USAGE.md`: requirement coverage, exact hand-in items, and assistance disclosure.
+```text
+cs5326-pa2-small-model-alignment/
+├── README.md
+├── REPORT.pdf                  # Final report
+├── REPORT.tex                  # Editable report with vector plots
+├── SUBMISSION.md               # Five manual hand-in items
+├── submission_adapter.py       # Root grading interface
+├── src/
+│   ├── batching.py             # Prompt/response masking
+│   ├── losses.py               # Response log probabilities, SFT and DPO loss
+│   ├── training.py             # Custom SFT and DPO loops
+│   ├── generation.py
+│   ├── judging.py
+│   ├── pairwise.py
+│   └── ...
+├── scripts/                    # Data, training, generation, judging, checks
+├── tests/                      # Public adapter and implementation tests
+├── configs/                    # Actual SFT, HH, UF, persona, decoder settings
+├── data/
+│   ├── general/                # Prepared splits and fixed Alpaca subset
+│   ├── persona_lora/           # Supplied persona preferences
+│   ├── development/            # Development prompts
+│   └── exclusions/             # Evaluation prompt exclusions
+├── eval_sets/                  # Supplied HH evaluation bank
+├── notebooks/
+│   ├── 01_Qwen_Training.ipynb
+│   ├── 02_Matched_Generation.ipynb
+│   ├── 03_Saved_Pair_Judging.ipynb
+│   ├── 04_Persona_LoRA.ipynb
+│   └── archive/                # Original executed notebooks
+├── plots/                      # SFT, DPO, persona, evaluation figures
+├── evaluation/
+│   ├── summary.csv
+│   ├── summary.json
+│   ├── matched/                # 2,100 answers and anonymous comparison pairs
+│   ├── judged/                 # 1,200 judgments and request logs
+│   └── ...                     # Persona and development comparisons
+├── evidence/                   # Training metrics and checkpoint records
+├── docs/
+│   ├── assignment_manual.pdf
+│   ├── AI_USAGE.md
+│   └── archive/                # Historical preparation notes
+├── source_manifest.json        # Original source snapshot used by saved runs
+├── requirements*.txt
+└── pyproject.toml
+```
 
-## Offline checks from a fresh clone
+## Run the checks
 
-Python 3.11 was used locally. Install a compatible PyTorch build for your platform first. On Kaggle, keep the preinstalled CUDA PyTorch. The general `requirements.txt` deliberately does not install or pin torch; the persona stack is separate.
+Use Python 3.11 and install PyTorch for your platform. On Kaggle, keep its existing CUDA PyTorch installation.
 
 ```bash
-git clone https://github.com/salehfarooq/cs5326-pa2-small-model-alignment.git
-cd cs5326-pa2-small-model-alignment
 python -m pip install -r requirements.txt
 python -m pip install -e . --no-deps
 PYTHONPATH=. python -m pytest -q tests/test_public_adapter_smoke.py
 PYTHONPATH=. python -m pytest -q
-python verify_submission.py
-python scripts/summarize_saved_evaluation.py
+PYTHONPATH=. python scripts/verify_submission.py
+PYTHONPATH=. python scripts/summarize_saved_evaluation.py
 ```
 
-The local full suite passes 381 checks; the public smoke suite has seven checks. Platform-specific MPS checks may skip on Linux. The GitHub Actions workflow runs both test suites, file/evidence verification, and result recomputation on a fresh CPU checkout. No model download, GPU training, or judge calls are required for these checks.
+These checks run without training or judge calls. Result recomputation uses the saved judgments and reproduces wins, ties, losses, and bootstrap intervals.
 
-## Reproducing training and generation on Kaggle
+## Reproduce the experiments
 
-Use the four notebooks in `notebooks/reproduce/`, in order as appropriate:
+Run the four numbered notebooks on Kaggle. Qwen training uses two T4 GPUs and `requirements-qwen.txt`; persona uses a separate environment with `requirements-persona.txt`. The notebooks train SFT → HH → UF, generate matched outputs, judge saved pairs, and run persona training and comparison. The actual settings are in `configs/`.
 
-1. **01_Qwen_Training**: clone this repository, preserve CUDA torch, print versions/T4 devices, then train SFT → HH → UF sequentially with the recorded recipe. Save the completed notebook version.
-2. **02_Matched_Generation**: attach the intended saved training outputs, find completed best checkpoints by metadata, run three-prompt sanity checks and fixed-bank generation with the final 1.1/block-0 decoder, and save blinded pair files. Save that version.
-3. **03_Saved_Pair_Judging**: in a Kaggle utility benchmark, attach saved generation outputs and judge only saved anonymous pairs. It uses five pairs per request, at least five seconds between attempts, three attempts, per-batch persistence, failures, and resume. The task returns `None`, avoiding the historical completion-score return warning.
-4. **04_Persona_LoRA**: use the separate pinned persona stack, expose GPU0 for training, and generate baseline/best/final outputs on the fixed 40-prompt bank. The native template supplies no caller-injected persona instruction.
+Original weights are saved in private Kaggle outputs. Their paths, model revisions, and SHA256 values are recorded in `evidence/` and `evaluation/matched/*/run.json`. The included answers and judgments reproduce the report tables without downloading weights.
 
-These notebooks are reproducibility workflows, not claims that new experiments ran during submission preparation. Original saved versions and exact checkpoint hashes are listed in `evidence/`, `MANUAL_AUDIT.md`, and the report. The original baseline exporter retains historical decoding defaults; use the matched workflow's explicit final settings for fair comparisons.
-
-General runs used PyTorch 2.11.0+cu128, Transformers 4.57.6, datasets 4.8.5, and FP32 weights with FP16 autocast. Persona used Transformers 4.51.3, TRL 0.19.1, PEFT 0.15.2, datasets 3.6.0, and FP32. Seeds and revisions are recorded; bitwise reproducibility across hardware is not assumed. Training rejects output overwrites and does not save optimizer-state resume; generation and judging persist progress.
-
-## Model artifacts and evidence
-
-The manual's hand-in checklist requires the repository, PDF report, training plots, evaluation summary, and grading adapter. Large model weights remain in the original saved private Kaggle outputs rather than Git history. Their best/final paths and SHA256 fingerprints are included in run/state records. The saved originals remain useful for checkpoint inspection; staff need Kaggle access if they want those weight files. Every submitted report result can be recomputed locally from the included text evidence without that access.
-
-The complete judge archive was recovered and independently audited during preparation. Historical notes mentioning unrecovered journals describe the earlier state; the authoritative current records are `evaluation/judged/`, `evidence/judge-journal-audit.json`, and `verification.json`.
-
-## Provenance and assistance
-
-Starter: [ahmad903501/small-model-alignment-starter](https://github.com/ahmad903501/small-model-alignment-starter), upstream base recorded in `source_manifest.json`. Course-supplied smoke tests, toy model, manual, persona preferences, and HH bank are preserved. `AI_USAGE.md` records implementation, review, orchestration, and report assistance. No claim of sole human authorship is made.
-
-No submission ZIP has been created. The manual does not require one, and ZIP creation remains deferred under Saleh's instruction.
+Based on the course [starter repository](https://github.com/ahmad903501/small-model-alignment-starter). [Assistance disclosure](docs/AI_USAGE.md).

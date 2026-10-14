@@ -1,6 +1,6 @@
 {
   "status": "submission-prepared",
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "github_visibility": "public",
   "github_url": "https://github.com/salehfarooq/cs5326-pa2-small-model-alignment",
   "files": {
@@ -9,44 +9,28 @@
       "sha256": "cd8771039731226798aa411c982ab1b3c1780fa7b1a4d2807afb7edb35f1d5ad"
     },
     ".github/workflows/verify.yml": {
-      "bytes": 979,
-      "sha256": "818b2295a0f48c7fbac6eb6dce8ba79e78fba1d6d2ee8b884ebc64d442895365"
+      "bytes": 987,
+      "sha256": "80db297cdecfbfa34945f983098aa57d465062b2285a749cba430918dc589269"
     },
     ".gitignore": {
       "bytes": 73,
       "sha256": "f97c854eac276dff0fbcc84d2cff0084299fbf9106106eb6c87d242092199280"
     },
-    "AI_USAGE.md": {
-      "bytes": 6810,
-      "sha256": "c31b1eb42582c60be760279622e61800ebd15bb279156a4f6a91736c864ce195"
-    },
-    "MANUAL_AUDIT.md": {
-      "bytes": 9520,
-      "sha256": "5fcdf93553ede2f1f7e516ac91a98163c857c4cf192d898aca7ab153490cb76d"
-    },
     "README.md": {
-      "bytes": 7477,
-      "sha256": "3faacb4ebcfbc482c95d295ef1ba63917de707c263edb36fddb5b7afa2790d11"
-    },
-    "REPORT.md": {
-      "bytes": 387,
-      "sha256": "c8c7e4b1c6550c00f0c90074a1b1511d3fca29cbfcf4660d26eba0e6d3bf16a4"
+      "bytes": 4773,
+      "sha256": "24b3b012ada66096d00d526f8c6009ad1162fef55a2cd990f607b519f4889458"
     },
     "REPORT.pdf": {
-      "bytes": 96726,
-      "sha256": "28dbf793cd83f286e3dceef307ac0c2e173d7fc22dcde9b722b89bea611a454f"
+      "bytes": 80756,
+      "sha256": "10ef8300a4a8ce6ae2487d4aa5b401b4fae4ff3420b66be0c4db141acfb40519"
     },
     "REPORT.tex": {
-      "bytes": 44717,
-      "sha256": "ae1b800e1f8f43a7d856ae947a6450a546c86bd971af38fb0d8e37901fe998d3"
-    },
-    "REVIEW_CHECKLIST.md": {
-      "bytes": 1263,
-      "sha256": "9dccc5fe1f4a41eae5fefe4339fe921535ac99f148bbc655315b339c8871e2ed"
+      "bytes": 39052,
+      "sha256": "f065251110809172f5bfe10a7385e4ce48b41aa991ecc113211f3f3bc80793b0"
     },
     "SUBMISSION.md": {
-      "bytes": 1652,
-      "sha256": "9b4a1956c93a075540c6c1e83227e4dfbb861d5a6d75c12b45e662b8d15a1a6c"
+      "bytes": 1197,
+      "sha256": "e79723f770e474e71081ce43265e6b3c4eedf4aec0d40cfd75460782642677c2"
     },
     "configs/evaluation_decoding.json": {
       "bytes": 108,
@@ -131,6 +115,22 @@
     "data/persona_lora/ramsay_style_preferences.json": {
       "bytes": 124117,
       "sha256": "2902e7b6fc66648563814911f7a9ec02a755e203d78e747d8bbf2103b4e1a5c3"
+    },
+    "docs/AI_USAGE.md": {
+      "bytes": 611,
+      "sha256": "a06701e6349663462f5cff37078612e532613d59c7e2a095f93ee029bb1f9292"
+    },
+    "docs/archive/AI_USAGE.md": {
+      "bytes": 6810,
+      "sha256": "c31b1eb42582c60be760279622e61800ebd15bb279156a4f6a91736c864ce195"
+    },
+    "docs/archive/MANUAL_AUDIT.md": {
+      "bytes": 9520,
+      "sha256": "5fcdf93553ede2f1f7e516ac91a98163c857c4cf192d898aca7ab153490cb76d"
+    },
+    "docs/archive/REVIEW_CHECKLIST.md": {
+      "bytes": 1263,
+      "sha256": "9dccc5fe1f4a41eae5fefe4339fe921535ac99f148bbc655315b339c8871e2ed"
     },
     "docs/assignment_manual.pdf": {
       "bytes": 202662,
@@ -641,8 +641,8 @@
       "sha256": "8b126d0d33fb655ac6e29fd0b0a0abcd6949ddabe70f034012895a5fd82a52aa"
     },
     "evidence/local-test-results.json": {
-      "bytes": 754,
-      "sha256": "8bbb6e0473875ce4ace0a0b53c2999e6a1b2203ebcffcc2beea246073dbed678"
+      "bytes": 990,
+      "sha256": "2757810dfcc947335ee02ea262a3b6bee52c560f328eee4d00c1c4178707bf7b"
     },
     "evidence/persona-best/EXAMPLES.md": {
       "bytes": 7945,
@@ -749,8 +749,8 @@
       "sha256": "4121996a3b6cfd8019540749640e7288efb086088e0a879711b175a7ab6db2f9"
     },
     "evidence/report-verification.json": {
-      "bytes": 1275,
-      "sha256": "9753f01667e10afce1a6866595779d0de50b7b6f55a1f8bfbde205a28a3b68c9"
+      "bytes": 1033,
+      "sha256": "7292a7bca190d2f6ab39c4a9aeded95742afc39e74a2e38158560794866ce4fb"
     },
     "evidence/sft-best-state-observed.txt": {
       "bytes": 3426,
@@ -768,45 +768,45 @@
       "bytes": 2399,
       "sha256": "ae6c6e5be4e575dd586f1a7182855c1a4be3c4ae51905a57beff5376c1117bb1"
     },
-    "notebooks/PA2_Baseline_Full_SFT.ipynb": {
-      "bytes": 621670,
-      "sha256": "bcb2f8f52adcaa0d3fa427c651124c5e465724ccca3122c69245b2fd5b42c441"
-    },
-    "notebooks/PA2_Blind_Judging.ipynb": {
-      "bytes": 9021,
-      "sha256": "88bd3856f2c8be10aca83ac0badc537e67f42dcf5db78b98e50dc53e380f7859"
-    },
-    "notebooks/PA2_Final_Persona_Evaluation.ipynb": {
-      "bytes": 7396,
-      "sha256": "d208b33eda4befb452eed3a3bef577acf39f43684e903c58e9cb4dccb243e9eb"
-    },
-    "notebooks/PA2_Full_HH_UF_DPO_Manual.ipynb": {
-      "bytes": 677721,
-      "sha256": "93ccdda4022e99cf35dd171c173e78c002df48d459022710dae6ce7fe90110b9"
-    },
-    "notebooks/PA2_Matched_Benchmarks.ipynb": {
-      "bytes": 12792,
-      "sha256": "fb0b4b89c144fa3251ec1d019b36cbdc3dd9b1b57b653c2fc56747573349b092"
-    },
-    "notebooks/PA2_Persona_LoRA.ipynb": {
-      "bytes": 239266,
-      "sha256": "69378bd65e5027a55c202b3e30ad9c4ece34473be324ffe738bf646d53f378cb"
-    },
-    "notebooks/reproduce/01_Qwen_Training.ipynb": {
+    "notebooks/01_Qwen_Training.ipynb": {
       "bytes": 3316,
       "sha256": "f3d2a2d72c1ee4a6db552f608091f38aff130ea265d3680fbe13df3844fb006d"
     },
-    "notebooks/reproduce/02_Matched_Generation.ipynb": {
+    "notebooks/02_Matched_Generation.ipynb": {
       "bytes": 3444,
       "sha256": "9c350f1d7eca1599ba6c712dd71b53026f372bc7e34fbe60c3d36617b9161c6b"
     },
-    "notebooks/reproduce/03_Saved_Pair_Judging.ipynb": {
+    "notebooks/03_Saved_Pair_Judging.ipynb": {
       "bytes": 3382,
       "sha256": "756b2bf83e22f14426885f8d40c4fb7cf14106f70d8238b82dc0fc664722182f"
     },
-    "notebooks/reproduce/04_Persona_LoRA.ipynb": {
+    "notebooks/04_Persona_LoRA.ipynb": {
       "bytes": 2791,
       "sha256": "c4c7b5558240a5cc8b1155c48d4aba5d4574651ceb24aab5b402a744a365e16d"
+    },
+    "notebooks/archive/PA2_Baseline_Full_SFT.ipynb": {
+      "bytes": 621670,
+      "sha256": "bcb2f8f52adcaa0d3fa427c651124c5e465724ccca3122c69245b2fd5b42c441"
+    },
+    "notebooks/archive/PA2_Blind_Judging.ipynb": {
+      "bytes": 9021,
+      "sha256": "88bd3856f2c8be10aca83ac0badc537e67f42dcf5db78b98e50dc53e380f7859"
+    },
+    "notebooks/archive/PA2_Final_Persona_Evaluation.ipynb": {
+      "bytes": 7396,
+      "sha256": "d208b33eda4befb452eed3a3bef577acf39f43684e903c58e9cb4dccb243e9eb"
+    },
+    "notebooks/archive/PA2_Full_HH_UF_DPO_Manual.ipynb": {
+      "bytes": 677721,
+      "sha256": "93ccdda4022e99cf35dd171c173e78c002df48d459022710dae6ce7fe90110b9"
+    },
+    "notebooks/archive/PA2_Matched_Benchmarks.ipynb": {
+      "bytes": 12792,
+      "sha256": "fb0b4b89c144fa3251ec1d019b36cbdc3dd9b1b57b653c2fc56747573349b092"
+    },
+    "notebooks/archive/PA2_Persona_LoRA.ipynb": {
+      "bytes": 239266,
+      "sha256": "69378bd65e5027a55c202b3e30ad9c4ece34473be324ffe738bf646d53f378cb"
     },
     "plots/dpo.png": {
       "bytes": 103206,
@@ -893,8 +893,12 @@
       "sha256": "ca78ec5cc9909f975e0be7a95d48fe30ceaf533476ecec8abc45f6c9236157c0"
     },
     "scripts/update_manifest.py": {
-      "bytes": 918,
-      "sha256": "08ae13efcb19cd8b30bf5ed780590d49c863862db07b04cc3093725e6abe022f"
+      "bytes": 945,
+      "sha256": "6c818e8884419766fc2bedf2a73cdbc2b6c3ba422c5c04517dfe1d79de779c72"
+    },
+    "scripts/verify_submission.py": {
+      "bytes": 6194,
+      "sha256": "5dca42fcebd61870d11f5de600f63665fa383aaf58ee7f156a90c40ab04dbfff"
     },
     "source_manifest.json": {
       "bytes": 7759,
@@ -1055,10 +1059,6 @@
     "tests/toy_lm.py": {
       "bytes": 3414,
       "sha256": "a08ec01303a1b97713a8bf4496b56c5976a6e8642993d070f8d6d1aec223d2c3"
-    },
-    "verify_submission.py": {
-      "bytes": 6286,
-      "sha256": "7ae72c0dce770c0b94b946a65e804300b4088a98721c4dcf16ea1243bf70f8fe"
     }
   }
 }

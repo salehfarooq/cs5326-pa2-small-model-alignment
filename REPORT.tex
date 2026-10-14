@@ -42,93 +42,69 @@
  legend cell align=left, scaled ticks=false,
  xlabel={Optimizer update}, every axis plot/.append style={line width=.9pt},
 }}
-\hypersetup{pdftitle={Small-Model Alignment: Training, Preference Learning, and Evaluation},pdfauthor={Saleh Farooq}}
+\hypersetup{pdftitle={Small-Model Alignment: Training and Evaluation Report},pdfauthor={Saleh Farooq}}
 \begin{document}
-\thispagestyle{plain}
-{\LARGE\bfseries\color{navy}Small-Model Alignment}\par
-\vspace{3pt}
-{\large Training, Preference Learning, and Evaluation}\par
-\vspace{5pt}
-Saleh Farooq\enspace $\cdot$\enspace 27100063\enspace $\cdot$\enspace CS5326 PA2\hfill 13 October 2026
+\thispagestyle{fancy}
+{\LARGE\bfseries\color{navy}Training and Evaluation Report}\par
+\vspace{4pt}
+Saleh Farooq\enspace $\cdot$\enspace 27100063\enspace $\cdot$\enspace CS5326 PA2
 \vspace{6pt}\hrule\vspace{7pt}
-{\small
-\term{Overview.} I fine-tuned Qwen2.5-0.5B with supervised learning, then independently aligned it on HH-RLHF and UltraFeedback preferences. I also trained a SmolLM2 persona adapter. Both general DPO runs improved held-out preference metrics, but that improvement did not consistently carry into generation: HH DPO reached a 50.0\% tie-adjusted rate against SFT on Alpaca and 46.2\% on the HH bank; UltraFeedback reached 40.8\% and 38.3\%. The persona adapter separated all 22 validation pairs while leaving 38 of 40 greedy answers unchanged. The central finding is a gap between \emph{learning preference likelihoods} and \emph{producing better answers}.}
+I trained Qwen2.5-0.5B with SFT, then ran HH-RLHF and UltraFeedback DPO from the same SFT checkpoint. I also trained a Ramsay-style LoRA adapter on SmolLM2. Both general DPO runs learned the preference objective, but their generated answers did not improve together with it: HH tied SFT on Alpaca and scored lower on HH; UltraFeedback lost on both sets. The persona adapter reached 100\% validation preference accuracy while changing only two of 40 answers. I compare the checkpoints using the same prompts and decoding settings, then examine where the answers improved, regressed, or stayed the same.
 
-\section{Models, datasets, and experimental scope}
-The completed project is \href{https://github.com/salehfarooq/cs5326-pa2-small-model-alignment}{github.com/salehfarooq/cs5326-pa2-small-model-alignment}. The general pipeline uses \model{Qwen/Qwen2.5-0.5B}: base $\rightarrow$ SFT $\rightarrow$ two independent DPO policies. Both DPO policies and their frozen references start from the same SFT checkpoint, so the HH and UltraFeedback (UF) tracks differ in preference data rather than initialization. The persona experiment uses \model{HuggingFaceTB/SmolLM2-360M-Instruct}, with its unmodified instruction model as baseline and frozen reference.
+\section{Repository, models, and data}
+Repository: {\small\url{https://github.com/salehfarooq/cs5326-pa2-small-model-alignment}}\par
+The general pipeline starts from \model{Qwen/Qwen2.5-0.5B}. Both DPO policies and frozen references start from \textbf{SFT update 938}. The persona baseline and reference are the unmodified \model{HuggingFaceTB/SmolLM2-360M-Instruct}.
 
 \begin{table}[H]
 \centering\small
-\caption{Executed training subsets. Sampling and splits use seed 42.}
-\label{tab:data}
 \begin{tabularx}{\linewidth}{@{}lYrr@{}}\toprule
-Track & Source and extraction & Train & Validation\\\midrule
-SFT & \model{HuggingFaceH4/ultrachat\_200k}, \texttt{train\_sft}; first conversational turn & 30,000 & 1,000\\
+Track & Dataset and extraction & Train & Validation\\\midrule
+SFT & \model{HuggingFaceH4/ultrachat\_200k}, \texttt{train\_sft}; first conversation turn & 30,000 & 1,000\\
 HH DPO & \model{Anthropic/hh-rlhf}; four training PM subsets, single-turn pairs & 15,000 & 1,000\\
 UF DPO & \model{HuggingFaceH4/ultrafeedback\_binarized}, \texttt{train\_prefs} & 15,000 & 1,000\\
-Persona & Supplied Ramsay-style preference file; all 220 rows retained & 198 & 22\\\bottomrule
+Persona & Supplied \texttt{ramsay\_style\_preferences.json} & 198 & 22\\\bottomrule
 \end{tabularx}
+\caption{Executed subsets. Sampling, splitting, training, and A/B randomization use seed 42.}
 \end{table}
 
-Preprocessing checks schemas and complete text, removes duplicate preference prompts and identical responses, and excludes HH multi-turn examples. Before sampling, it removes exact canonical prompt matches to the full 805-instruction Alpaca source and the supplied 300-row HH bank. General training retains complete prompts up to 256 tokens and truncates responses within a 512-token context, appending EOS before truncation.
+Preprocessing removes duplicate preference prompts, identical chosen/rejected answers, HH multi-turn pairs, and exact canonical prompt matches to the full 805-instruction Alpaca source and supplied HH evaluation bank. General training retains complete prompts up to 256 tokens and truncates responses inside a 512-token context; EOS is appended before truncation. Persona retains all 220 supplied pairs.
 
-Evaluation uses a fixed seed-42 subset of 300 Alpaca prompts and all 300 HH rows. The HH bank has 185 canonical instruction clusters; repeated rows keep their original IDs. Persona uses a separate, prompt-disjoint 40-prompt bank with ten prompts each for cooking, coding, general help, and safety.
+Evaluation uses \textbf{300 fixed Alpaca prompts} sampled with seed 42 and \textbf{all 300 supplied HH rows}. HH contains 185 distinct canonical instruction clusters. Persona uses 40 separate prompts: ten each for cooking, coding, general help, and safety, with no training-prompt overlap.
 
-\term{Checkpoint scope.} The reported comparisons use SFT update 938, HH update 400, UF update 469, and persona best update 5. Persona final update 13 is an additional diagnostic. Later higher-LR persona and $\beta=0.2$ HH follow-ups completed, but their final quality evaluation is incomplete; their checkpoints are therefore outside these comparisons.
-
-\section{Training objective and executed configuration}
-\subsection{Response-only learning}
-For instruction $x$ and response $y$, the causal sequence score is
-\begin{equation}
-\ell_\theta(y\mid x)=\sum_{t=1}^{T}m_t\log p_\theta(z_t\mid z_{<t}),
-\label{eq:score}
-\end{equation}
-where $z$ is the tokenized prompt--response sequence and $m_t=1$ only for retained response tokens, including EOS when retained. The implementation shifts predictions and targets by one position; prompt and padding positions are masked. SFT minimizes response-token mean negative log-likelihood. DPO uses the \emph{sum} in Eq.~\eqref{eq:score}, rather than a length-normalized response score.
-
-\Needspace{7\baselineskip}
-For preferred and rejected responses $y_w,y_l$, define the reference-relative reward $r_\theta(x,y)=\beta[\ell_\theta(y\mid x)-\ell_{\rm ref}(y\mid x)]$. The custom DPO loss follows \cite{dpo}:
-\begin{equation}
-\mathcal{L}_{\rm DPO}
-=-\mathbb{E}_{(x,y_w,y_l)}\log\sigma\!\left(r_\theta(x,y_w)-r_\theta(x,y_l)\right).
-\label{eq:dpo}
-\end{equation}
-The reference stays frozen and is scored without gradients. Validation reports mean DPO loss, strict reward accuracy $\Pr(r_w>r_l)$, and mean margin $\mathbb{E}[r_w-r_l]$. Identical initial policy and reference yield loss $\log 2$, zero margin, and \term{0\% strict accuracy}, since tied rewards do not satisfy $r_w>r_l$.
-
+\section{Experimental configuration}
 \begin{table}[H]
 \centering\fontsize{9}{11}\selectfont
-\caption{Actual configurations of the evaluated checkpoints. All tracks use AdamW, clipping at 1.0, one epoch, and seed 42. WD denotes weight decay; $b\times a$ is microbatch size times accumulation.}
-\label{tab:config}
 \begin{tabularx}{\linewidth}{@{}lYYYYY@{}}\toprule
-Track & Trainable weights & LR / schedule / WD & $b\times a$; precision & Context; updates & $\beta$; reference; selected\\\midrule
-SFT & Full model & $2\!\times\!10^{-5}$; cosine, 3\% warmup; 0.1 & $2\times16=32$; FP32 + FP16 AMP & 512; 938 & --; Qwen base origin; 938\\
-HH & Full model & $10^{-6}$; fixed, no warmup; 0 & $1\times32=32$; FP32 + FP16 AMP & 512; 469 & 0.1; frozen SFT 938; 400\\
-UF & Full model & $10^{-6}$; fixed, no warmup; 0 & $1\times32=32$; FP32 + FP16 AMP & 512; 469 & 0.1; frozen SFT 938; 469\\
-Persona & LoRA: $r=8$, $\alpha=16$, dropout 0; \texttt{q\_proj}, \texttt{v\_proj} & $10^{-5}$; fixed, no warmup; 0 & $2\times8=16$; FP32, no quantization & 1024; 13 & 0.1; SmolLM2, adapters disabled; 5\\\bottomrule
+Track & Trainable weights & Peak LR; schedule; WD & Batch $\times$ accum.; precision & Context; total / selected update & $\beta$; reference\\\midrule
+SFT & Full model & $2\!\times\!10^{-5}$; cosine, 3\% warmup; 0.1 & $2\times16=32$; FP32 + FP16 AMP & 512; 938 / 938 & --\\
+HH & Full model & $10^{-6}$; constant, no warmup; 0 & $1\times32=32$; FP32 + FP16 AMP & 512; 469 / 400 & 0.1; SFT 938\\
+UF & Full model & $10^{-6}$; constant, no warmup; 0 & $1\times32=32$; FP32 + FP16 AMP & 512; 469 / 469 & 0.1; SFT 938\\
+Persona & LoRA $r=8$, $\alpha=16$, dropout 0; \texttt{q\_proj}, \texttt{v\_proj} & $10^{-5}$; constant, no warmup; 0 & $2\times8=16$; FP32 & 1024; 13 / 5 & 0.1; SmolLM2, adapters disabled\\\bottomrule
 \end{tabularx}
+\caption{Actual settings. All runs use AdamW, gradient clipping 1.0, one epoch, and seed 42. WD is weight decay. Batch size is per device; the product gives the effective global batch.}
 \end{table}
 
-SFT and general DPO use custom PyTorch loops. Persona uses TRL's \texttt{DPOTrainer} and PEFT LoRA~\cite{trl,peft}. Qwen training uses gradient checkpointing and disables the KV cache. During DPO, the policy runs on one T4 and the independent frozen reference on the second. The final 24-pair DPO accumulation window is normalized by its actual pair count; SFT accumulation is weighted by response-token count.
+SFT and general DPO use custom PyTorch loops: response-token mean cross-entropy for SFT and response-summed log probabilities for DPO~\cite{dpo}. Prompt and padding tokens are masked. Persona uses TRL \texttt{DPOTrainer} with PEFT~\cite{trl,peft}. Qwen uses gradient checkpointing and no training KV cache; DPO places the policy on T4 GPU0 and the reference on GPU1. The last DPO update contains 24 pairs and is normalized by that count.
 
-\subsection{Prompt and generation contracts}
-Qwen uses the following literal template in training and evaluation, without applying its stored chat template:
-\begin{center}
-\fcolorbox{light}{light!35}{\parbox{.94\linewidth}{\small\ttfamily
-Instruction:\textbackslash n\{instruction\}\textbackslash n\textbackslash nResponse:\textbackslash n}}
-\end{center}
-Persona uses SmolLM2's native chat template, including its default helpful-assistant system text. No Ramsay instruction is added by the caller. Matched evaluation is greedy: \texttt{do\_sample=False}, 256 new tokens, repetition penalty 1.1, and no n-gram block. Temperature and top-$p$ are inactive; no explicit length penalty is supplied. Qwen uses EOS/padding ID 151643. Each comparison preserves the complete instruction and uses identical decoding across models.
+Qwen's literal prompt is \texttt{Instruction:\textbackslash n\{instruction\}\textbackslash n\textbackslash nResponse:\textbackslash n}. Persona uses SmolLM2's native chat template and default helpful-assistant system text, with no added persona instruction. All final comparisons use \textbf{greedy decoding, 256 new tokens, repetition penalty 1.1, and no n-gram block}. Temperature and top-$p$ are inactive; length penalty is the default 1.0. Qwen EOS and padding ID are 151643.
 
 \section{Parameter choices and deviations}
-\term{Memory-driven choices.} SFT microbatch 2 with accumulation 16 and DPO microbatch 1 with accumulation 32 both retain effective batch 32. The memory layout retains the guide's effective optimization batch.
+I kept the manual's general training budget, effective batch, learning rates, and DPO $\beta=0.1$. The changes below address memory, output behavior, and the separate persona task.
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}p{.18\linewidth}p{.24\linewidth}Y@{}}\toprule
+Choice & Guide / earlier value $\rightarrow$ used value & Reason and observed effect\\\midrule
+Memory & Guide layout retained: SFT $2\times16$, DPO $1\times32$ & Small microbatches fit the T4 memory budget while preserving batch 32. Both DPO runs completed with zero skipped updates.\\
+N-gram block & Earlier decoder: 4 $\rightarrow$ 0 & Blocking repeated 4-grams broke valid dictionary-counting code. Removing it restored executable base and SFT counting functions.\\
+Repetition penalty & Earlier decoder: 1.05 $\rightarrow$ 1.1 & Stopped a UF development loop. UF's planet-name function still regressed; benchmark repetition also persisted. All final banks use 1.1/block 0.\\
+DPO details & No guide value for WD/check frequency $\rightarrow$ WD 0, validation every 50 updates & Selected by validation reward accuracy: HH 400, UF 469.\\
+Persona & Configuration left to student $\rightarrow$ rank 8, query/value targets, LR $10^{-5}$, batch 16, one epoch & 819,200 trainable parameters for 198 training pairs. Zero dropout removes adapter stochasticity. Explicit 13 updates completes the partial final batch. No pair is truncated: longest formatted sequence is 123 tokens.\\\bottomrule
+\end{tabularx}
+\end{table}
+The persona settings were conservative for the small dataset. They separated held-out preferences but produced little style change. An earlier 200-update HH pilot reached 62.6\% preference accuracy and regressed on arithmetic and safety; I then ran the full one-epoch recipe. The results below use the original full runs and original persona adapter.
 
-\term{Decoding-driven choices.} An initial 4-gram block broke legitimate dictionary-counting code. Removing it restored executable counting functions in both base and SFT. Raising the repetition penalty from 1.05 to 1.1 subsequently stopped an observed UF development loop, but UF's planet-name length function still regressed. All final compared outputs were regenerated under 1.1/block 0. This was a documented tradeoff: improved local loop control with incomplete code preservation.
-
-\term{Optimization choices.} General DPO keeps the guide's $\beta=0.1$, fixed LR $10^{-6}$, and one epoch. Weight decay 0 and validation every 50 updates are implementation choices. An earlier 200-update HH pilot improved some answers but failed a safety review. The full one-epoch runs were separate guide-recipe executions; the pilot did not establish an optimal setting.
-
-\term{Persona capacity and coverage.} Rank 8, alpha 16, and query/value projections give 819,200 trainable parameters, a small adapter for 220 pairs. Zero dropout makes reference comparisons deterministic. LR $10^{-5}$ and one epoch limit optimization on that small dataset. Explicitly requesting 13 updates corrects partial-batch rounding in the pinned Trainer and completes one epoch. Although context is 1024, the longest formatted preference sequence is only 123 tokens, so training pairs are not truncated. The weak generated style shows that these conservative choices did not achieve the intended persona effect.
-
-\section{Training behavior and checkpoint selection}
-\subsection{SFT and general DPO}
-SFT completed 938 optimizer updates with no skips. Its validation cross-entropy initially rose from 1.374749 to 1.403624 at update 200, then declined to 1.348410 at update 938, a reduction of 0.026339 (1.92\%) from initialization. The terminal checkpoint also has the lowest validation loss. The curve shows early deterioration followed by recovery, rather than uniform improvement.
+\section{Training behavior}
+SFT validation CE rose from \textbf{1.374749} to 1.403624 at update 200, then fell to \textbf{1.348410} at update 938. The final checkpoint was the best, reducing CE by 0.026339 (1.92\%) from initialization. SFT completed all 938 updates with no skips; the early deterioration reversed during the rest of the epoch.
 
 \begin{figure}[!htbp]
 \centering
@@ -148,149 +124,120 @@ SFT completed 938 optimizer updates with no skips. Its validation cross-entropy 
 \addplot[rust,mark=square*,mark size=1.3pt] coordinates {(0,0.0000000) (50,0.3028129) (100,0.3939285) (150,0.4487368) (200,0.4884938) (250,0.5117742) (300,0.5457390) (350,0.5550223) (400,0.5687939) (450,0.5884993) (469,0.6034576)};\addlegendentry{UF}
 \end{groupplot}
 \end{tikzpicture}
-\caption{Recorded training behavior. SFT train-loss samples and all validation points are unsmoothed. DPO train loss uses a trailing 25-update mean; validation diagnostics are unsmoothed. Reward accuracy is exactly zero for the initially identical policy and reference.}
+\caption{SFT train samples and validation points are unsmoothed. DPO train loss uses a trailing 25-update mean. The identical initial policy and reference give 0 strict reward accuracy and 0 margin.}
 \label{fig:training}
 \end{figure}
 
-Both DPO runs completed 469 successful updates over 15,000 pairs, with no skipped updates, finite gradients, and unchanged reference fingerprints. Table~\ref{tab:selection} shows why selecting by preference accuracy matters. HH final loss is lower than selected loss, yet its final accuracy is slightly lower; UF selects its final checkpoint.
+
+
+Both DPO runs completed 469 updates over 15,000 pairs, with no skipped updates and unchanged frozen references. UF developed stronger preference separation than HH: 72.8\% versus 64.5\% selected validation accuracy, and 0.6035 versus 0.2409 reward margin.
 \begin{table}[H]
 \centering\small
-\caption{General DPO checkpoint selection. Loss, accuracy, and margin are from validation.}
-\label{tab:selection}
 \begin{tabular}{@{}lrrrrr@{}}\toprule
-Track & Selected / final & Selected loss & Selected accuracy & Margin & Final accuracy\\\midrule
-HH & 400 / 469 & 0.630991 & 64.5\% & 0.240880 & 64.3\%\\
-UF & 469 / 469 & 0.553575 & 72.8\% & 0.603458 & 72.8\%\\\bottomrule
+Track & Selected / final & Val. loss, selected / final & Selected accuracy & Margin & Final accuracy\\\midrule
+HH & 400 / 469 & 0.630991 / 0.622583 & 64.5\% & 0.240880 & 64.3\%\\
+UF & 469 / 469 & 0.553575 / 0.553575 & 72.8\% & 0.603458 & 72.8\%\\\bottomrule
 \end{tabular}
+\caption{General DPO checkpoints selected by validation reward accuracy.}
 \end{table}
-HH final loss is 0.622583. Positive reward margins establish that the policies move toward chosen responses relative to their references. They are likelihood diagnostics; their relationship to generated quality is tested separately below.
+HH's loss continued to fall after update 400, but its preference accuracy ended 0.2 percentage points lower. I therefore evaluated update 400. UF's highest accuracy occurred at its final update.
 
-\subsection{Persona preference learning}
-Persona validation reaches 100\% strict accuracy at update 5 and ties that accuracy at updates 10 and 13. The selection rule retains the first maximum, update 5. Validation loss falls from 0.693147 to 0.690129 at the selected checkpoint and 0.685189 at the final checkpoint; the corresponding margins are 0.006046 and 0.015986. Immutable base-weight fingerprints match before and after training. The adapter separates preferences with modest likelihood movement, despite frozen base weights.
-
+\Needspace{5\baselineskip}
+Persona reached \textbf{100\% accuracy on 22 validation pairs at update 5}, then tied it at updates 10 and 13. The first maximum selected update 5. Validation loss fell from 0.693147 to 0.690129 at selection and 0.685189 at the end; margin rose to 0.006046 and 0.015986. The frozen base weights stayed unchanged.
 
 \begin{figure}[!ht]
 \centering
 \begin{tikzpicture}
-\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.6cm},reportaxis,width=.445\linewidth,height=3.2cm,xmin=0,xmax=13,xtick={0,5,10,13}]
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.9cm},reportaxis,width=.42\linewidth,height=3.2cm,xmin=0,xmax=13,xtick={0,5,10,13}]
 \nextgroupplot[title={Persona validation loss},ylabel={Loss},ymin=.684,ymax=.695,ytick={.685,.690,.695},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill}]
 \addplot[navy,mark=*,mark size=1.3pt] coordinates {(0,.693147)(5,.690129)(10,.687027)(13,.685189)};
-\nextgroupplot[title={Persona reward margin},ylabel={Margin},ymin=0,ymax=.018]
+\nextgroupplot[title={Persona reward margin},ylabel={Margin},ymin=0,ymax=.018,ytick={0,.005,.010,.015},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill}]
 \addplot[rust,mark=*,mark size=1.3pt] coordinates {(0,0)(5,.006046)(10,.012282)(13,.015986)};
 \end{groupplot}
 \end{tikzpicture}
-\caption{Original persona adapter: unsmoothed validation loss and reward margin. Accuracy first reaches its maximum at update 5, which is selected.}
+\caption{Persona validation loss and margin, unsmoothed. Best checkpoint: update 5, the first to reach 100\% preference accuracy.}
 \label{fig:persona}
 \end{figure}
 
-\section{Matched evaluation results}
-\subsection{Blind DPO--SFT comparisons}
-Generation persisted 2,100 responses: base on Alpaca, plus SFT and both DPO models on Alpaca and HH. All banks contain 300 answers with zero blanks. Four 300-pair files compare DPO against SFT with seed-42 A/B randomization and separate identity mappings. Local checks reconstruct the pairs byte for byte.
 
-A separate Kaggle utility notebook judges the saved pairs with \model{google/gemini-3.6-flash} (SDK 0.6.1), using correctness, helpfulness, instruction following, formatting, and absence of hallucinations or unsafe content. The evaluator submits five pairs per request, waits at least five seconds between attempts, allows three attempts per batch, persists validated judgments after each batch, and supports resume. It reports zero unknown, unresolved-failure, and pending judgments. The recovered attempt journals record 250 request attempts for 240 initial batches: one HH/Alpaca retry and nine UF/Alpaca retries. Malformed or partial returns are validated by ID; valid judgments are retained, remaining IDs are retried, and unresolved failures are logged separately. All 1,200 judgments and the reported bootstrap intervals reproduce locally from the original saved records.
 
-For DPO wins $W$, ties $T$, and losses $L$, the two rates are
-\begin{equation}
-\widehat p_{\rm tie}=\frac{W+T/2}{W+T+L},\qquad
-\widehat p_{\rm decisive}=\frac{W}{W+L}.
-\label{eq:rates}
-\end{equation}
-Both describe DPO relative to SFT. The tie-adjusted rate has parity at 50\% and is the primary comparison; unlike evaluation banks are reported separately.
+\section{DPO-versus-SFT results}
+I generated 300 answers per bank: base on Alpaca, plus SFT, HH DPO, and UF DPO on both Alpaca and HH, giving 2,100 saved answers with no blanks. Four separate files compare DPO against SFT; A/B positions are randomized with seed 42 and model identities are hidden from the judge.
+
+The judge was \model{google/gemini-3.6-flash} through Kaggle Benchmarks SDK 0.6.1. It compared correctness, helpfulness, instruction following, concision, formatting, hallucinations, and safety. Requests contained five pairs, with at least five seconds between attempts and up to three attempts per batch. Valid ID-matched judgments were saved after each batch; malformed or missing decisions were retried, and unresolved failures were logged. All 1,200 pairs were judged: \textbf{250 attempts, 10 retries, zero unknowns or unresolved failures}. HH/Alpaca needed one retry and UF/Alpaca nine.
 
 \begin{table}[H]
 \centering\small
-\caption{Saved blind evaluation. Each row contains $N=300$ valid judgments. Intervals apply to the tie-adjusted rate.}
-\label{tab:results}
 \begin{tabularx}{\linewidth}{@{}lrrrYYY@{}}\toprule
-DPO / bank & $W$ & $T$ & $L$ & Tie-adjusted & Decisive & 95\% interval\\\midrule
+DPO / set & Wins & Ties & Losses & Tie-adjusted & Decisive & 95\% interval\\\midrule
 HH / Alpaca & 101 & 98 & 101 & 50.0\% & 50.0\% & 45.3--54.5\%\\
 HH / HH & 115 & 47 & 138 & 46.2\% & 45.5\% & 38.9--53.2\%\\
 UF / Alpaca & 91 & 63 & 146 & 40.8\% & 38.4\% & 36.2--45.7\%\\
 UF / HH & 103 & 24 & 173 & 38.3\% & 37.3\% & 31.0--45.7\%\\\bottomrule
 \end{tabularx}
+\caption{DPO against SFT; 300 valid judgments per row. Tie-adjusted rate is $(W+T/2)/300$; decisive rate is $W/(W+L)$. Intervals use 2,000 seed-42 bootstrap resamples, clustered by instruction for HH.}
 \end{table}
 
-\term{HH DPO does not establish an improvement.} It has exactly as many wins as losses on Alpaca. On HH, its point estimate is 3.83 percentage points below parity, but both HH intervals include 50\%. The evidence is consistent with parity; it does not establish equivalence.
+\textbf{HH tied SFT on Alpaca}: 101 wins and 101 losses. On HH it lost 138 pairs and won 115, placing its tie-adjusted score 3.8 points below parity. Both intervals include 50\%. \textbf{UF lost to SFT on both sets}, finishing 9.2 points below parity on Alpaca and 11.7 below on HH; both intervals are below 50\%. The run with the stronger preference metrics generated the weaker judged answers.
 
-\term{SFT outperforms UF under this judge.} UF is 9.17 points below parity on Alpaca and 11.67 below on HH, with both intervals wholly below 50\%. This is the clearest result across the general tracks: UF has the higher validation preference accuracy (72.8\%), yet its sampled answers are judged worse.
-
-The saved uncertainty calculation uses 2,000 bootstrap resamples and seed 42. HH resamples its 185 canonical instruction clusters instead of treating all 300 rows as independent. These intervals represent sampling variation in these comparisons, rather than judge bias or training-seed variability.
-
-\subsection{Persona style, usefulness, and safety}
-The original selected adapter changes only two of 40 greedy answers; the final adapter changes six. Table~\ref{tab:persona} shows that the perfect preference score does not produce a corresponding behavioral shift. No coding answer changes. All three models reach the 256-token limit on 22 of 40 prompts, and their wording remains generic rather than distinctly Ramsay-like.
-
+\subsection*{Persona result}
 \begin{table}[H]
 \centering\small
-\caption{Persona results on the same 40 prompts and decoder. Output identity is a behavioral diagnostic, not a quality score.}
-\label{tab:persona}
 \begin{tabular}{@{}lrrrr@{}}\toprule
-Adapter & Val. loss & Val. accuracy & Reward margin & Identical to baseline\\\midrule
-Best, update 5 & 0.690129 & 100\% & 0.006046 & 38/40\\
-Final, update 13 & 0.685189 & 100\% & 0.015986 & 34/40\\\bottomrule
+Adapter & Val. loss & Val. accuracy & Margin & Changed answers\\\midrule
+Best, update 5 & 0.690129 & 100\% & 0.006046 & 2/40\\
+Final, update 13 & 0.685189 & 100\% & 0.015986 & 6/40\\\bottomrule
 \end{tabular}
+\caption{Persona compared with the unmodified SmolLM2 baseline on the same 40 prompts and decoder.}
 \end{table}
+Neither checkpoint developed a distinct Ramsay voice. Every coding answer stayed unchanged. A changed salmon answer added closing advice but retained unsafe doneness guidance; cake-rescue advice remained unsound, and a changed correlation/causation explanation remained confused. Allergy-prank and password-theft responses remained harmful. Baseline, best, and final each reached the token cap on 22/40 prompts. This was a matched manual comparison, with no external persona judging.
 
-Qualitative checks do not show convincing persona transfer. A changed salmon answer adds slightly better closing advice while retaining unsafe doneness guidance. A changed cake-rescue answer remains unsound, and a reworded correlation/causation answer remains confused. Coding errors and harmful responses to allergy-prank and password-theft requests persist. This assessment is matched but unblinded; there is no external persona win rate. The adapter's effect is limited, and safety preservation is not established.
-
-\section{Interpretation and representative errors}
-\subsection{What changes in the answers?}
-The examples below come from the frozen development bank with the \emph{final} penalty 1.1/block-0 decoder. They illustrate aggregate findings without substituting for the 300-pair blind comparisons.
-
+\section{Interpretation and error analysis}
+The following examples use the final decoder on the 40-prompt development bank. They show improvement, regression, and unchanged behavior alongside the larger judged comparisons.
 \begin{table}[H]
 \centering\small
-\caption{Matched development examples: improvement, regression, and unchanged behavior. Full outputs are retained in \texttt{evaluation/*-development.json}.}
-\label{tab:examples}
-\begin{tabularx}{\linewidth}{@{}p{.27\linewidth}YYY@{}}\toprule
-Task / expected behavior & SFT & HH DPO & UF DPO\\\midrule
-Beads: $18+12-6+3=27$ & Gives 27, but calls a total a blue-bead count & Gives 9; loses the counts and bead types & Gives 27 with consistent color accounting\\
-Bat and ball: 110 cents total, bat 100 cents more; ball costs 5 & Gives 5 with correct algebra & Writes $2x+100=110$, then gives 50 & Gives 5 with correct algebra\\
-Extract Maya's Friday booking and Omar's Monday invitations & Both actions & Both actions & Both actions\\
-Integer-count function: expected \texttt{\{2:3, -3:2\}} & Correct function; wrong example comment & Correct function; wrong example comment & Correct function; wrong example comment\\
-Planet-name lengths: independent executable cases & 3/3 pass & 3/3 pass & Counts occurrences; 1/3 pass\\\bottomrule
+\begin{tabularx}{\linewidth}{@{}p{.25\linewidth}YYY@{}}\toprule
+Prompt / expected result & SFT & HH DPO & UF DPO\\\midrule
+Beads: $18+12-6+3=27$ & 27, but calls the total a blue-bead count & 9; loses bead counts and colors & 27, with consistent color accounting\\
+Bat and ball: 110 cents total; bat costs 100 cents more; ball costs 5 & 5, with correct algebra & Writes $2x+100=110$, then answers 50 & 5, with correct algebra\\
+Maya books Friday; Omar sends invitations Monday & Extracts both actions & Extracts both actions & Extracts both actions\\
+Integer counts: \texttt{\{2:3, -3:2\}} & Correct function; wrong example comment & Correct function; wrong example comment & Correct function; wrong example comment\\
+Planet-name lengths: three executable cases & 3/3 pass & 3/3 pass & Counts occurrences; 1/3 pass\\\bottomrule
 \end{tabularx}
+\caption{Matched development outputs. Full answers: \texttt{evaluation/*-development.json}.}
 \end{table}
 
-UF improves the bead explanation without improving the already correct numeric answer. HH regresses on both arithmetic examples; the bat-and-ball answer shows how a correct-looking equation can coexist with a wrong solution. Meeting extraction is unchanged across the final-decoder models, even though an older SFT decoder omitted an action. The integer-count example separates executable correctness from the model's claimed output.
+UF improved the bead explanation while retaining the correct total. HH regressed on both arithmetic tasks: even a correct equation did not lead to the correct bat-and-ball answer. Extraction stayed the same, and DPO did not fix the incorrect comment attached to the counting function. Persona likewise retained its coding errors: first-unique-character failed \texttt{aab}, \texttt{abc}, and \texttt{aabb}; binary search passed four edge cases. A 90-minute plan still totaled 135 minutes, and a library summary invented closing times.
 
-Persona coding outputs are unchanged: first-unique-character fails \texttt{aab}, \texttt{abc}, and \texttt{aabb}, while binary search passes four edge cases. A 90-minute plan reaches 135 minutes, and a library summary invents closing times.
+\textbf{UF's failures extended beyond isolated examples.} Its answers reached the 256-token cap on 138/300 Alpaca prompts and 163/300 HH prompts, compared with 56 and 52 for SFT, and 41 and 34 for HH DPO. Final banks contained repeated ``please'' in a landlord-message rewrite, repeated hashtags, and an HH DPO emoji loop. Raising the repetition penalty fixed a development loop but did not remove repetition from the evaluation banks.
 
-\subsection{Why might preference learning fail to improve generation?}
-\term{Observed preference-data risks.} Complete-pair reviews found questionable chosen labels in both sources, including factual errors and mismatched refusals. Raw-source checks found no converter label swap. UF chosen responses are truncated in 3,987/15,000 training pairs, versus 28/15,000 for HH; the sampled mean chosen/rejected length ratios are 1.96 and 1.60. The response-summed DPO objective can therefore learn from noisy or unevenly retained comparisons. This is a plausible contributor, not an isolated causal explanation.
+\textbf{Preference data and response coverage help explain the mismatch.} Pair reviews found factual errors and mismatched refusals among chosen responses in both datasets; source checks found no converter label swap. UF truncated chosen responses in \textbf{3,987/15,000 pairs}, compared with \textbf{28/15,000 for HH}. Sampled chosen/rejected length ratios averaged 1.96 and 1.60. The response-summed objective therefore trained on labels and response spans that did not consistently represent a better complete answer. These observations support data mismatch as an explanation; the runs did not vary filtering or context length to measure its individual effect.
 
-\term{Observed generation risks.} UF hits the response cap on 138/300 Alpaca and 163/300 HH answers, compared with SFT's 56 and 52 and HH's 41 and 34. Length limits alone do not imply poor quality. Manual inspection also confirms sustained repetition in final banks: repeated ``please'' in a landlord-message rewrite, hashtag repetition, and an HH emoji loop. The development decoder repair did not eliminate benchmark degeneration.
+The general runs held $\beta=0.1$ and training length at one epoch, so they provide a direct comparison of the two preference sources from the same SFT origin. UF's larger reward margin accompanied worse generation; HH's smaller margin accompanied parity on Alpaca and a lower score on HH. Lower DPO loss and higher preference accuracy did not predict the ordering of answer quality. Persona showed the other failure: margins of only 0.0060--0.0160 changed pair rankings while leaving most greedy answers identical. Its small adapter and short, low-LR run achieved preference separation without the intended style transfer.
 
-Together, these observations suggest that higher reference-relative likelihood separation is insufficient when preference labels, response coverage, and autoregressive behavior remain problematic. UF's worse blind scores are measured; data mismatch, over-optimization, and decoding sensitivity are hypotheses about their cause. The persona result is consistent with under-adaptation: small positive margins change pair ranking while rarely moving greedy decoding to a different answer. These runs do not identify which single adjustment would resolve either failure.
-
-\section{Limitations, reproducibility, and conclusion}
-All training uses one seed, and general evaluation uses one model judge. Exact-text exclusions do not rule out semantic overlap. The HH bank repeats instructions; the persona assessment has only 22 held-out preference pairs and 40 purposefully adversarial prompts. Decoder selection has a documented code-quality tradeoff. These limits constrain the size and generality of the quality claims.
-
-\term{Reproducibility.} The project retains code, prepared splits, training metrics, checkpoint states and hashes, all matched outputs, blinded pairs and mappings, and the complete saved judge journals (Table~\ref{tab:evidence}). Its assembled code passed 381 offline tests, including all seven unchanged public adapter tests. Large weights remain in the private Kaggle outputs and were not rehashed locally during report preparation. Training does not resume optimizer state; generation and judging persist progress.
+\section{Limitations and reproducibility}
+Training used one seed and general evaluation one model judge. Bootstrap intervals cover prompt-sampling variation, not judge bias or training-seed variance. Exact prompt exclusions do not detect semantic overlap. HH repeats instructions; the persona comparison contains 22 validation pairs and 40 manually selected evaluation prompts and was unblinded. There was no controlled sweep of $\beta$, context length, or training duration.
 
 \begin{table}[H]
 \centering\footnotesize
-\caption{Compact evidence index. Paths are relative to the project root.}
-\label{tab:evidence}
 \begin{tabularx}{\linewidth}{@{}lY@{}}\toprule
-Evidence & Local record / saved experiment\\\midrule
-Data and configuration & \pathcode{data/general/}, \pathcode{configs/}, \pathcode{evidence/data_summary.json}\\
-SFT and original DPO & \pathcode{evidence/sft-launch_status.json}, \pathcode{evidence/dpo/}; versions 356840240 and 357186707\\
-Matched generation and blinding & \pathcode{evaluation/matched/}; \href{https://www.kaggle.com/code/muhammadsalehfarooq/pa2-matched-evaluation?scriptVersionId=357326672}{version 357326672}\\
-Judge counts and intervals & \pathcode{evaluation/summary.json}, \pathcode{evaluation/judged/}; \href{https://www.kaggle.com/code/muhammadsalehfarooq/pa2-dpo-blind-judging?scriptVersionId=357378242}{version 357378242}\\
-Persona baseline, best, and final & \pathcode{evidence/persona-best/}, \pathcode{evidence/persona-final/}; versions 357420502 and 357446665\\
-Source and verification & \pathcode{submission_adapter.py}, \pathcode{src/}, \pathcode{tests/}, \pathcode{verify_submission.py}, \pathcode{AI_USAGE.md}\\\bottomrule
+Reproduce & Repository files\\\midrule
+Data and settings & \pathcode{data/general/}, \pathcode{configs/}, \pathcode{evidence/data_summary.json}\\
+Training curves and checkpoints & \pathcode{evidence/sft-launch_status.json}, \pathcode{evidence/sft-completed-run-logs.txt}, \pathcode{evidence/dpo/}, \pathcode{evidence/persona-best/}, \pathcode{evidence/persona-final/}\\
+Answers and judge results & \pathcode{evaluation/matched/}, \pathcode{evaluation/judged/}, \pathcode{evaluation/summary.json}, \pathcode{scripts/summarize_saved_evaluation.py}\\
+Kaggle workflows & \pathcode{notebooks/01_Qwen_Training.ipynb}, \pathcode{02_Matched_Generation.ipynb}, \pathcode{03_Saved_Pair_Judging.ipynb}, \pathcode{04_Persona_LoRA.ipynb} (all under \texttt{notebooks/})\\\bottomrule
 \end{tabularx}
 \end{table}
+Qwen runs used PyTorch 2.11.0+cu128 and Transformers 4.57.6; persona used Transformers 4.51.3, TRL 0.19.1, and PEFT 0.15.2.
 
-Executed stacks are pinned in the project: Qwen used PyTorch 2.11.0+cu128 and Transformers 4.57.6 on two T4s; persona used Transformers 4.51.3, TRL 0.19.1, and PEFT 0.15.2. Run records retain exact model revisions and weight hashes. The completed public project is \url{https://github.com/salehfarooq/cs5326-pa2-small-model-alignment}. The README attributes the course starter. Assistance is disclosed in \pathcode{AI_USAGE.md}.
+Large weights are saved in the original private Kaggle outputs; checkpoint paths and SHA256 values are included in the run records. Saved versions: SFT 356840240, DPO 357186707, generation 357326672, judging 357378242, persona best 357420502 and final 357446665. The saved answers and judgments reproduce every result table without downloading weights.
 
-\term{Conclusion.} The strongest result is that learning the preference objective did not reliably improve generated quality. HH DPO shows no clear gain over SFT; UF DPO performs worse under the saved judge on both banks. Persona reaches perfect validation preference separation with little useful style transfer. SFT remains the stronger baseline against UF, while preference accuracy should be interpreted alongside matched generation, correctness, and safety rather than used as their substitute.
+SFT remains the stronger model against UF on both evaluation sets. HH did not improve over SFT, and persona preference accuracy did not translate into a useful style change. The result is that these preference-training runs improved their own validation objectives without improving the assistant behavior they were meant to target.
 
-\begin{minipage}{\linewidth}\small
-\begin{thebibliography}{4}
+\begin{thebibliography}{3}\small
 \setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
-\bibitem{dpo} R.~Rafailov, A.~Sharma, E.~Mitchell, S.~Ermon, C.~D.~Manning, and C.~Finn. \emph{Direct Preference Optimization: Your Language Model is Secretly a Reward Model}. NeurIPS, 2023. \href{https://arxiv.org/abs/2305.18290}{arXiv:2305.18290}.
-\bibitem{trl} Hugging Face. \emph{TRL DPOTrainer documentation}, version 0.19.1. \url{https://huggingface.co/docs/trl/v0.19.1/en/dpo_trainer}.
-\bibitem{peft} Hugging Face. \emph{PEFT LoRA configuration reference}. \url{https://huggingface.co/docs/peft/package_reference/lora}. Executed PEFT version: 0.15.2.
+\bibitem{dpo} R. Rafailov et al. \emph{Direct Preference Optimization: Your Language Model is Secretly a Reward Model}. NeurIPS, 2023. \href{https://arxiv.org/abs/2305.18290}{arXiv:2305.18290}.
+\bibitem{trl} Hugging Face. \emph{TRL DPOTrainer}, version 0.19.1. \url{https://huggingface.co/docs/trl/v0.19.1/en/dpo_trainer}.
+\bibitem{peft} Hugging Face. \emph{PEFT LoRA configuration reference}. \url{https://huggingface.co/docs/peft/package_reference/lora}. Executed version: 0.15.2.
 \end{thebibliography}
-\end{minipage}
 \end{document}

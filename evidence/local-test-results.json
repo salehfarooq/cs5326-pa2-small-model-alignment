@@ -17,5 +17,14 @@
     "PYTHONPATH=. ../small-model-alignment-starter/.venv/bin/python -m pytest -q (assembled copy)"
   ],
   "final_prepublication_tests": "381 passed in 7.25s",
-  "editable_install": "uv pip install -e . --no-deps completed"
+  "editable_install": "uv pip install -e . --no-deps completed",
+  "current_tests": {
+    "date": "2026-10-14",
+    "passed": 381,
+    "failed": 0,
+    "skipped": 0,
+    "public_adapter_passed": 7,
+    "full_suite_output": "381 passed in 12.13s",
+    "public_adapter_output": "7 passed in 2.87s"
+  }
 }

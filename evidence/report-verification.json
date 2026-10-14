@@ -1,23 +1,20 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "format": "LaTeX",
-  "pages": 6,
-  "pdf_sha256": "28dbf793cd83f286e3dceef307ac0c2e173d7fc22dcde9b722b89bea611a454f",
-  "tex_sha256": "ae1b800e1f8f43a7d856ae947a6450a546c86bd971af38fb0d8e37901fe998d3",
+  "pages": 5,
+  "pdf_sha256": "10ef8300a4a8ce6ae2487d4aa5b401b4fae4ff3420b66be0c4db141acfb40519",
+  "tex_sha256": "f065251110809172f5bfe10a7385e4ce48b41aa991ecc113211f3f3bc80793b0",
   "compiler": "Tectonic 0.17.0",
   "export_exit_code": 0,
-  "desktop_editor_compile": "success on preceding source; final source export verified",
   "overfull_boxes": 0,
   "unresolved_references": 0,
-  "visual_review": "All six final published-report pages inspected; no clipping/overlap.",
+  "visual_review": "All five final rendered pages inspected; no clipping, overlap, or orphaned paragraph fragments.",
   "rendered_page_sha256": {
-    "page-1.png": "ef0a31ae1991ea46eec31e8fa5e3f62f1f9be6a926c77db3c90adcec4294fdc6",
-    "page-2.png": "b6486cea40f9a14b3cfa816db51d56e53ce22f53f878643402b0ccf3f4bfbe50",
-    "page-3.png": "6a85354e33725fa6d2adf853c1c94086c74ffe0c40f4c38a84443adb3f31ad5c",
-    "page-4.png": "3e8a987016318fd4a05151f066e5e37d4cd8a1c92033052955bab9f13f754321",
-    "page-5.png": "0fb5790c8060d78033d53fdb15a735c26e82aca6d71042392b4df75f2fa5a440",
-    "page-6.png": "67bf21eb1eb8be64ec8ef2ce5e54ddad44fa1a110a0d31c43198b1d7874d5eb9"
+    "page-1.png": "43d7cc120b120e8d1fd2e6a847c7977c875f4e592c676b2e25754df7dae8fb69",
+    "page-2.png": "51453590a2ae2100a2571768566f14d85adfe950ce47ebf8287e51f395b70314",
+    "page-3.png": "e907d2e4854d9a740479e0f74e5e6ef67e9cb3ca8af5ef14c576059eef17b1d1",
+    "page-4.png": "5f87536e727fb490be314bbd26ed8748d62f941a22af5ff9bd2ac43394ad9195",
+    "page-5.png": "5f4044ae713dddfb629dfbc6a6e9077e43baad3f9d67483be46b4ab60408cc30"
   },
-  "requested_change": "Assignment-manual bibliography entry removed; remaining references renumbered.",
-  "judge_evidence": "Complete original archive recovered and recomputed; 250 attempts / 10 retries."
+  "requested_change": "Concise result-focused report in the PA1 style; seven manual report sections retained."
 }

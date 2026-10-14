@@ -1,21 +1,28 @@
-# Submission items
+# CS5326 PA2 submission
 
-Saleh Farooq · 27100063 · CS5326 PA2
+Saleh Farooq · 27100063
 
-The complete manual was read and audited. Section 16 asks for these five items:
-
-| Required hand-in | Ready item |
+| Manual §16 item | Final file / location |
 | --- | --- |
-| Completed-project GitHub URL | https://github.com/salehfarooq/cs5326-pa2-small-model-alignment |
-| Short final report, PDF | [REPORT.pdf](REPORT.pdf), six pages including figures, tables, and references |
-| SFT and DPO training plots | [plots/](plots/), also embedded as vector plots in the report |
-| DPO-versus-SFT evaluation summary | [summary.csv](evaluation/summary.csv), [summary.json](evaluation/summary.json), with all original judgments in [evaluation/judged/](evaluation/judged/) |
-| Root grading adapter with passing public tests | [submission_adapter.py](submission_adapter.py); unchanged signatures, seven public smoke tests passing |
+| Completed GitHub repository | [salehfarooq/cs5326-pa2-small-model-alignment](https://github.com/salehfarooq/cs5326-pa2-small-model-alignment) |
+| Final report PDF, maximum eight pages | [REPORT.pdf](REPORT.pdf) |
+| SFT and DPO training plots | [sft.png](plots/sft.png), [dpo.png](plots/dpo.png); [persona.png](plots/persona.png) |
+| DPO-versus-SFT evaluation summary | [summary.csv](evaluation/summary.csv), [summary.json](evaluation/summary.json) |
+| Root grading adapter | [submission_adapter.py](submission_adapter.py), connected to `src/`; public tests in `tests/test_public_adapter_smoke.py` |
 
-Submit the repository URL and upload the PDF, plot files, and evaluation summary in the course submission fields as requested by the LMS. This preparation does not submit to the LMS.
+The local `PA2/hand-in/` folder contains the upload files:
 
-The implementation, saved data, generation/pair files, attempts, and report evidence are all in the repository. [MANUAL_AUDIT.md](MANUAL_AUDIT.md) maps the full requirements to their evidence and distinguishes mandatory work from optional advice.
+```text
+hand-in/
+├── REPOSITORY.txt
+├── REPORT.pdf
+├── plots/
+│   ├── sft.png
+│   ├── dpo.png
+│   └── persona.png
+└── evaluation/
+    ├── summary.csv
+    └── summary.json
+```
 
-The persona assessment is qualitative and matched; no external persona judge win rate is invented. Training weights remain in private saved Kaggle outputs and are not required by the five-item hand-in list. Their metadata/fingerprints are included; staff access is needed only to inspect those cloud weights.
-
-No ZIP is required by section 16. No submission ZIP has been created.
+The grading adapter, implementation, prepared data, notebooks, saved answers, and judgments are in the repository. Submit the repository URL with the report, plots, and evaluation summary.

@@ -23,6 +23,6 @@ jobs:
       - name: Full offline suite
         run: PYTHONPATH=. python -m pytest -q
       - name: Verify saved submission evidence
-        run: python verify_submission.py
+        run: python scripts/verify_submission.py
       - name: Recompute original judge results
         run: python scripts/summarize_saved_evaluation.py

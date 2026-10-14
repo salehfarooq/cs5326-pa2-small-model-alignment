@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, tempfile
 from src.pairwise import build_pairs
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 load = lambda p: json.loads(p.read_text())
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 
@@ -12,7 +12,7 @@ def verify():
     assert sha(ROOT/'REPORT.pdf') == report['pdf_sha256']
     assert sha(ROOT/'REPORT.tex') == report['tex_sha256']
     assert report['pages'] <= 8
-    manifest = load(ROOT / 'manifest.json')
+    manifest = load(ROOT / 'evidence/manifest.json')
     for name, record in manifest['files'].items():
         p = ROOT / name
         assert p.is_file() and p.stat().st_size == record['bytes'], 'Missing/size mismatch: ' + name
@@ -87,12 +87,12 @@ def verify():
     return {'status':'verified','manifest_files':len(manifest['files']),'protected_course_files':len(protected),
             'data_rows':data_counts,'matched_answers':answers,'blind_pairs':len(rebuilds)*300,
             'byte_identical_rebuilt_pair_banks':rebuilds,'selected_updates':{'sft':938,'hh':400,'uf':469,'persona':5},
-            'persona_unchanged_best':38,'persona_unchanged_final':34,'tests':{'passed':381,'failed':0,'skipped':0},
-            'report_pages':load(ROOT/'evidence/report-verification.json')['pages'],'pdf_visual_review':'All six rendered pages inspected; no clipping or overlap.',
+            'persona_unchanged_best':38,'persona_unchanged_final':34,'tests':load(ROOT/'evidence/local-test-results.json')['current_tests'],
+            'report_pages':load(ROOT/'evidence/report-verification.json')['pages'],'pdf_visual_review':report['visual_review'],
             'github_project_url':'https://github.com/salehfarooq/cs5326-pa2-small-model-alignment','raw_judge_journal_locally_available':True,'zip_created':False,
-            'readiness':'Five manual hand-in items prepared; persona assessment remains qualitative as documented.', 'date':'2026-10-13'}
+            'date':report['date']}
 
 if __name__ == '__main__':
     result=verify()
-    (ROOT/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
+    (ROOT/'evidence/verification.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
