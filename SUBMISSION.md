@@ -16,6 +16,15 @@ The local `PA2/hand-in/` folder contains the upload files:
 hand-in/
 ├── REPOSITORY.txt
 ├── REPORT.pdf
+├── README.md
+├── submission_adapter.py
+├── src/
+├── tests/
+│   ├── test_public_adapter_smoke.py
+│   ├── toy_lm.py
+│   └── __init__.py
+├── requirements.txt
+├── pyproject.toml
 ├── plots/
 │   ├── sft.png
 │   ├── dpo.png
@@ -25,4 +34,4 @@ hand-in/
     └── summary.json
 ```
 
-The grading adapter, implementation, prepared data, notebooks, saved answers, and judgments are in the repository. Submit the repository URL with the report, plots, and evaluation summary.
+The hand-in folder includes the root adapter, its implementation, and the unchanged public tests. Run `PYTHONPATH=. python -m pytest -q tests/test_public_adapter_smoke.py` from that folder. Prepared data, training notebooks, saved answers, and judgments are in the full repository.
